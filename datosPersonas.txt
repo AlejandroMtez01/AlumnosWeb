@@ -1,0 +1,3 @@
+ERIKA (JAVAFX -> 1OS PASOS (eventos)) ver diferentes componentes, EXPRESIONES REGULARES, 
+
+Próxima clase ERIKA -> PATTERN PERSONALIZADO.

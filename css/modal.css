@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/*-----------*/
+/*-----------*/
+/*-----------*/
+/*Estilo Colores*/
+.modal {
+  font-family: "Inter";
+  display: block;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 50px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.tooltip {
+  position: fixed;
+  padding: 20px 5px;
+  border: 1px solid #b3c9ce;
+  border-radius: 4px;
+  text-align: center;
+  font: normal 14px/1.3 "Inter";
+  color: #333;
+  background: #fff;
+  z-index: 0;
+}
+
+/* Modal Content */
+.contenidoModal {
+  width: 600px;
+  margin: auto auto;
+}
+.contenidoModal .logo {
+  background-color: white;
+  position: absolute;
+  top: 25px;
+  margin: 0px 20px;
+  border-radius: 15px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  padding: 10px;
+  border: 1px solid #F4F4F5;
+}
+.contenidoModal .logo img {
+  width: 100%;
+  height: 100%;
+}
+.contenidoModal .contenidoM {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 40px 30px;
+  border-top: 1px solid #888;
+  border-top-left-radius: 7.5px;
+  border-top-right-radius: 7.5px;
+}
+.contenidoModal h2 {
+  letter-spacing: 2px;
+}
+.contenidoModal .subtitulo {
+  margin-top: 25px;
+  padding-top: 10px;
+}
+.contenidoModal .subtitulo h3 {
+  letter-spacing: 1.5px;
+  text-align: center;
+  font-weight: 600;
+}
+.contenidoModal ul > li {
+  list-style-type: lower-latin;
+  padding: 3.5px;
+}
+.contenidoModal .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.contenidoModal .grid-dual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.contenidoModal .subContenido {
+  margin: 15px 0px;
+  display: block;
+}
+.contenidoModal .subContenido span {
+  font-weight: 500;
+}
+.contenidoModal .subContenido .fondoPerfil {
+  height: 40px;
+  width: 40px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.contenidoModal .subContenido .fondoPerfil span {
+  width: 100%;
+  text-align: center;
+}
+.contenidoModal .subContenido .historial {
+  background-color: #f3f3f3;
+  min-height: 130px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 10px;
+}
+.contenidoModal .subContenido .historial .bloque {
+  border: 1px solid #F4F4F5;
+}
+.contenidoModal .subContenido .historial .bloque .titulo {
+  font-size: 13px;
+  font-weight: 600;
+}
+.contenidoModal .subContenido .historial .bloque .fecha {
+  font-size: 12px;
+}
+.contenidoModal .subContenido .historial .bloque .hora {
+  font-size: 11px;
+}
+.contenidoModal .subContenido .historial .bloque .fecha, .contenidoModal .subContenido .historial .bloque .hora, .contenidoModal .subContenido .historial .bloque .titulo {
+  text-align: center;
+  padding: 2px 0px;
+}
+.contenidoModal .subContenido div.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.contenidoModal .subContenido input, .contenidoModal .subContenido select {
+  margin: 5px 0px;
+  border-radius: 8px;
+  border: 2px solid #a8a8b1;
+  padding: 10px 10px;
+  font-size: 15px;
+  font-family: "Inter";
+}
+.contenidoModal .subContenido input.active, .contenidoModal .subContenido select.active {
+  border: 2px solid rgb(139, 0, 0);
+  background-color: rgb(235, 211, 211);
+}
+.contenidoModal .subContenido textarea {
+  border-radius: 8px;
+  border: 2px solid #a8a8b1;
+  padding: 10px 10px;
+  margin: 5px 0px;
+  font-family: "Inter";
+  font-size: 15px;
+  resize: none;
+}
+.contenidoModal .subContenido button {
+  background-color: transparent;
+  border: 0px;
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  margin: auto auto;
+}
+.contenidoModal .subContenido button img {
+  width: 100%;
+  height: 100%;
+}
+.contenidoModal .contenidoFinal {
+  background-color: #F4F4F5;
+  border-top: 1px solid gray;
+  padding: 20px;
+  display: flex;
+  margin-bottom: 70px;
+  border-bottom-left-radius: 7.5px;
+  border-bottom-right-radius: 7.5px;
+}
+.contenidoModal .contenidoFinal input[type=submit] {
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 15px;
+  margin: auto auto;
+  font-family: "Inter";
+  font-weight: 700;
+  border: 3px solid rgba(199, 0, 0, 0.753);
+  color: rgba(199, 0, 0, 0.753);
+  font-size: 15px;
+}
+.contenidoModal .contenidoFinal input[type=submit].aprobar {
+  border-color: rgb(0, 146, 19);
+  color: rgb(0, 146, 19);
+}
+.contenidoModal .contenidoFinal input[type=submit].aprobar:hover {
+  background-color: rgb(0, 146, 19);
+}
+.contenidoModal .contenidoFinal input[type=submit]:hover {
+  color: white;
+  background-color: rgba(199, 0, 0, 0.753);
+}
+.contenidoModal .panelInformacion .error {
+  color: darkred;
+}
+.contenidoModal .panelInformacion .exito {
+  color: green;
+}/*# sourceMappingURL=modal.css.map */

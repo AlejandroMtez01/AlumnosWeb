@@ -1,0 +1,2125 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/*-----------*/
+/*-----------*/
+/*-----------*/
+/*Estilo Colores*/
+body div.sidebar div.subBotones.visible {
+  opacity: 1;
+  transform: translateY(0%) translateX(0%);
+  transition: opacity 0.5s, ease-in-out, transform 0.5s linear;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-button {
+  background: black;
+}
+
+::-webkit-scrollbar-track-piece {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(141, 0, 0);
+}
+
+/*Estilos BG (Background)*/
+.estilo1BG {
+  background-color: rgb(255, 215, 223);
+}
+
+.estilo2BG {
+  background-color: rgb(255, 223, 205);
+}
+
+.estilo3BG {
+  background-color: rgb(212, 245, 201);
+}
+
+.estilo4BG {
+  background-color: rgb(225, 223, 250);
+}
+
+.estilo5BG {
+  background-color: rgb(201, 241, 245);
+}
+
+.estilo6BG {
+  background-color: rgb(252, 199, 249);
+}
+
+.estilo7BG {
+  background-color: rgb(204, 230, 255);
+}
+
+/*Estilos FG (Foreground)*/
+.estilo1FG {
+  color: rgb(255, 53, 94) !important;
+}
+
+.estilo2FG {
+  color: rgb(255, 145, 83) !important;
+}
+
+.estilo3FG {
+  color: rgb(104, 204, 69) !important;
+}
+
+.estilo4FG {
+  color: rgb(135, 127, 237) !important;
+}
+
+.estilo5FG {
+  color: rgb(7, 162, 173) !important;
+}
+
+.estilo6FG {
+  color: rgb(206, 95, 200) !important;
+}
+
+.estilo7FG {
+  color: rgb(71, 167, 255) !important;
+}
+
+.estilo1BG-SinConfirmar {
+  background-color: rgba(255, 255, 255, 0);
+  opacity: 1;
+  background: repeating-linear-gradient(-45deg, rgb(255, 215, 223), rgb(255, 215, 223) 5px, rgba(255, 255, 255, 0) 5px, rgba(255, 255, 255, 0) 10px);
+}
+
+.estilo2BG-SinConfirmar {
+  background-color: rgba(255, 255, 255, 0);
+  opacity: 1;
+  background: repeating-linear-gradient(-45deg, rgb(255, 223, 205), rgb(255, 223, 205) 5px, rgba(255, 255, 255, 0) 5px, rgba(255, 255, 255, 0) 10px);
+}
+
+.estilo3BG-SinConfirmar {
+  background-color: rgba(255, 255, 255, 0);
+  opacity: 1;
+  background: repeating-linear-gradient(-45deg, rgb(212, 245, 201), rgb(212, 245, 201) 5px, rgba(255, 255, 255, 0) 5px, rgba(255, 255, 255, 0) 10px);
+}
+
+.estilo4BG-SinConfirmar {
+  background-color: rgba(255, 255, 255, 0);
+  opacity: 1;
+  background: repeating-linear-gradient(-45deg, rgb(225, 223, 250), rgb(225, 223, 250) 5px, rgba(255, 255, 255, 0) 5px, rgba(255, 255, 255, 0) 10px);
+}
+
+.estilo5BG-SinConfirmar {
+  background-color: rgba(255, 255, 255, 0);
+  opacity: 1;
+  background: repeating-linear-gradient(-45deg, rgb(201, 241, 245), rgb(201, 241, 245) 5px, rgba(255, 255, 255, 0) 5px, rgba(255, 255, 255, 0) 10px);
+}
+
+.estilo6BG-SinConfirmar {
+  background-color: rgba(255, 255, 255, 0);
+  opacity: 1;
+  background: repeating-linear-gradient(-45deg, rgb(252, 199, 249), rgb(252, 199, 249) 5px, rgba(255, 255, 255, 0) 5px, rgba(255, 255, 255, 0) 10px);
+}
+
+.estilo7BG-SinConfirmar {
+  background-color: rgba(255, 255, 255, 0);
+  opacity: 1;
+  background: repeating-linear-gradient(-45deg, rgb(204, 230, 255), rgb(204, 230, 255) 5px, rgba(255, 255, 255, 0) 5px, rgba(255, 255, 255, 0) 10px);
+}
+
+div.navGeneral .perfilNav a {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+div.navGeneral .estilos {
+  border-radius: 5px;
+  height: 25px;
+  width: 25px;
+}
+div.navGeneral .estilos div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  height: 25px;
+  width: 25px;
+  font-size: 13px;
+}
+
+div.fondoPerfil {
+  padding: 5px 4px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin: auto auto;
+}
+div.fondoPerfil.ampliacion {
+  padding: 15px 25px !important;
+}
+div.fondoPerfil.estilo1 {
+  background-color: rgb(255, 215, 223);
+  color: rgb(255, 53, 94);
+}
+div.fondoPerfil.estilo2 {
+  background-color: rgb(255, 223, 205);
+  color: rgb(255, 145, 83);
+}
+div.fondoPerfil.estilo3 {
+  background-color: rgb(212, 245, 201);
+  color: rgb(104, 204, 69);
+}
+div.fondoPerfil.estilo4 {
+  background-color: rgb(225, 223, 250);
+  color: rgb(135, 127, 237);
+}
+div.fondoPerfil.estilo5 {
+  background-color: rgb(201, 241, 245);
+  color: rgb(7, 162, 173);
+}
+div.fondoPerfil.estilo6 {
+  background-color: rgb(252, 199, 249);
+  color: rgb(206, 95, 200);
+}
+div.fondoPerfil.estilo7 {
+  background-color: rgb(204, 230, 255);
+  color: rgb(71, 167, 255);
+}
+
+.botones {
+  margin: auto auto;
+}
+.botones button,
+.botones a.button {
+  background-color: transparent;
+  border-radius: 25px;
+  border: 0.1px solid gray;
+  display: block;
+  width: 22px;
+  height: 22px;
+  padding: 7.5px;
+}
+.botones button:hover,
+.botones a.button:hover {
+  cursor: pointer;
+  background-color: #c9c9c9;
+}
+.botones button img,
+.botones a.button img {
+  padding: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+body {
+  font-family: "Inter";
+  background-color: #F4F4F5;
+  display: grid;
+  /*Todos los enlaces <a>, tendrán, en principio color negro y no tendrán decoración de texto (subrayado de enlace)*/
+}
+body.inicio {
+  grid-template-columns: 15% 85%;
+}
+body a {
+  color: black;
+  text-decoration: none;
+}
+body .tooltip {
+  position: fixed;
+  padding: 2px 5px;
+  border: 1px solid #b3c9ce;
+  border-radius: 4px;
+  text-align: center;
+  font: normal 14px/1.3 "Inter";
+  color: #333;
+  background: #fff;
+}
+body div.sidebar {
+  background-color: #F4F4F5;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: block;
+  overflow-y: auto;
+  /*Jerarquía de subBotones (Para 'subcategorias' dentro de 'categorias'
+  -subBotones
+      -a
+          -subBotonesNav
+              -contenedorSubB
+
+  - subBotones (Agrupa todos los subBotones de forma que queden compactos en una clase contenedora, y también crea una línea que contendrán todos los subBotones en gris)
+  - a (Está inmediatamente después para que cada elemento sea un enlace y no su texto sino todo el div)
+  - subBotonesNav (Añade un margen entre cada elemento y es el botón en si (junto a <a>) y además cuando tiene la clase active, se coloca una línea vertical del tamaño del botón para indicarnos que se encuentra en dicho botón, también permite añadir margin hacia arriba y hacia abajo (sin alterar la línea active))
+  - contenedorSubB (Permite añadir margen y padding de izquierda a derecha), si añadimos hacia arriba o hacia abajo se tiene en cuenta en la linea de 'subBotonesNav.active'
+  */
+}
+body div.sidebar div.logo img {
+  width: 120px;
+  display: block;
+  height: 40px;
+  margin: auto auto;
+  padding-bottom: 62px;
+}
+body div.sidebar div.botonesNav {
+  padding: 6px;
+  border-radius: 8px;
+  margin: 0px 10px;
+  display: flex;
+  border: 0.5px solid transparent;
+  /*Se pasa de div a span, para que semánticamente se mantenga más correcto*/
+}
+body div.sidebar div.botonesNav.especial {
+  margin-top: 80px !important;
+  margin: 0px 10px;
+  height: 50px !important;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body div.sidebar div.botonesNav.especial div.imgPersonalizada {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  border: 1px solid #F4F4F5;
+  border-radius: 10px;
+}
+body div.sidebar div.botonesNav.especial div.imgPersonalizada span {
+  margin: auto 0;
+  font-weight: 550;
+  padding: 0;
+}
+body div.sidebar div.botonesNav a {
+  display: contents;
+}
+body div.sidebar div.botonesNav:hover, body div.sidebar div.botonesNav.active {
+  background-color: #E3E4E5;
+  border: 0.5px solid transparent;
+}
+body div.sidebar div.botonesNav img {
+  padding: 1% 1% 1% 1%;
+}
+body div.sidebar div.botonesNav span,
+body div.sidebar div.botonesNav div {
+  padding: 1% 3%;
+  width: 100%;
+  font-weight: 500;
+  font-size: 14px;
+  color: rgb(30, 30, 49);
+}
+body div.sidebar div.botonesNav .expandirMenu {
+  padding-right: 5%;
+  display: flex;
+  width: 30px;
+}
+body div.sidebar div.botonesNav .flecha {
+  background-color: transparent;
+  border: transparent 1px solid;
+  border-radius: 4px;
+}
+body div.sidebar div.botonesNav .flecha:hover {
+  background-color: #c9c9c9;
+  cursor: pointer;
+}
+body div.sidebar div.botonesNav .flecha img {
+  height: 12px;
+  width: 12px;
+  margin: auto auto;
+}
+body div.sidebar div.subBotones {
+  border-left: 2px solid #E2E2E5;
+  font-weight: 500;
+  margin-left: 28px;
+}
+body div.sidebar div.subBotones.hidden {
+  transform: translateY(0%) translateX(-120%);
+  opacity: 0;
+  height: 0px;
+  transition: transform 0.5s linear, opacity 0.5s linear, height 0.5s linear;
+}
+body div.sidebar div.subBotones.visible.Bandeja {
+  height: 82px;
+}
+body div.sidebar div.subBotones.visible.Perfil {
+  height: 82px;
+}
+body div.sidebar div.subBotones.visible.Empleados {
+  height: 82px;
+}
+body div.sidebar div.subBotones.visible.Calendario {
+  height: 82px;
+}
+body div.sidebar div.subBotones a {
+  border-radius: 8px;
+  display: flex;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgb(30, 30, 49);
+  width: 100%;
+}
+body div.sidebar div.subBotones a div.subBotonesNav {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+body div.sidebar div.subBotones a div.subBotonesNav.active, body div.sidebar div.subBotones a div.subBotonesNav:hover {
+  border-left: 2px solid #515164;
+  margin-left: -2px;
+}
+body div.sidebar div.subBotones .contenedorSubB {
+  margin-left: 20px;
+}
+body div.sidebar .tituloNav {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  margin-left: 1%;
+}
+body div.sidebar .navTexto {
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 700;
+}
+body .submain {
+  background-color: white;
+  border-radius: 18px;
+  box-shadow: 0px 4px 12px -8px #F4F4F5, 0px 1px 3px #F4F4F5;
+}
+body div.paneles.inicio {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 35vh 35vh;
+  overflow-y: auto;
+  gap: 20px;
+  padding: 0px 10px;
+}
+body div.paneles.inicio div.panel {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px -8px #F4F4F5, 0px 1px 3px #F4F4F5;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  justify-content: center;
+  margin: auto auto;
+  transition: all 0.2s ease;
+}
+body div.paneles.inicio div.panel div.encabezado {
+  font-weight: 600;
+  font-size: 14px;
+  color: rgb(81, 81, 100);
+  border-bottom: 0.25px solid #F4F4F5;
+  background-color: white;
+  border-radius: 20px 20px 0px 0px;
+}
+body div.paneles.inicio div.panel div.encabezado p {
+  margin: 3% 5%;
+}
+body div.paneles.inicio div.panel div.contenido {
+  display: block;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 0px 0px 20px 20px;
+  background-color: white;
+  overflow-y: auto;
+  height: 100%;
+  margin-bottom: 3%;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgb(81, 81, 100);
+}
+body div.paneles.inicio div.panel div.contenido.eventos {
+  padding-top: 25%;
+  margin: auto auto;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+body div.paneles.inicio div.panel div.contenido.enlaces .enlace {
+  text-align: center;
+  padding: 15px;
+  border-bottom: 1px solid #c2c2c2;
+  background-color: #fafafa;
+  border-radius: 7.5px;
+  margin: 5px 10px;
+  display: block;
+}
+body div.paneles.inicio div.panel div.contenido.enlaces .enlace::before, body div.paneles.inicio div.panel div.contenido.enlaces .enlace::after {
+  content: " [+] ";
+}
+body div.paneles.inicio div.panel div.contenido::-webkit-scrollbar {
+  border-radius: 20px 20px 20px 20px;
+  background-color: transparent;
+  min-height: 40%;
+}
+body div.paneles.inicio div.panel div.contenido::-webkit-scrollbar-thumb {
+  background-color: rgb(245, 250, 255);
+  border-radius: 20px 20px 20px 20px;
+}
+body div.paneles.inicio div.panel div.contenido::-webkit-scrollbar-track-piece {
+  max-height: 20px;
+}
+body div.paneles.inicio div.panel div.contenido div.departamento {
+  display: grid;
+  grid-template-columns: 1fr 80px;
+  height: 50px;
+  background-color: #f7f7f7;
+}
+body div.paneles.inicio div.panel div.contenido div.departamento .nombre {
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 5px;
+  align-items: center;
+  margin: auto 20px;
+}
+body div.paneles.inicio div.panel div.contenido div.departamento .enlace {
+  margin: auto auto;
+  font-size: 20px;
+}
+body div.paneles.inicio div.panel div.contenido div.empleado-ausencia {
+  background-color: transparent;
+  display: flex;
+  gap: 16px;
+}
+body div.paneles.inicio div.panel div.contenido div.empleado-ausencia div.iniciales {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  padding: 5px 4px;
+  display: flex;
+}
+body div.paneles.inicio div.panel div.contenido div.empleado-ausencia div.iniciales span {
+  margin: auto auto;
+}
+body div.paneles.inicio div.panel div.contenido div.empleado {
+  background-color: transparent;
+  display: flex;
+  gap: 16px;
+  padding: 12px 16px;
+  border-bottom: 0.1px solid #F4F4F5;
+  max-height: 50px;
+}
+body div.paneles.inicio div.panel div.contenido div.empleado div.iniciales {
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  padding: 5px 4px;
+  display: flex;
+}
+body div.paneles.inicio div.panel div.contenido div.empleado div.iniciales span {
+  margin: auto auto;
+}
+body div.paneles.inicio div.panel div.contenido div.empleado .nombreYapellidos {
+  font-weight: 500;
+  font-size: 14px;
+  align-self: center;
+}
+body div.paneles.inicio div.panel div.contenido div.festivo {
+  background-color: transparent;
+  display: flex;
+  gap: 16px;
+  grid-template-columns: 10% 90%;
+  padding: 12px 16px;
+  border-bottom: 0.1px solid #F4F4F5;
+  max-height: 50px;
+}
+body div.paneles.inicio div.panel div.contenido div.festivo .img {
+  margin: auto 0;
+}
+body div.paneles.inicio div.panel div.contenido div.festivo div.calendario {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 0.5px solid rgb(192, 192, 192);
+  border-radius: 12px;
+  height: 40px;
+  width: 40px;
+  grid-row: 1/3;
+  grid-column: 1/2;
+}
+body div.paneles.inicio div.panel div.contenido div.festivo div.calendario div.mes {
+  background-color: #ff355e;
+  color: white;
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  height: 35%;
+  border-radius: 12px 12px 0px 0px;
+  padding-top: 1%;
+}
+body div.paneles.inicio div.panel div.contenido div.festivo div.calendario div.dia {
+  background-color: white;
+  color: black;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 16px;
+  height: 65%;
+  border-radius: 0px 0px 12px 12px;
+}
+body div.paneles.inicio div.panel div.contenido div.festivo div.descripcion {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+body div.paneles.inicio div.panel div.contenido div.festivo div.descripcion .dia {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 14px;
+  color: rgb(30, 30, 49);
+}
+body div.paneles.inicio div.panel div.contenido div.festivo div.descripcion .restante {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 14px;
+  color: rgb(81, 81, 100);
+  margin-top: 3%;
+}
+body div.paneles.calendario .conjunto, body div.paneles.bandejaDeEntrada .conjunto, body div.paneles.ausencias .conjunto {
+  margin: 50px 50px;
+  padding-bottom: 50px;
+}
+body div.paneles.calendario .fila-centrista, body div.paneles.bandejaDeEntrada .fila-centrista, body div.paneles.ausencias .fila-centrista {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 70px;
+  gap: 100px;
+  margin: auto auto;
+  width: 70%;
+}
+body div.paneles.calendario .fila-extremista, body div.paneles.bandejaDeEntrada .fila-extremista, body div.paneles.ausencias .fila-extremista {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 70px;
+  gap: 40%;
+}
+body div.paneles.calendario .informacion2, body div.paneles.bandejaDeEntrada .informacion2, body div.paneles.ausencias .informacion2 {
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 15px;
+  background-color: #F4F4F5;
+}
+body div.paneles.calendario .informacion2 .titulo, body div.paneles.bandejaDeEntrada .informacion2 .titulo, body div.paneles.ausencias .informacion2 .titulo {
+  margin: auto auto;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+body div.paneles.calendario .informacion2 .bloque-informacion, body div.paneles.bandejaDeEntrada .informacion2 .bloque-informacion, body div.paneles.ausencias .informacion2 .bloque-informacion {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+body div.paneles.calendario .informacion2 .bloque-informacion span, body div.paneles.bandejaDeEntrada .informacion2 .bloque-informacion span, body div.paneles.ausencias .informacion2 .bloque-informacion span {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+body div.paneles.calendario .informacion2 .formularioValor, body div.paneles.bandejaDeEntrada .informacion2 .formularioValor, body div.paneles.ausencias .informacion2 .formularioValor {
+  border: 1px solid rgb(177, 177, 177);
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 15px;
+}
+body div.paneles.calendario .informacion2 .formularioValor.submitEstilo1, body div.paneles.bandejaDeEntrada .informacion2 .formularioValor.submitEstilo1, body div.paneles.ausencias .informacion2 .formularioValor.submitEstilo1 {
+  background-color: rgb(255, 230, 230) !important;
+  width: 50%;
+  margin: auto auto;
+}
+body div.paneles.calendario .grid, body div.paneles.bandejaDeEntrada .grid, body div.paneles.ausencias .grid {
+  display: flex;
+  flex-direction: column;
+}
+body div.paneles.calendario .grid span.titulo, body div.paneles.bandejaDeEntrada .grid span.titulo, body div.paneles.ausencias .grid span.titulo {
+  font-weight: 600;
+  font-size: 25px;
+  color: black;
+  padding-bottom: 10px;
+}
+body div.paneles.calendario .grid span.titulo2, body div.paneles.bandejaDeEntrada .grid span.titulo2, body div.paneles.ausencias .grid span.titulo2 {
+  font-weight: 500;
+  font-size: 19px;
+  color: black;
+  padding-bottom: 10px;
+}
+body div.paneles.calendario .grid span.titulo3, body div.paneles.bandejaDeEntrada .grid span.titulo3, body div.paneles.ausencias .grid span.titulo3 {
+  font-weight: 600;
+  font-size: 22px;
+  color: black;
+  padding-bottom: 10px;
+}
+body div.paneles.calendario .grid img, body div.paneles.bandejaDeEntrada .grid img, body div.paneles.ausencias .grid img {
+  height: 25px;
+  width: 25px;
+}
+body div.paneles.calendario .grid.indicador, body div.paneles.bandejaDeEntrada .grid.indicador, body div.paneles.ausencias .grid.indicador {
+  border: 0.2px solid #F4F4F5;
+  border-radius: 16px;
+  padding: 15px;
+}
+body div.paneles.calendario .fila-general, body div.paneles.bandejaDeEntrada .fila-general, body div.paneles.ausencias .fila-general {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 0.1px solid #F4F4F5;
+  border-radius: 20px;
+}
+body div.paneles.calendario .fila-general .grid, body div.paneles.bandejaDeEntrada .fila-general .grid, body div.paneles.ausencias .fila-general .grid {
+  padding: 15px 10px;
+  display: grid;
+  grid-template-columns: 80px 1fr 120px;
+  border-bottom: 0.1px solid #F4F4F5;
+}
+body div.paneles.calendario .fila-general .grid.no-leido, body div.paneles.bandejaDeEntrada .fila-general .grid.no-leido, body div.paneles.ausencias .fila-general .grid.no-leido {
+  background-color: #f3f3f3;
+}
+body div.paneles.calendario .fila-general .grid:hover, body div.paneles.bandejaDeEntrada .fila-general .grid:hover, body div.paneles.ausencias .fila-general .grid:hover {
+  background-color: rgb(250, 250, 250);
+}
+body div.paneles.calendario .fila-general .grid:last-child, body div.paneles.bandejaDeEntrada .fila-general .grid:last-child, body div.paneles.ausencias .fila-general .grid:last-child {
+  border-bottom: 0px solid #F4F4F5;
+  border-radius: 0 0 20px 20px;
+}
+body div.paneles.calendario .fila-general .grid:first-child, body div.paneles.bandejaDeEntrada .fila-general .grid:first-child, body div.paneles.ausencias .fila-general .grid:first-child {
+  border-radius: 20px 20px 0px 0px;
+}
+body div.paneles.calendario .fila-general .grid .icono, body div.paneles.bandejaDeEntrada .fila-general .grid .icono, body div.paneles.ausencias .fila-general .grid .icono {
+  background-color: rgb(173, 225, 255);
+  margin: auto auto;
+  padding: 15px 15px;
+  border-radius: 8px;
+}
+body div.paneles.calendario .fila-general .grid .icono.ausencia, body div.paneles.bandejaDeEntrada .fila-general .grid .icono.ausencia, body div.paneles.ausencias .fila-general .grid .icono.ausencia {
+  background-color: rgb(255, 222, 173);
+}
+body div.paneles.calendario .fila-general .grid .informacion, body div.paneles.bandejaDeEntrada .fila-general .grid .informacion, body div.paneles.ausencias .fila-general .grid .informacion {
+  display: grid;
+  gap: 12px;
+}
+body div.paneles.calendario .fila-general .grid .informacion .titulo, body div.paneles.bandejaDeEntrada .fila-general .grid .informacion .titulo, body div.paneles.ausencias .fila-general .grid .informacion .titulo {
+  font-size: 16px;
+}
+body div.paneles.calendario .fila-general .grid .informacion .fecha_hora, body div.paneles.bandejaDeEntrada .fila-general .grid .informacion .fecha_hora, body div.paneles.ausencias .fila-general .grid .informacion .fecha_hora {
+  font-size: 14px;
+}
+body div.paneles.calendario .fila-general .grid .informacion .descripcion, body div.paneles.bandejaDeEntrada .fila-general .grid .informacion .descripcion, body div.paneles.ausencias .fila-general .grid .informacion .descripcion {
+  font-size: 14px;
+}
+body div.paneles.calendario .fila-general .grid .informacion .no-leido, body div.paneles.bandejaDeEntrada .fila-general .grid .informacion .no-leido, body div.paneles.ausencias .fila-general .grid .informacion .no-leido {
+  color: rgb(0, 32, 100);
+}
+body div.paneles.calendario .fila-general .grid .botones-2, body div.paneles.bandejaDeEntrada .fila-general .grid .botones-2, body div.paneles.ausencias .fila-general .grid .botones-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: auto auto;
+  gap: 10px;
+}
+body div.paneles.calendario .fila-general .grid .botones-2 a .botonBandeja, body div.paneles.bandejaDeEntrada .fila-general .grid .botones-2 a .botonBandeja, body div.paneles.ausencias .fila-general .grid .botones-2 a .botonBandeja {
+  height: 35px;
+  width: 35px;
+  padding: 7.5px;
+  background-color: transparent;
+  border-radius: 25px;
+  border: 0.1px solid gray;
+}
+body div.paneles.calendario .fila-general .grid .botones-2 a .botonBandeja img, body div.paneles.bandejaDeEntrada .fila-general .grid .botones-2 a .botonBandeja img, body div.paneles.ausencias .fila-general .grid .botones-2 a .botonBandeja img {
+  width: 100%;
+  height: 100%;
+}
+body div.paneles.calendario .fila-general .grid .botones-3, body div.paneles.bandejaDeEntrada .fila-general .grid .botones-3, body div.paneles.ausencias .fila-general .grid .botones-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto auto;
+  gap: 10px;
+}
+body div.paneles.calendario .fila-general .grid .botones-3 a.no-leido .botonBandeja, body div.paneles.bandejaDeEntrada .fila-general .grid .botones-3 a.no-leido .botonBandeja, body div.paneles.ausencias .fila-general .grid .botones-3 a.no-leido .botonBandeja {
+  background-color: #eeeeee;
+}
+body div.paneles.calendario .fila-general .grid .botones-3 a .botonBandeja, body div.paneles.bandejaDeEntrada .fila-general .grid .botones-3 a .botonBandeja, body div.paneles.ausencias .fila-general .grid .botones-3 a .botonBandeja {
+  height: 35px;
+  width: 35px;
+  padding: 7.5px;
+  background-color: transparent;
+  border-radius: 25px;
+  border: 0.1px solid gray;
+}
+body div.paneles.calendario .fila-general .grid .botones-3 a .botonBandeja img, body div.paneles.bandejaDeEntrada .fila-general .grid .botones-3 a .botonBandeja img, body div.paneles.ausencias .fila-general .grid .botones-3 a .botonBandeja img {
+  width: 100%;
+  height: 100%;
+}
+body div.paneles.calendario .fila-general .grid .botones, body div.paneles.bandejaDeEntrada .fila-general .grid .botones, body div.paneles.ausencias .fila-general .grid .botones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto auto;
+  gap: 10px;
+}
+body div.paneles.calendario .fila-general .grid .botones button, body div.paneles.bandejaDeEntrada .fila-general .grid .botones button, body div.paneles.ausencias .fila-general .grid .botones button {
+  background-color: transparent;
+  border-radius: 25px;
+  border: 0.1px solid gray;
+}
+body div.paneles.calendario .fila-general .grid .botones button .botonBandeja, body div.paneles.bandejaDeEntrada .fila-general .grid .botones button .botonBandeja, body div.paneles.ausencias .fila-general .grid .botones button .botonBandeja {
+  height: 40px !important;
+  width: 40px !important;
+}
+body div.paneles.calendario .fila-general .grid .botones button .botonBandeja:hover, body div.paneles.bandejaDeEntrada .fila-general .grid .botones button .botonBandeja:hover, body div.paneles.ausencias .fila-general .grid .botones button .botonBandeja:hover {
+  cursor: pointer;
+  background-color: #c9c9c9;
+}
+body div.paneles.calendario .fila-general .grid .botones button img, body div.paneles.bandejaDeEntrada .fila-general .grid .botones button img, body div.paneles.ausencias .fila-general .grid .botones button img {
+  padding: 2px;
+  height: 100%;
+  width: 100%;
+}
+body div.paneles.calendario .fila-espaciada,
+body div.paneles.calendario .fila-centrada, body div.paneles.bandejaDeEntrada .fila-espaciada,
+body div.paneles.bandejaDeEntrada .fila-centrada, body div.paneles.ausencias .fila-espaciada,
+body div.paneles.ausencias .fila-centrada {
+  border-radius: 20px 20px 0px 0px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 150px 1fr 150px;
+  align-items: center;
+  box-sizing: border-box;
+  border-bottom: 0.01px solid #F4F4F5;
+  height: 60px;
+}
+body div.paneles.calendario .fila-espaciada.ausencias,
+body div.paneles.calendario .fila-centrada.ausencias, body div.paneles.bandejaDeEntrada .fila-espaciada.ausencias,
+body div.paneles.bandejaDeEntrada .fila-centrada.ausencias, body div.paneles.ausencias .fila-espaciada.ausencias,
+body div.paneles.ausencias .fila-centrada.ausencias {
+  border: none;
+  background-color: transparent;
+}
+body div.paneles.calendario .fila-espaciada .clase_div_der,
+body div.paneles.calendario .fila-centrada .clase_div_der, body div.paneles.bandejaDeEntrada .fila-espaciada .clase_div_der,
+body div.paneles.bandejaDeEntrada .fila-centrada .clase_div_der, body div.paneles.ausencias .fila-espaciada .clase_div_der,
+body div.paneles.ausencias .fila-centrada .clase_div_der {
+  margin-right: 20px;
+  text-align: center;
+  display: flex;
+}
+body div.paneles.calendario .fila-espaciada .clase_div_izq,
+body div.paneles.calendario .fila-centrada .clase_div_izq, body div.paneles.bandejaDeEntrada .fila-espaciada .clase_div_izq,
+body div.paneles.bandejaDeEntrada .fila-centrada .clase_div_izq, body div.paneles.ausencias .fila-espaciada .clase_div_izq,
+body div.paneles.ausencias .fila-centrada .clase_div_izq {
+  margin-left: 20px;
+  text-align: center;
+  display: flex;
+}
+body div.paneles.calendario .fila-espaciada div span,
+body div.paneles.calendario .fila-centrada div span, body div.paneles.bandejaDeEntrada .fila-espaciada div span,
+body div.paneles.bandejaDeEntrada .fila-centrada div span, body div.paneles.ausencias .fila-espaciada div span,
+body div.paneles.ausencias .fila-centrada div span {
+  width: 100%;
+}
+body div.paneles.calendario .fila-espaciada .enlacesPrincipales,
+body div.paneles.calendario .fila-centrada .enlacesPrincipales, body div.paneles.bandejaDeEntrada .fila-espaciada .enlacesPrincipales,
+body div.paneles.bandejaDeEntrada .fila-centrada .enlacesPrincipales, body div.paneles.ausencias .fila-espaciada .enlacesPrincipales,
+body div.paneles.ausencias .fila-centrada .enlacesPrincipales {
+  display: flex;
+  margin: auto auto;
+}
+body div.paneles.calendario .fila-espaciada .enlacesPrincipales a,
+body div.paneles.calendario .fila-centrada .enlacesPrincipales a, body div.paneles.bandejaDeEntrada .fila-espaciada .enlacesPrincipales a,
+body div.paneles.bandejaDeEntrada .fila-centrada .enlacesPrincipales a, body div.paneles.ausencias .fila-espaciada .enlacesPrincipales a,
+body div.paneles.ausencias .fila-centrada .enlacesPrincipales a {
+  margin: 0% 10px;
+  letter-spacing: 0.25px;
+  display: block;
+  height: 100%;
+}
+body div.paneles.calendario .fila-espaciada .enlacesPrincipales a.boton,
+body div.paneles.calendario .fila-centrada .enlacesPrincipales a.boton, body div.paneles.bandejaDeEntrada .fila-espaciada .enlacesPrincipales a.boton,
+body div.paneles.bandejaDeEntrada .fila-centrada .enlacesPrincipales a.boton, body div.paneles.ausencias .fila-espaciada .enlacesPrincipales a.boton,
+body div.paneles.ausencias .fila-centrada .enlacesPrincipales a.boton {
+  letter-spacing: 0.5px;
+  background-color: transparent;
+  color: rgb(158, 0, 0);
+  padding: 4px 8px;
+  border-radius: 15px;
+  border: 2px solid rgb(158, 0, 0);
+  font-weight: 500;
+}
+body div.paneles.calendario .fila-espaciada .enlacesPrincipales a.boton:hover,
+body div.paneles.calendario .fila-centrada .enlacesPrincipales a.boton:hover, body div.paneles.bandejaDeEntrada .fila-espaciada .enlacesPrincipales a.boton:hover,
+body div.paneles.bandejaDeEntrada .fila-centrada .enlacesPrincipales a.boton:hover, body div.paneles.ausencias .fila-espaciada .enlacesPrincipales a.boton:hover,
+body div.paneles.ausencias .fila-centrada .enlacesPrincipales a.boton:hover {
+  background-color: rgb(255, 90, 90);
+  color: white;
+}
+body div.paneles.calendario .fila-espaciada .enlacesPrincipales a.sinSubrayado span,
+body div.paneles.calendario .fila-centrada .enlacesPrincipales a.sinSubrayado span, body div.paneles.bandejaDeEntrada .fila-espaciada .enlacesPrincipales a.sinSubrayado span,
+body div.paneles.bandejaDeEntrada .fila-centrada .enlacesPrincipales a.sinSubrayado span, body div.paneles.ausencias .fila-espaciada .enlacesPrincipales a.sinSubrayado span,
+body div.paneles.ausencias .fila-centrada .enlacesPrincipales a.sinSubrayado span {
+  border-bottom: none !important;
+  display: block;
+  margin: 10px;
+}
+body div.paneles.calendario .fila-espaciada .enlacesPrincipales a span,
+body div.paneles.calendario .fila-centrada .enlacesPrincipales a span, body div.paneles.bandejaDeEntrada .fila-espaciada .enlacesPrincipales a span,
+body div.paneles.bandejaDeEntrada .fila-centrada .enlacesPrincipales a span, body div.paneles.ausencias .fila-espaciada .enlacesPrincipales a span,
+body div.paneles.ausencias .fila-centrada .enlacesPrincipales a span {
+  padding-bottom: 2.5px;
+  border-bottom: 2px solid rgb(30, 30, 49);
+  color: rgb(31, 31, 31);
+  font-weight: 500;
+}
+body div.paneles.calendario .fila-espaciada .enlacesPrincipales a span:hover,
+body div.paneles.calendario .fila-centrada .enlacesPrincipales a span:hover, body div.paneles.bandejaDeEntrada .fila-espaciada .enlacesPrincipales a span:hover,
+body div.paneles.bandejaDeEntrada .fila-centrada .enlacesPrincipales a span:hover, body div.paneles.ausencias .fila-espaciada .enlacesPrincipales a span:hover,
+body div.paneles.ausencias .fila-centrada .enlacesPrincipales a span:hover {
+  color: rgb(54, 32, 32);
+  border-color: darkred;
+}
+body div.paneles.calendario .fila-espaciada .enlacesPrincipales a span.active,
+body div.paneles.calendario .fila-centrada .enlacesPrincipales a span.active, body div.paneles.bandejaDeEntrada .fila-espaciada .enlacesPrincipales a span.active,
+body div.paneles.bandejaDeEntrada .fila-centrada .enlacesPrincipales a span.active, body div.paneles.ausencias .fila-espaciada .enlacesPrincipales a span.active,
+body div.paneles.ausencias .fila-centrada .enlacesPrincipales a span.active {
+  color: darkred;
+  border-color: darkred;
+}
+body div.paneles.calendario .fila-centrada, body div.paneles.bandejaDeEntrada .fila-centrada, body div.paneles.ausencias .fila-centrada {
+  margin: auto auto;
+  display: flex;
+  height: 60px;
+  background-color: white;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-bottom: 0.01px solid rgb(226, 226, 229);
+}
+body div.paneles.calendario .fila-centrada form, body div.paneles.bandejaDeEntrada .fila-centrada form, body div.paneles.ausencias .fila-centrada form {
+  display: contents;
+}
+body div.paneles.calendario .fila-centrada form div.elementos, body div.paneles.bandejaDeEntrada .fila-centrada form div.elementos, body div.paneles.ausencias .fila-centrada form div.elementos {
+  display: flex;
+}
+body div.paneles.calendario .fila-centrada form div.elementos .flecha, body div.paneles.bandejaDeEntrada .fila-centrada form div.elementos .flecha, body div.paneles.ausencias .fila-centrada form div.elementos .flecha {
+  background-color: transparent;
+  border: transparent 1px solid;
+  border-radius: 4px;
+  height: 20px;
+  /*Se alínea al centro de su contenedor*/
+  margin: auto auto;
+}
+body div.paneles.calendario .fila-centrada form div.elementos .flecha:hover, body div.paneles.bandejaDeEntrada .fila-centrada form div.elementos .flecha:hover, body div.paneles.ausencias .fila-centrada form div.elementos .flecha:hover {
+  background-color: #c9c9c9;
+  cursor: pointer;
+}
+body div.paneles.calendario .fila-centrada form div.elementos .flecha img, body div.paneles.bandejaDeEntrada .fila-centrada form div.elementos .flecha img, body div.paneles.ausencias .fila-centrada form div.elementos .flecha img {
+  height: 12px;
+  width: 12px;
+  margin: auto auto;
+}
+body div.paneles.calendario .fila-centrada form div.elementos .categorias, body div.paneles.bandejaDeEntrada .fila-centrada form div.elementos .categorias, body div.paneles.ausencias .fila-centrada form div.elementos .categorias {
+  height: 60px;
+  width: 100px;
+  display: flex;
+  align-content: center;
+}
+body div.paneles.calendario .fila-centrada form div.elementos .categorias select.mesElegido,
+body div.paneles.calendario .fila-centrada form div.elementos .categorias select.añoElegido, body div.paneles.bandejaDeEntrada .fila-centrada form div.elementos .categorias select.mesElegido,
+body div.paneles.bandejaDeEntrada .fila-centrada form div.elementos .categorias select.añoElegido, body div.paneles.ausencias .fila-centrada form div.elementos .categorias select.mesElegido,
+body div.paneles.ausencias .fila-centrada form div.elementos .categorias select.añoElegido {
+  font-weight: 500;
+  font-size: 16px;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0px solid transparent;
+  font-family: "Inter";
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+}
+body div.paneles.calendario .calendarioCompleto, body div.paneles.bandejaDeEntrada .calendarioCompleto, body div.paneles.ausencias .calendarioCompleto {
+  display: grid;
+}
+body div.paneles.calendario .calendarioCompleto .diasSemana, body div.paneles.bandejaDeEntrada .calendarioCompleto .diasSemana, body div.paneles.ausencias .calendarioCompleto .diasSemana {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  text-align: right;
+  background-color: #F4F4F5;
+  font-weight: 600;
+  font-size: 12px;
+  border-bottom: 0.5px solid #e2e2e5;
+}
+body div.paneles.calendario .calendarioCompleto .diasSemana div, body div.paneles.bandejaDeEntrada .calendarioCompleto .diasSemana div, body div.paneles.ausencias .calendarioCompleto .diasSemana div {
+  border-left: 0.5px solid #e2e2e5;
+  margin: 0%;
+  padding: 5%;
+}
+body div.paneles.calendario .calendarioCompleto .diasCalendario, body div.paneles.bandejaDeEntrada .calendarioCompleto .diasCalendario, body div.paneles.ausencias .calendarioCompleto .diasCalendario {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+body div.paneles.calendario .calendarioCompleto .diasCalendario .general, body div.paneles.bandejaDeEntrada .calendarioCompleto .diasCalendario .general, body div.paneles.ausencias .calendarioCompleto .diasCalendario .general {
+  min-height: 200px;
+  border-left: 0.5px solid #e2e2e5;
+  border-bottom: 0.5px solid #e2e2e5;
+  background-color: white;
+}
+body div.paneles.calendario .calendarioCompleto .diasCalendario .general.finDeSemana, body div.paneles.bandejaDeEntrada .calendarioCompleto .diasCalendario .general.finDeSemana, body div.paneles.ausencias .calendarioCompleto .diasCalendario .general.finDeSemana {
+  background-color: #F4F4F5;
+}
+body div.paneles.calendario .calendarioCompleto .diasCalendario .general.actual, body div.paneles.bandejaDeEntrada .calendarioCompleto .diasCalendario .general.actual, body div.paneles.ausencias .calendarioCompleto .diasCalendario .general.actual {
+  border-top: 2px solid rgb(0, 80, 230);
+  background-color: rgb(167, 193, 238);
+  color: rgb(0, 80, 230);
+}
+body div.paneles.calendario .calendarioCompleto .diasCalendario .general .ausencias, body div.paneles.bandejaDeEntrada .calendarioCompleto .diasCalendario .general .ausencias, body div.paneles.ausencias .calendarioCompleto .diasCalendario .general .ausencias {
+  margin: 5px 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+body div.paneles.calendario .calendarioCompleto .diasCalendario .general .ausencias div,
+body div.paneles.calendario .calendarioCompleto .diasCalendario .general .ausencias a, body div.paneles.bandejaDeEntrada .calendarioCompleto .diasCalendario .general .ausencias div,
+body div.paneles.bandejaDeEntrada .calendarioCompleto .diasCalendario .general .ausencias a, body div.paneles.ausencias .calendarioCompleto .diasCalendario .general .ausencias div,
+body div.paneles.ausencias .calendarioCompleto .diasCalendario .general .ausencias a {
+  margin: 0px 0px 3px 3px;
+  font-size: 12.5px;
+  padding: 2px 4px;
+  border-radius: 7.5px;
+  border: 1px solid #eeeeee;
+}
+body div.paneles.calendario .calendarioCompleto .diasCalendario .general .ausencias .ausencia, body div.paneles.bandejaDeEntrada .calendarioCompleto .diasCalendario .general .ausencias .ausencia, body div.paneles.ausencias .calendarioCompleto .diasCalendario .general .ausencias .ausencia {
+  background-color: rgb(255, 227, 227);
+  color: black;
+}
+body div.paneles.calendario .calendarioCompleto .diasCalendario .general .ausencias .birthday, body div.paneles.bandejaDeEntrada .calendarioCompleto .diasCalendario .general .ausencias .birthday, body div.paneles.ausencias .calendarioCompleto .diasCalendario .general .ausencias .birthday {
+  background-color: rgb(255, 247, 209);
+  color: black;
+}
+body div.paneles.calendario .calendarioCompleto .diasCalendario .general .ausencias .aniversario, body div.paneles.bandejaDeEntrada .calendarioCompleto .diasCalendario .general .ausencias .aniversario, body div.paneles.ausencias .calendarioCompleto .diasCalendario .general .ausencias .aniversario {
+  background-color: rgb(235, 243, 255);
+  color: black;
+}
+body div.paneles.calendario .calendarioCompleto .diasCalendario .general .texto, body div.paneles.bandejaDeEntrada .calendarioCompleto .diasCalendario .general .texto, body div.paneles.ausencias .calendarioCompleto .diasCalendario .general .texto {
+  margin: 5px 10px;
+}
+body div.paneles.calendario .calendarioCompleto .diasCalendario .general .texto.domingo, body div.paneles.bandejaDeEntrada .calendarioCompleto .diasCalendario .general .texto.domingo, body div.paneles.ausencias .calendarioCompleto .diasCalendario .general .texto.domingo {
+  color: red;
+}
+body div.paneles.calendario .calendarioCompleto .diasCalendario .general .texto.fueraMes, body div.paneles.bandejaDeEntrada .calendarioCompleto .diasCalendario .general .texto.fueraMes, body div.paneles.ausencias .calendarioCompleto .diasCalendario .general .texto.fueraMes {
+  color: #AEAEB8 !important;
+}
+body div.paneles.calendario .grid-ausencias, body div.paneles.bandejaDeEntrada .grid-ausencias, body div.paneles.ausencias .grid-ausencias {
+  display: grid;
+  grid-template-columns: 1.75fr 3fr;
+}
+body div.paneles.calendario .grid-ausencias .grid-1, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1, body div.paneles.ausencias .grid-ausencias .grid-1 {
+  background-color: white;
+  margin-right: 25px;
+  overflow: auto;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .festivosGenerales, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .festivosGenerales, body div.paneles.ausencias .grid-ausencias .grid-1 .festivosGenerales {
+  display: block;
+  padding: 35px 0px;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .festivosGenerales div.elemento, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .festivosGenerales div.elemento, body div.paneles.ausencias .grid-ausencias .grid-1 .festivosGenerales div.elemento {
+  margin: 15px 0px;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .festivosGenerales a:hover .festivos, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .festivosGenerales a:hover .festivos, body div.paneles.ausencias .grid-ausencias .grid-1 .festivosGenerales a:hover .festivos {
+  background-color: #eeeeee;
+  cursor: pointer;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .festivosGenerales a.aprobada .festivos, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .festivosGenerales a.aprobada .festivos, body div.paneles.ausencias .grid-ausencias .grid-1 .festivosGenerales a.aprobada .festivos {
+  background-color: #fff0f0;
+  background-size: 40px 100%;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .festivosGenerales a.rechazada .festivos, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .festivosGenerales a.rechazada .festivos, body div.paneles.ausencias .grid-ausencias .grid-1 .festivosGenerales a.rechazada .festivos {
+  background-color: #fffcf0;
+  background-size: 40px 100%;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .festivosGenerales a.rechazada .festivos div, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .festivosGenerales a.rechazada .festivos div, body div.paneles.ausencias .grid-ausencias .grid-1 .festivosGenerales a.rechazada .festivos div {
+  text-decoration: line-through;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .festivosGenerales .festivos, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .festivosGenerales .festivos, body div.paneles.ausencias .grid-ausencias .grid-1 .festivosGenerales .festivos {
+  border-bottom: 0.5px solid rgb(226, 226, 229);
+  border-left: 0.5px solid rgb(226, 226, 229);
+  border-right: 0.5px solid rgb(226, 226, 229);
+  border-top: 0.5px solid rgb(226, 226, 229);
+  display: flex;
+  gap: 2px;
+  padding-left: 20px;
+  padding: 30px 20px;
+  margin-bottom: 3px;
+  border-radius: 5px;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .festivosGenerales .festivos .flecha, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .festivosGenerales .festivos .flecha, body div.paneles.ausencias .grid-ausencias .grid-1 .festivosGenerales .festivos .flecha {
+  font-size: 25px;
+  font-weight: 900;
+  padding: 5px;
+  margin: auto 5px;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .festivosGenerales .festivos div.calendario, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .festivosGenerales .festivos div.calendario, body div.paneles.ausencias .grid-ausencias .grid-1 .festivosGenerales .festivos div.calendario {
+  display: block;
+  text-align: center;
+  border: 0.5px solid rgb(192, 192, 192);
+  border-radius: 12px;
+  height: 40px;
+  width: 40px;
+  margin: auto 0px;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .festivosGenerales .festivos div.calendario div.mes, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .festivosGenerales .festivos div.calendario div.mes, body div.paneles.ausencias .grid-ausencias .grid-1 .festivosGenerales .festivos div.calendario div.mes {
+  background-color: #ff355e;
+  color: white;
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  height: 10px;
+  border-radius: 12px 12px 0px 0px;
+  padding-top: 2px;
+  margin: 0 0;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .festivosGenerales .festivos div.calendario div.dia, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .festivosGenerales .festivos div.calendario div.dia, body div.paneles.ausencias .grid-ausencias .grid-1 .festivosGenerales .festivos div.calendario div.dia {
+  background-color: white;
+  color: black;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 16px;
+  height: 25px;
+  border-radius: 0px 0px 12px 12px;
+  margin: 2.5px 0;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .festivosGenerales .festivos div.descripcion, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .festivosGenerales .festivos div.descripcion, body div.paneles.ausencias .grid-ausencias .grid-1 .festivosGenerales .festivos div.descripcion {
+  display: flex;
+  flex-direction: column;
+  gap: 7.5px;
+  padding-left: 20px;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .festivosGenerales .festivos div.descripcion .concepto, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .festivosGenerales .festivos div.descripcion .concepto, body div.paneles.ausencias .grid-ausencias .grid-1 .festivosGenerales .festivos div.descripcion .concepto {
+  font-weight: 500;
+  font-size: 16px;
+  color: black;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .festivosGenerales .festivos div.descripcion .duracion, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .festivosGenerales .festivos div.descripcion .duracion, body div.paneles.ausencias .grid-ausencias .grid-1 .festivosGenerales .festivos div.descripcion .duracion {
+  font-weight: 400;
+  font-size: 16px;
+  color: black;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .festivosGenerales .titulo, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .festivosGenerales .titulo, body div.paneles.ausencias .grid-ausencias .grid-1 .festivosGenerales .titulo {
+  font-weight: 600;
+  font-size: 18px;
+  color: black;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .festivosGenerales .subtitulo, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .festivosGenerales .subtitulo, body div.paneles.ausencias .grid-ausencias .grid-1 .festivosGenerales .subtitulo {
+  font-weight: 400;
+  font-size: 16px;
+  color: black;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .bloque-ausencias, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .bloque-ausencias, body div.paneles.ausencias .grid-ausencias .grid-1 .bloque-ausencias {
+  display: block;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones, body div.paneles.ausencias .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones {
+  border: 0.01px #a5a5a5 solid;
+  border-radius: 5px;
+  background-color: #F4F4F5;
+  margin-bottom: 20px;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3, body div.paneles.ausencias .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3 {
+  display: grid;
+  padding: 20px 0px;
+  grid-template-columns: 70px 1fr 70px;
+  border-bottom: 0.01px #a5a5a5 solid;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3 img,
+body div.paneles.calendario .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3 div, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3 img,
+body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3 div, body div.paneles.ausencias .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3 img,
+body div.paneles.ausencias .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3 div {
+  margin: auto auto;
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  color: black;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3 .tag, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3 .tag, body div.paneles.ausencias .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3 .tag {
+  padding: 3px 7.5px;
+  background-color: #E2E2E5;
+  border-radius: 15px;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3 .bloque, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3 .bloque, body div.paneles.ausencias .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3 .bloque {
+  display: block;
+  margin: auto auto;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3 .bloque .titulo, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3 .bloque .titulo, body div.paneles.ausencias .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3 .bloque .titulo {
+  font-weight: 500;
+  font-size: 14px;
+  color: black;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3 .bloque .subtitulo, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3 .bloque .subtitulo, body div.paneles.ausencias .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3 .bloque .subtitulo {
+  font-weight: 400;
+  font-size: 14px;
+  color: black;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3b, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3b, body div.paneles.ausencias .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3b {
+  display: grid;
+  margin: 10px 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  padding: 5px 5px;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3b .bloque, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3b .bloque, body div.paneles.ausencias .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3b .bloque {
+  display: block;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3b .bloque .titulo, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3b .bloque .titulo, body div.paneles.ausencias .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3b .bloque .titulo {
+  font-weight: 400;
+  font-size: 30px;
+  color: black;
+  padding-bottom: 3px;
+}
+body div.paneles.calendario .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3b .bloque .subtitulo, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3b .bloque .subtitulo, body div.paneles.ausencias .grid-ausencias .grid-1 .bloque-ausencias .cuadro-vacaciones .grid-3b .bloque .subtitulo {
+  font-weight: 500;
+  font-size: 14px;
+  color: black;
+}
+body div.paneles.calendario .grid-ausencias .grid-2, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-2, body div.paneles.ausencias .grid-ausencias .grid-2 {
+  padding: 5px;
+  background-color: #F4F4F5;
+  overflow: auto;
+  height: 90vh;
+}
+body div.paneles.calendario .grid-ausencias .grid-2 .flex, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-2 .flex, body div.paneles.ausencias .grid-ausencias .grid-2 .flex {
+  display: flex;
+  gap: 20px;
+  padding: 20px 20px;
+}
+body div.paneles.calendario .grid-ausencias .grid-2 .flex .leyenda, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-2 .flex .leyenda, body div.paneles.ausencias .grid-ausencias .grid-2 .flex .leyenda {
+  background-color: #e2e2e5;
+  padding: 2px 7px;
+  border-radius: 15px;
+  display: flex;
+  font-weight: 400;
+  font-size: 14px;
+  color: black;
+}
+body div.paneles.calendario .grid-ausencias .grid-2 .flex .leyenda .icono, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-2 .flex .leyenda .icono, body div.paneles.ausencias .grid-ausencias .grid-2 .flex .leyenda .icono {
+  width: 7.5px;
+  height: 7.5px;
+  margin: auto auto;
+  border-radius: 25px;
+  margin-right: 10px;
+}
+body div.paneles.calendario .grid-ausencias .grid-2 .flex .leyenda .icono.festivos, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-2 .flex .leyenda .icono.festivos, body div.paneles.ausencias .grid-ausencias .grid-2 .flex .leyenda .icono.festivos {
+  background-color: red;
+}
+body div.paneles.calendario .grid-ausencias .grid-2 .flex-calendario, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-2 .flex-calendario, body div.paneles.ausencias .grid-ausencias .grid-2 .flex-calendario {
+  margin: auto auto;
+  padding: 10px 5px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+body div.paneles.calendario .grid-ausencias .grid-2 .flex-calendario .mes, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-2 .flex-calendario .mes, body div.paneles.ausencias .grid-ausencias .grid-2 .flex-calendario .mes {
+  width: 200px;
+  margin: auto auto;
+}
+body div.paneles.calendario .grid-ausencias .grid-2 .flex-calendario .mes .tituloMes, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-2 .flex-calendario .mes .tituloMes, body div.paneles.ausencias .grid-ausencias .grid-2 .flex-calendario .mes .tituloMes {
+  margin: auto auto;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  color: black;
+}
+body div.paneles.calendario .grid-ausencias .grid-2 .flex-calendario .mes .grid-7, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-2 .flex-calendario .mes .grid-7, body div.paneles.ausencias .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+body div.paneles.calendario .grid-ausencias .grid-2 .flex-calendario .mes .grid-7.dias, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-2 .flex-calendario .mes .grid-7.dias, body div.paneles.ausencias .grid-ausencias .grid-2 .flex-calendario .mes .grid-7.dias {
+  color: darkgray;
+}
+body div.paneles.calendario .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .dia, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .dia, body div.paneles.ausencias .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .dia {
+  width: 14.2857142857%;
+  padding: 4px;
+  font-weight: 400;
+  font-size: 13px;
+  color: darkgray;
+}
+body div.paneles.calendario .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia, body div.paneles.ausencias .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia {
+  padding: 4px;
+  text-align: center;
+  font-weight: 450;
+  font-size: 11px;
+  color: black;
+  /*Diferentes estilos en función de las festividades o las asusencias*/
+}
+body div.paneles.calendario .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.individual, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.individual, body div.paneles.ausencias .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.individual {
+  border-radius: 25px;
+}
+body div.paneles.calendario .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.grupo-izq, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.grupo-izq, body div.paneles.ausencias .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.grupo-izq {
+  border-radius: 25px 0px 0px 25px;
+}
+body div.paneles.calendario .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.grupo-centro, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.grupo-centro, body div.paneles.ausencias .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.grupo-centro {
+  border-radius: 0;
+}
+body div.paneles.calendario .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.grupo-der, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.grupo-der, body div.paneles.ausencias .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.grupo-der {
+  border-radius: 0px 25px 25px 0px;
+}
+body div.paneles.calendario .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.festivo, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.festivo, body div.paneles.ausencias .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.festivo {
+  background-color: rgb(255, 96, 96);
+  color: white;
+}
+body div.paneles.calendario .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.ausencia-sinconfirmar, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.ausencia-sinconfirmar, body div.paneles.ausencias .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.ausencia-sinconfirmar {
+  background-color: #b3c9ce;
+  color: white;
+}
+body div.paneles.calendario .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.ausencia-rechazada, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.ausencia-rechazada, body div.paneles.ausencias .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.ausencia-rechazada {
+  background-color: #e2e2e2;
+  color: black;
+}
+body div.paneles.calendario .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.ausencia-aprobada, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.ausencia-aprobada, body div.paneles.ausencias .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia.ausencia-aprobada {
+  background-color: #348aa0;
+  color: white;
+}
+body div.paneles.calendario .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia div, body div.paneles.bandejaDeEntrada .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia div, body div.paneles.ausencias .grid-ausencias .grid-2 .flex-calendario .mes .grid-7 .numDia div {
+  color: darkgray;
+}
+body div.paneles .informacion3 {
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 15px;
+  padding: 15px;
+}
+body div.paneles .informacion3 .grid-personalizado {
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+}
+body div.paneles .informacion3 .grid-personalizado .bloque {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+body div.paneles .informacion3 .grid-personalizado .bloque .titulo4 {
+  font-weight: 600;
+  font-size: 16px;
+  color: black;
+  padding-bottom: 10px;
+  letter-spacing: 1.5px;
+}
+body div.paneles .informacion3 .grid-personalizado .bloque span {
+  font-weight: 400;
+  font-size: 14px;
+  color: black;
+}
+
+body.login {
+  background-color: #F4F4F5;
+  height: 100vh;
+}
+body.login div.error {
+  background-color: #CC0132;
+  color: white;
+  padding: 15px 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 7.5px;
+  font-size: 16px;
+}
+body.login h2 {
+  letter-spacing: 2px;
+  padding-bottom: 10px;
+  font-size: 30px;
+}
+body.login .cuadroLogin {
+  width: 400px;
+  background-color: aliceblue;
+  margin: auto auto;
+  padding: 50px;
+  border: 2px solid gray;
+  border-radius: 15px;
+}
+body.login .cuadroLogin div.text-input {
+  position: relative;
+  display: block;
+}
+body.login .cuadroLogin div.text-input:first-child {
+  margin-bottom: 30px;
+}
+body.login .cuadroLogin div.text-input input {
+  width: 100%;
+  padding-top: 35px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  border: 2px solid #a8a8b1;
+}
+body.login .cuadroLogin div.text-input input:focus {
+  border-color: rgb(31, 128, 255);
+  outline: none;
+}
+body.login .cuadroLogin div.text-input input:focus + label.text-input_label {
+  color: rgb(31, 128, 255);
+}
+body.login .cuadroLogin div.text-input label.text-input_label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-weight: 600;
+  font-size: 14px;
+  color: black;
+}
+body.login .cuadroLogin a {
+  display: block;
+  float: right;
+  margin: 20px 0px;
+  font-size: 13px;
+}
+body.login .cuadroLogin input[type=submit] {
+  background-color: #ff355e;
+  color: white;
+  width: 100%;
+  font-size: 16px;
+  padding: 18px 30px;
+  border-radius: 25px;
+}
+
+div.main-equipo .general {
+  border: 1px solid #F9F9FA;
+  padding: 25px;
+  display: block;
+  border-radius: 15px;
+}
+div.main-equipo .general div.titulo {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: larger;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+div.main-equipo .general div.subtitulo {
+  text-align: left;
+  margin-bottom: 30px;
+  font-size: medium;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+div.main-equipo .general div.subtitulo span {
+  color: darkred;
+  border-bottom: 1px solid rgb(172, 0, 0);
+}
+div.main-equipo .equipo {
+  display: block;
+  margin: 5px 15px;
+  border-radius: 15px;
+  padding: 10px;
+  border: 1px solid #F4F4F5;
+  background-color: rgb(255, 247, 247) !important;
+}
+div.main-equipo .equipo .empleado {
+  display: grid;
+  padding: 5px 10px;
+  border: 1px solid rgba(95, 0, 0, 0.1);
+}
+div.main-equipo .equipo .empleado .datos {
+  margin: auto 0;
+  color: rgb(51, 51, 51);
+  margin-left: 5px;
+}
+div.main-equipo .equipo .empleado.header-equipo {
+  border: 0px solid transparent;
+}
+div.main-equipo .equipo .empleado.header-equipo div {
+  text-align: center;
+  font-size: 1.7vh;
+  border: none;
+}
+div.main-equipo .equipo .empleado.dias-31 {
+  grid-template-columns: 40px 250px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+div.main-equipo .equipo .empleado.dias-30 {
+  grid-template-columns: 40px 250px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+div.main-equipo .equipo .empleado.dias-29 {
+  grid-template-columns: 40px 250px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+div.main-equipo .equipo .empleado.dias-28 {
+  grid-template-columns: 40px 250px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+div.main-equipo .equipo .empleado div,
+div.main-equipo .equipo .empleado a {
+  text-align: left;
+}
+div.main-equipo .equipo .empleado div.centrado,
+div.main-equipo .equipo .empleado a.centrado {
+  text-align: center;
+  border: 1px solid rgba(56, 0, 0, 0.219);
+  margin: 0 1px;
+}
+
+body.admin {
+  background-color: white;
+}
+body.admin .general {
+  border: 1px solid #F9F9FA;
+  padding: 25px;
+  margin: 25px;
+  display: block;
+  border-radius: 15px;
+  background-color: #F4F4F5;
+}
+body.admin .general div.titulo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+body.admin .general div.titulo h1 {
+  letter-spacing: 2px;
+}
+body.admin .general div.flex {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+body.admin .general div.flex div.bloqueEmpresa {
+  width: 400px;
+  background-color: white;
+  border: 1px solid #F9F9FA;
+  border-radius: 7.5px;
+  padding: 10px 15px;
+}
+body.admin .general div.flex div.bloqueEmpresa .tituloEmpresa {
+  border-bottom: 1px solid rgb(226, 226, 229);
+  font-weight: 700;
+  font-size: 17px;
+  color: black;
+  padding: 15px 0px;
+  text-align: center;
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 20px;
+  row-gap: 10px;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  padding-bottom: 20px;
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid.estilo2, body.admin .general div.flex div.bloqueEmpresa .miniGrid.estilo3 {
+  border-top: 1px solid rgb(158, 208, 255);
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid.estilo2 .subtituloEmpresa, body.admin .general div.flex div.bloqueEmpresa .miniGrid.estilo3 .subtituloEmpresa {
+  grid-column: span 2;
+  font-weight: 500;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  padding-bottom: 15px;
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid.estilo2 .subtituloEmpresa span, body.admin .general div.flex div.bloqueEmpresa .miniGrid.estilo3 .subtituloEmpresa span {
+  border-bottom: 1px solid rgb(201, 201, 204);
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid input {
+  border: none;
+  outline: none;
+  background-color: #f8f8f8;
+  border-radius: 7.5px;
+  box-sizing: border-box;
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid input:not(:-moz-placeholder-shown):valid {
+  background-color: white;
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid input:not(:placeholder-shown):valid {
+  background-color: white;
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid span,
+body.admin .general div.flex div.bloqueEmpresa .miniGrid input {
+  outline: none;
+  margin: auto 0px;
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid span.subtitulo,
+body.admin .general div.flex div.bloqueEmpresa .miniGrid input.subtitulo {
+  width: 120px;
+  font-weight: 600;
+  font-size: 16px;
+  color: black;
+  text-align: right;
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid span.subtitulo::after,
+body.admin .general div.flex div.bloqueEmpresa .miniGrid input.subtitulo::after {
+  content: ":";
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid span.subtitulo.extraTamaño,
+body.admin .general div.flex div.bloqueEmpresa .miniGrid input.subtitulo.extraTamaño {
+  height: 40px !important;
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid span.subtituloSin,
+body.admin .general div.flex div.bloqueEmpresa .miniGrid input.subtituloSin {
+  width: 120px;
+  font-weight: 600;
+  font-size: 16px;
+  color: black;
+  text-align: right;
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid span.subtituloSin.extraTamaño,
+body.admin .general div.flex div.bloqueEmpresa .miniGrid input.subtituloSin.extraTamaño {
+  height: 40px !important;
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid span.informacion,
+body.admin .general div.flex div.bloqueEmpresa .miniGrid input.informacion {
+  width: 265px;
+  font-weight: 400;
+  font-size: 15.5px;
+  color: black;
+  font-family: "Inter";
+  height: 20px;
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid span.informacion.extraTamaño,
+body.admin .general div.flex div.bloqueEmpresa .miniGrid input.informacion.extraTamaño {
+  height: 40px;
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid input[type=submit] {
+  font-weight: 500;
+  font-size: 16px;
+  color: black;
+  font-family: "Inter";
+  padding: 12px;
+  margin: 0 15px;
+  border-radius: 7.5px;
+  text-align: center;
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid input[type=submit].bEstilo1 {
+  background-color: #C9F1F5;
+  border: 1px solid #F9F9FA;
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid input[type=submit].bEstilo1.unico {
+  grid-column: span 2;
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid input[type=submit].bEstilo2 {
+  background-color: #f5c9f1;
+  border: 1px solid #F9F9FA;
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid a.boton {
+  padding: 12px;
+  margin: 0 15px;
+  border-radius: 7.5px;
+  text-align: center;
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid a.boton.bEstilo1 {
+  background-color: #C9F1F5;
+  border: 1px solid #F9F9FA;
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid a.boton.bEstilo1.unico {
+  grid-column: span 2;
+}
+body.admin .general div.flex div.bloqueEmpresa .miniGrid a.boton.bEstilo2 {
+  background-color: #f5c9f1;
+  border: 1px solid #F9F9FA;
+}
+
+div.administrador {
+  margin: 10px 25px;
+  padding: 10px 25px;
+}
+div.administrador div.titulo {
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: large;
+}
+div.administrador .bloqueInformacionFinal {
+  padding: 10px 2px;
+  background-color: rgba(255, 255, 255, 0.185);
+  margin: 10px 0px;
+}
+div.administrador .bloqueInformacionFinal span span {
+  color: darkred;
+}
+div.administrador .areaFlex .departamentos {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+div.administrador .areaFlex .departamentos .bloqueDepartamento {
+  background-color: white;
+  border-radius: 7.5px;
+  border: 1px solid #F9F9FA;
+  min-width: 375px;
+  width: 400px;
+  padding: 10px;
+  padding-bottom: 0;
+}
+div.administrador .areaFlex .departamentos .bloqueDepartamento .tituloDept {
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 17px;
+  padding: 5%;
+  border-bottom: 1px solid rgb(226, 226, 229);
+}
+div.administrador .areaFlex .departamentos .bloqueDepartamento .tituloDept span {
+  font-weight: 700;
+}
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  row-gap: 7.5px;
+  padding: 10px 0px;
+}
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid span {
+  display: block;
+}
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid textarea {
+  resize: none;
+}
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid .subtitulo {
+  text-align: right;
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+}
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid .subtitulo::after {
+  content: ":";
+}
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid .subtitulo.extraInformacion {
+  height: 100%;
+  margin: auto 0px;
+}
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid input,
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid textarea {
+  background-color: rgb(243, 243, 243);
+  border-radius: 7.5px;
+  padding: 0 5px;
+  font-family: "Inter";
+}
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid .informacion {
+  text-align: left;
+  font-size: 15px;
+  border: 0px;
+}
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid .informacion.extraInformacion {
+  height: 50px;
+}
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid-botones {
+  margin: 10px 10px;
+  border-top: 1px solid rgb(226, 226, 229);
+  min-height: 70px;
+  gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(253, 253, 255);
+}
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid-botones input[type=submit].boton,
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid-botones a.boton {
+  border-color: transparent;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid-botones input[type=submit].boton:hover,
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid-botones a.boton:hover {
+  text-decoration: underline;
+}
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid-botones input[type=submit].boton.estilo1,
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid-botones a.boton.estilo1 {
+  background-color: rgb(252, 150, 150);
+  color: rgb(0, 0, 0);
+}
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid-botones input[type=submit].boton.estilo1:hover,
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid-botones a.boton.estilo1:hover {
+  color: white;
+  background-color: darkred;
+}
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid-botones input[type=submit].boton.estilo2,
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid-botones a.boton.estilo2 {
+  background-color: rgb(252, 211, 150);
+  color: rgb(0, 0, 0);
+}
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid-botones input[type=submit].boton.estilo2:hover,
+div.administrador .areaFlex .departamentos .bloqueDepartamento .grid-botones a.boton.estilo2:hover {
+  background-color: rgb(255, 188, 87);
+  color: white;
+}
+div.administrador .areaFlex .departamentos .bloqueDepartamento .informacionConsulta {
+  background-color: rgb(226, 146, 146);
+  margin: 0 20px;
+  padding: 10px;
+  border-radius: 7.5px;
+  font-size: 15px;
+  min-height: 20px;
+}
+div.administrador .areaFlex .departamentos .bloqueDepartamento .informacionConsulta:empty {
+  background-color: #F4F4F5;
+}
+
+div.main.empleados {
+  margin: 10px 25px;
+  padding: 10px 25px;
+}
+div.main.empleados .titulo {
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: large;
+}
+div.main.empleados .bloqueInformacionFinal {
+  padding: 10px 2px;
+  background-color: rgba(255, 255, 255, 0.185);
+  margin: 10px 0px;
+}
+div.main.empleados .bloqueInformacionFinal span span {
+  color: darkred;
+}
+div.main.empleados .clases {
+  display: flex;
+  gap: 50px;
+  flex-wrap: nowrap;
+  background-color: rgb(223, 159, 159);
+  padding: 2%;
+  border-radius: 10px;
+  overflow: auto;
+}
+div.main.empleados .clases .bloqueCard {
+  background-color: white;
+  border-radius: 7.5px;
+  border: 1px solid #F9F9FA;
+  min-width: 375px;
+  width: 400px;
+  padding: 10px;
+  padding-bottom: 0;
+}
+div.main.empleados .clases .bloqueCard .tituloEmpl {
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 17px;
+  padding: 5%;
+  border-bottom: 1px solid rgb(226, 226, 229);
+}
+div.main.empleados .clases .bloqueCard .tituloEmpl span {
+  font-weight: 700;
+}
+div.main.empleados .clases .bloqueCard .grid {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  row-gap: 7.5px;
+  padding: 10px 0px;
+}
+div.main.empleados .clases .bloqueCard .grid .subtitulo2 {
+  grid-column: 1/span 2;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+}
+div.main.empleados .clases .bloqueCard .grid.division {
+  border-top: 1px solid rgb(226, 226, 229);
+  min-height: 120px;
+}
+div.main.empleados .clases .bloqueCard .grid span {
+  display: block;
+}
+div.main.empleados .clases .bloqueCard .grid textarea {
+  resize: none;
+}
+div.main.empleados .clases .bloqueCard .grid .subtitulo {
+  text-align: right;
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+}
+div.main.empleados .clases .bloqueCard .grid .subtitulo::after {
+  content: ":";
+}
+div.main.empleados .clases .bloqueCard .grid .subtitulo.extraInformacion {
+  height: 100%;
+  margin: auto 0px;
+}
+div.main.empleados .clases .bloqueCard .grid input,
+div.main.empleados .clases .bloqueCard .grid textarea {
+  background-color: rgb(243, 243, 243);
+  border-radius: 7.5px;
+  padding: 0 5px;
+  font-family: "Inter";
+}
+div.main.empleados .clases .bloqueCard .grid .informacion {
+  text-align: left;
+  font-size: 15px;
+  border: 0px;
+}
+div.main.empleados .clases .bloqueCard .grid .informacion input {
+  border: 0.1px solid gray !important;
+  padding: 1%;
+  text-align: center;
+}
+div.main.empleados .clases .bloqueCard .grid .informacion .grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 20px 1fr;
+}
+div.main.empleados .clases .bloqueCard .grid .informacion .grid-3 div {
+  text-align: center;
+}
+div.main.empleados .clases .bloqueCard .grid .informacion .grid-3 div input {
+  width: 95%;
+  text-align: center;
+}
+div.main.empleados .clases .bloqueCard .grid .informacion.extraInformacion {
+  height: 50px;
+}
+div.main.empleados .clases .bloqueCard .grid-botones {
+  padding: 20px 0;
+  border-top: 1px solid rgb(226, 226, 229);
+  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(253, 253, 255);
+}
+div.main.empleados .clases .bloqueCard .grid-botones input[type=submit].boton,
+div.main.empleados .clases .bloqueCard .grid-botones a.boton {
+  color: rgb(0, 0, 0);
+  border-color: transparent;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+div.main.empleados .clases .bloqueCard .grid-botones input[type=submit].boton:disabled,
+div.main.empleados .clases .bloqueCard .grid-botones a.boton:disabled {
+  background-color: #888 !important;
+  color: white;
+}
+div.main.empleados .clases .bloqueCard .grid-botones input[type=submit].boton:disabled:hover,
+div.main.empleados .clases .bloqueCard .grid-botones a.boton:disabled:hover {
+  text-decoration: none !important;
+}
+div.main.empleados .clases .bloqueCard .grid-botones input[type=submit].boton.eliminar,
+div.main.empleados .clases .bloqueCard .grid-botones a.boton.eliminar {
+  background-color: rgb(252, 150, 150);
+}
+div.main.empleados .clases .bloqueCard .grid-botones input[type=submit].boton.eliminar:hover,
+div.main.empleados .clases .bloqueCard .grid-botones a.boton.eliminar:hover {
+  color: white;
+  background-color: darkred;
+  text-decoration: underline;
+}
+div.main.empleados .clases .bloqueCard .grid-botones input[type=submit].boton.editar,
+div.main.empleados .clases .bloqueCard .grid-botones a.boton.editar {
+  background-color: rgb(252, 216, 150);
+}
+div.main.empleados .clases .bloqueCard .grid-botones input[type=submit].boton.editar:hover,
+div.main.empleados .clases .bloqueCard .grid-botones a.boton.editar:hover {
+  color: white;
+  background-color: rgb(219, 182, 16);
+  text-decoration: underline;
+}
+div.main.empleados .clases .bloqueCard .grid-botones input[type=submit].boton.alta,
+div.main.empleados .clases .bloqueCard .grid-botones a.boton.alta {
+  background-color: rgb(250, 213, 255);
+}
+div.main.empleados .clases .bloqueCard .grid-botones input[type=submit].boton.alta:hover,
+div.main.empleados .clases .bloqueCard .grid-botones a.boton.alta:hover {
+  color: white;
+  background-color: rgb(236, 92, 255);
+  text-decoration: underline;
+}
+div.main.empleados .clases .bloqueCard .grid-botones input[type=submit].boton.baja,
+div.main.empleados .clases .bloqueCard .grid-botones a.boton.baja {
+  background-color: rgb(194, 231, 255);
+}
+div.main.empleados .clases .bloqueCard .grid-botones input[type=submit].boton.baja:hover,
+div.main.empleados .clases .bloqueCard .grid-botones a.boton.baja:hover {
+  color: white;
+  background-color: rgb(51, 174, 255);
+  text-decoration: underline;
+}
+div.main.empleados .clases .bloqueCard .informacionConsulta {
+  background-color: rgb(226, 146, 146);
+  margin: 0 20px;
+  padding: 10px;
+  border-radius: 7.5px;
+  font-size: 15px;
+  min-height: 20px;
+}
+div.main.empleados .clases .bloqueCard .informacionConsulta:empty {
+  background-color: #F4F4F5;
+}
+div.main.empleados .empleados {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+div.main.empleados .empleados .bloqueCard {
+  background-color: white;
+  border-radius: 7.5px;
+  border: 1px solid #F9F9FA;
+  min-width: 375px;
+  width: 400px;
+  padding: 10px;
+  padding-bottom: 0;
+}
+div.main.empleados .empleados .bloqueCard .tituloEmpl {
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 17px;
+  padding: 5%;
+  border-bottom: 1px solid rgb(226, 226, 229);
+}
+div.main.empleados .empleados .bloqueCard .tituloEmpl span {
+  font-weight: 700;
+}
+div.main.empleados .empleados .bloqueCard .grid {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  row-gap: 7.5px;
+  padding: 10px 0px;
+}
+div.main.empleados .empleados .bloqueCard .grid .subtitulo2 {
+  grid-column: 1/span 2;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+}
+div.main.empleados .empleados .bloqueCard .grid.division {
+  border-top: 1px solid rgb(226, 226, 229);
+  min-height: 120px;
+}
+div.main.empleados .empleados .bloqueCard .grid span {
+  display: block;
+}
+div.main.empleados .empleados .bloqueCard .grid textarea {
+  resize: none;
+}
+div.main.empleados .empleados .bloqueCard .grid .subtitulo {
+  text-align: right;
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+}
+div.main.empleados .empleados .bloqueCard .grid .subtitulo::after {
+  content: ":";
+}
+div.main.empleados .empleados .bloqueCard .grid .subtitulo.extraInformacion {
+  height: 100%;
+  margin: auto 0px;
+}
+div.main.empleados .empleados .bloqueCard .grid input,
+div.main.empleados .empleados .bloqueCard .grid textarea {
+  background-color: rgb(243, 243, 243);
+  border-radius: 7.5px;
+  padding: 0 5px;
+  font-family: "Inter";
+}
+div.main.empleados .empleados .bloqueCard .grid .informacion {
+  text-align: left;
+  font-size: 15px;
+  border: 0px;
+}
+div.main.empleados .empleados .bloqueCard .grid .informacion.extraInformacion {
+  height: 50px;
+}
+div.main.empleados .empleados .bloqueCard .grid-botones {
+  padding: 20px 0;
+  border-top: 1px solid rgb(226, 226, 229);
+  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(253, 253, 255);
+}
+div.main.empleados .empleados .bloqueCard .grid-botones input[type=submit].boton,
+div.main.empleados .empleados .bloqueCard .grid-botones a.boton {
+  color: rgb(0, 0, 0);
+  border-color: transparent;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+div.main.empleados .empleados .bloqueCard .grid-botones input[type=submit].boton:disabled,
+div.main.empleados .empleados .bloqueCard .grid-botones a.boton:disabled {
+  background-color: #888 !important;
+  color: white;
+}
+div.main.empleados .empleados .bloqueCard .grid-botones input[type=submit].boton:disabled:hover,
+div.main.empleados .empleados .bloqueCard .grid-botones a.boton:disabled:hover {
+  text-decoration: none !important;
+}
+div.main.empleados .empleados .bloqueCard .grid-botones input[type=submit].boton.eliminar,
+div.main.empleados .empleados .bloqueCard .grid-botones a.boton.eliminar {
+  background-color: rgb(252, 150, 150);
+}
+div.main.empleados .empleados .bloqueCard .grid-botones input[type=submit].boton.eliminar:hover,
+div.main.empleados .empleados .bloqueCard .grid-botones a.boton.eliminar:hover {
+  color: white;
+  background-color: darkred;
+  text-decoration: underline;
+}
+div.main.empleados .empleados .bloqueCard .grid-botones input[type=submit].boton.editar,
+div.main.empleados .empleados .bloqueCard .grid-botones a.boton.editar {
+  background-color: rgb(252, 216, 150);
+}
+div.main.empleados .empleados .bloqueCard .grid-botones input[type=submit].boton.editar:hover,
+div.main.empleados .empleados .bloqueCard .grid-botones a.boton.editar:hover {
+  color: white;
+  background-color: rgb(219, 182, 16);
+  text-decoration: underline;
+}
+div.main.empleados .empleados .bloqueCard .grid-botones input[type=submit].boton.alta,
+div.main.empleados .empleados .bloqueCard .grid-botones a.boton.alta {
+  background-color: rgb(250, 213, 255);
+}
+div.main.empleados .empleados .bloqueCard .grid-botones input[type=submit].boton.alta:hover,
+div.main.empleados .empleados .bloqueCard .grid-botones a.boton.alta:hover {
+  color: white;
+  background-color: rgb(236, 92, 255);
+  text-decoration: underline;
+}
+div.main.empleados .empleados .bloqueCard .grid-botones input[type=submit].boton.baja,
+div.main.empleados .empleados .bloqueCard .grid-botones a.boton.baja {
+  background-color: rgb(194, 231, 255);
+}
+div.main.empleados .empleados .bloqueCard .grid-botones input[type=submit].boton.baja:hover,
+div.main.empleados .empleados .bloqueCard .grid-botones a.boton.baja:hover {
+  color: white;
+  background-color: rgb(51, 174, 255);
+  text-decoration: underline;
+}
+div.main.empleados .empleados .bloqueCard .informacionConsulta {
+  background-color: rgb(226, 146, 146);
+  margin: 0 20px;
+  padding: 10px;
+  border-radius: 7.5px;
+  font-size: 15px;
+  min-height: 20px;
+}
+div.main.empleados .empleados .bloqueCard .informacionConsulta:empty {
+  background-color: #F4F4F5;
+}
+div.main.empleados .bloqueNuevo {
+  padding: 25px;
+  background-color: white;
+  border-radius: 15px;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+}
+div.main.empleados .bloqueNuevo a.boton-especial {
+  padding: 5px;
+  background-color: rgb(243, 208, 208);
+  border: 1px solid black;
+  border-radius: 5px;
+  border-color: #CC0132;
+}
+
+div.licencia {
+  border: 0.1px solid rgb(228, 228, 228);
+  padding: 10px;
+}
+div.licencia p.licencia {
+  color: gray;
+  font-size: 7px;
+}
+div.licencia:hover {
+  background-color: gold;
+}/*# sourceMappingURL=style.css.map */
