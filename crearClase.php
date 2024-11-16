@@ -20,7 +20,7 @@ $cambiarPagina = false;
 
     <!-- Modal content -->
     <div class="contenidoModal">
-        <form method="post" action="operacionesAlumnos.php" id="form1" class="formularioEdicion">
+        <form method="post" action="operacionesClase.php" id="form1" class="formularioEdicion">
 
 
             <div class="logo">
@@ -40,8 +40,8 @@ $cambiarPagina = false;
                         <div class="subContenido">
                             <div><span>Fecha</span></div>
                             <div class="grid">
-                                <input type="date" name="fecha" value="">
-                                <input type="text" name="id" hidden value="">
+                            <input type="date" name="fecha" value="<?php echo $_GET["fecha"] ?>"  required>
+                                <input type="text" name="id" hidden value="<?php echo $_GET["id"] ?>">
 
                             </div>
                         </div>
@@ -49,14 +49,14 @@ $cambiarPagina = false;
                             <div class="subContenido">
                                 <div><span>Hora Inicio</span></div>
                                 <div class="grid">
-                                    <input type="time" name="horaInicio" value="">
+                                    <input type="time" name="horaInicio" value="<?php echo $_GET["horaInicio"] ?>" required>
 
                                 </div>
                             </div>
                             <div class="subContenido">
                                 <div><span>Hora Final</span></div>
                                 <div class="grid">
-                                    <input type="time" name="horaFin" value=>
+                                    <input type="time" name="horaFin" value="<?php echo $_GET["horaFin"] ?>"  required>
 
                                 </div>
                             </div>
@@ -70,8 +70,7 @@ $cambiarPagina = false;
                         <div class="subContenido">
                             <div><span>Contenido Explicado</span></div>
                             <div class="grid">
-                                <textarea rows="5" name="contenidoExplicado"></textarea>
-                                <input type="text" name="id" hidden value="">
+                                <textarea rows="5" name="contenidoExplicado"  required></textarea>
 
                             </div>
                         </div>
@@ -84,7 +83,7 @@ $cambiarPagina = false;
                         <div class="subContenido">
                             <div><span>Observaciones (Próxima Clase)</span></div>
                             <div class="grid">
-                                <textarea rows="5" name="observacionesCSiguiente"></textarea>
+                                <textarea rows="5" name="observacionesProximaClase"></textarea>
                             </div>
                         </div>
                     </div>
@@ -96,16 +95,14 @@ $cambiarPagina = false;
                         <div class="subContenido">
                             <div><span>Dificultad</span></div>
                             <div class="grid">
-                                <textarea rows="5" name="contenidoExplicado"></textarea>
-                                <input type="text" name="id" hidden value="">
+                                <textarea rows="5" name="dificultad"></textarea>
 
                             </div>
                         </div>
                         <div class="subContenido">
                             <div><span>Evolución</span></div>
                             <div class="grid">
-                                <textarea rows="5" name="contenidoExplicado"></textarea>
-                                <input type="text" name="id" hidden value="">
+                                <textarea rows="5" name="evolucion"></textarea>
 
                             </div>
                         </div>
@@ -126,8 +123,8 @@ $cambiarPagina = false;
             <div class="contenidoFinal1">
 
                 <div class="botones">
-                    <input type="submit" name="submitCrear" value="Crear Clase">
-                    <input type="submit" name="submitCrear" value="Cancelar">
+                    <input type="submit" name="crearClase" value="Crear Clase">
+                    <input type="submit" name="cancelarClase" value="Cancelar">
                 </div>
             </div>
     </div>
@@ -180,11 +177,19 @@ $cambiarPagina = false;
 
 
 
+    function confirmarSalida(pagina) {
+      const respuesta = confirm("¿Estás seguro de que desea salir?");
+      if (respuesta) {
+        window.location.href =pagina;
+      } else {
+      }
+    }
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         if (event.target == modal) {
             //window.location.href = "<?php echo $_SESSION["pagina"] . ".php" ?>";
+            confirmarSalida("<?php echo $_SESSION["pagina"] . ".php" ?>");
         }
     }
 </script>

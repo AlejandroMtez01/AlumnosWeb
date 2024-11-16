@@ -90,7 +90,7 @@
 
     <div class="main empleados">
         <div class="exito"><?php if (isset($_GET["exito"])) {
-                                //echo $_GET["exito"];
+                                echo $_GET["exito"];
                             } ?></div>
 
 
@@ -163,6 +163,8 @@
                                                                             $filaAlumno["nombre"] . " " . substr($filaAlumno["apellido1"], 0, 1) . "." //. substr($filaAlumno["apellido2"],0,1)."." 
                                                                         ?></div>
                                                 <div class="grid">
+                                                    <input type="text" name="id" value="<?php echo $filaAlumno["id"];
+                                                                                        ?>" hidden>
                                                     <span class="subtitulo">Fecha</span>
                                                     <span class="informacion">
                                                         <input type="date" name="fecha" value="<?php
@@ -181,9 +183,9 @@
                                                     <span class="subtitulo">Horario</span>
                                                     <span class="informacion">
                                                         <div class="grid-3">
-                                                            <div class="div_centrado"><input type="time" name="fechaFin" value="<?php echo $filaClasesPendientes["horaInicio"] ?>"></div>
+                                                            <div class="div_centrado"><input type="time" name="horaInicio" value="<?php echo $filaClasesPendientes["horaInicio"] ?>"></div>
                                                             <div class="div_centrado">-</div>
-                                                            <div class="div_centrado"><input type="time" name="fechaInicio" value="<?php echo $filaClasesPendientes["horaFin"] ?>"> </div>
+                                                            <div class="div_centrado"><input type="time" name="horaFin" value="<?php echo $filaClasesPendientes["horaFin"] ?>"> </div>
 
                                                         </div>
                                                     </span>
@@ -203,8 +205,7 @@
                                                                                 ?></span>
 
 
-                                                    <input type="text" name="id" value="<?php //echo $fila["id"]; 
-                                                                                        ?>" hidden>
+                                                    
                                                 </div> -->
                                                 <div class="grid-botones">
                                                     <input type="submit" name="crearClase" class="boton editar" value="Finalizada" />
@@ -236,30 +237,187 @@
                 </div>
 
 
-                <?php
-                //}
-                //}
-                ?>
-
             </div>
 
         </div>
+        <br>
+        <br>
+        <div class="titulo">
+            <h3>CLASES FINALIZADAS</h3>
+        </div>
         <div class="areaFlex">
-            <div class="titulo">
-                <h3>CLASES FINALIZADAS</h3>
+            <div class="clases color2">
+
+                <?php
+                $hoy = new DateTime();
+
+                $diaDeLaSemana = $hoy->format('N');
+
+                // Calcular la fecha del lunes (inicio de la semana)
+                $lunes = clone $hoy;
+                $lunes->modify('-' . ($diaDeLaSemana - 1) . ' days');
+                //echo "Lunes: " . $lunes->format("d/m/Y");
+
+                // Calcular la fecha del domingo (último día de la semana)
+                $domingo = clone $hoy;
+                $domingo->modify('+' . (7 - $diaDeLaSemana) . ' days');
+                //echo "Domingo: " . $domingo->format("d/m/Y");
+                $query = "SELECT * FROM clases INNER JOIN alumnos on clases.idAlumno = alumnos.id  WHERE fecha between '" . $lunes->format("Y-m-d") . "' and '" . $domingo->format("Y-m-d") . "' ORDER BY idAlumno,fecha asc";
+                //echo $query;
+                $resultado = $conn->query($query);
+                while ($filaClasesRealizadas = $resultado->fetch_assoc()) {
+                ?>
+
+
+                    <div class="bloqueCard amplio">
+                        <form action="gestionClases.php" method="post">
+
+                            <div class="tituloEmpl"><b>(<?php echo "Clase" ?>)</b> - <?php echo $filaClasesRealizadas["nombre"] . " " . substr($filaClasesRealizadas["apellido1"], 0, 1) . "." ?></div>
+
+                            <div class="bloqueSeccion">
+                                <p class="tituloSeccion"><span>CONTENIDO VISTO</span></p>
+
+                                <div class="bloqueSubseccion">
+                                    <span class="posibleEnlace"><?php echo str_replace("\n", "<br>", $filaClasesRealizadas["contenidoExplicado"]) ?></span>
+                                </div>
+                            </div>
+
+                            <div class="bloqueSeccion">
+                                <p class="tituloSeccion"><span>EJERCICIOS REALIZADOS</span></p>
+
+                                <div class="bloqueSubseccion">
+                                    <span class="posibleEnlace"><?php echo str_replace("\n", "<br>", $filaClasesRealizadas["ejerciciosRealizados"]) ?></span>
+                                </div>
+                            </div>
+
+
+                            <!-- <div class="grid division">
+                                                    <div class="subtitulo2">
+                                                        <h3>INFORMACIÓN ADICIONAL</h3>
+                                                    </div>
+
+
+                                                    <span class="subtituloSin"></span>
+                                                    <span class="informacion"></span>
+
+
+                                                    
+                                                </div> -->
+                            <div class="grid-botones">
+                                <input type="submit" name="editarClase" class="boton editar" value="Editar">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="bloqueCard amplio">
+                        <form action="gestionClases.php" method="post">
+
+                            <div class="tituloEmpl"><b>(<?php echo "Clase" ?>)</b> - <?php echo $filaClasesRealizadas["nombre"] . " " . substr($filaClasesRealizadas["apellido1"], 0, 1) . "." ?></div>
+
+                            <div class="bloqueSeccion">
+                                <p class="tituloSeccion"><span>CONTENIDO VISTO</span></p>
+
+                                <div class="bloqueSubseccion">
+                                    <span class="posibleEnlace"><?php echo str_replace("\n", "<br>", $filaClasesRealizadas["contenidoExplicado"]) ?></span>
+                                </div>
+                            </div>
+
+                            <div class="bloqueSeccion">
+                                <p class="tituloSeccion"><span>EJERCICIOS REALIZADOS</span></p>
+
+                                <div class="bloqueSubseccion">
+                                    <span class="posibleEnlace"><?php echo str_replace("\n", "<br>", $filaClasesRealizadas["ejerciciosRealizados"]) ?></span>
+                                </div>
+                            </div>
+
+
+                            <!-- <div class="grid division">
+                                                    <div class="subtitulo2">
+                                                        <h3>INFORMACIÓN ADICIONAL</h3>
+                                                    </div>
+
+
+                                                    <span class="subtituloSin"></span>
+                                                    <span class="informacion"></span>
+
+
+                                                    
+                                                </div> -->
+                            <div class="grid-botones">
+                                <input type="submit" name="editarClase" class="boton editar" value="Editar">
+                            </div>
+                        </form>
+                    </div>
+                <?php } ?>
+
+
+
+                </form>
             </div>
 
-            <div class="clases">
 
-
-
-
-            </div>
 
 
             <script>
                 cargarEventos();
+
+                var elementos = document.querySelectorAll(".posibleEnlace");
+                elementos.forEach(e => {
+
+                    //Declaración de array
+                    var palabras = e.innerHTML.split(" ");
+
+
+                    //console.log("Cantidad de palabras: "+e.innerHTML.split(" ").length);
+                    //Construccción innherHTML
+                    finalTexto = "";
+                    for (var i = 0; i < palabras.length; i++) {
+
+                        if (palabras[i].startsWith("https://") || palabras[i].startsWith("http://") || palabras[i].startsWith("www://")) {
+
+                            //Dividir enlace en parte del enlace (y siguiente) (Si está  junto un intro)
+                            palabra0 = "";
+                            palabra1 = "";
+                            const cortar = palabras[i].indexOf('<'); //Inicio de br
+                            if (cortar != -1) {
+                                palabra0 = palabras[i].substring(0, cortar);
+                                palabra1 = palabras[i].substring(cortar, palabras[i].length);
+                                console.log("Palabra0: " + palabra0);
+                                console.log("Palabra1: " + palabra1);
+
+                            }
+
+                            if (palabra0 != "") {
+                                finalTexto += "<a href='" +
+                                    palabra0 +
+                                    "'>" + "(Enlace)" + "</a>" + palabra1;
+                            } else {
+                                console.log("enlace");
+                                finalTexto += "<a href='" +
+                                    palabras[i] +
+                                    "'>" + "enlace" + "</a>";
+                            }
+
+                        } else {
+
+                            if (i == palabras.length - 1) {
+                                finalTexto += palabras[i];
+                            } else {
+
+                                finalTexto += (palabras[i] + " ");
+                            }
+
+                        }
+                        e.innerHTML = finalTexto;
+
+
+                    }
+
+                    console.log("funciona");
+                });
             </script>
+        </div>
+    </div>
+    </div>
 
 </body>
 

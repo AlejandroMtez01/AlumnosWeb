@@ -10,23 +10,6 @@ body div.sidebar div.subBotones.visible {
   transition: opacity 0.5s, ease-in-out, transform 0.5s linear;
 }
 
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-
-::-webkit-scrollbar-button {
-  background: black;
-}
-
-::-webkit-scrollbar-track-piece {
-  background: white;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgb(141, 0, 0);
-}
-
 /*Estilos BG (Background)*/
 .estilo1BG {
   background-color: rgb(255, 215, 223);
@@ -1770,21 +1753,62 @@ div.main.empleados .bloqueInformacionFinal span span {
 }
 div.main.empleados .clases {
   display: flex;
-  gap: 50px;
+  gap: 1%;
   flex-wrap: nowrap;
-  background-color: rgb(223, 159, 159);
+  background-color: rgb(245, 204, 204);
   padding: 2%;
   border-radius: 10px;
   overflow: auto;
 }
+div.main.empleados .clases.color2 {
+  background-color: #ffe5d8;
+  border: 1px solid rgb(224, 224, 224);
+  flex-wrap: wrap;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
 div.main.empleados .clases .bloqueCard {
   background-color: white;
   border-radius: 7.5px;
-  border: 1px solid #F9F9FA;
+  border: 1px solid rgb(185, 185, 185);
   min-width: 375px;
-  width: 400px;
+  width: 200px;
   padding: 10px;
   padding-bottom: 0;
+  margin-bottom: 1%;
+}
+div.main.empleados .clases .bloqueCard.amplio {
+  width: 425px;
+  border: 1px solid rgb(185, 185, 185);
+}
+div.main.empleados .clases .bloqueCard.amplio .bloqueSeccion {
+  padding-bottom: 2%;
+  border-bottom: 1px solid rgb(226, 226, 229);
+}
+div.main.empleados .clases .bloqueCard.amplio .bloqueSeccion .bloqueSubseccion {
+  background-color: #fdecec;
+  padding: 2%;
+  max-height: 150px;
+  min-height: 150px;
+  overflow-y: auto;
+  border-radius: 20px;
+}
+div.main.empleados .clases .bloqueCard.amplio .bloqueSeccion .bloqueSubseccion a {
+  background-color: darkred;
+  color: white;
+  text-decoration: underline;
+}
+div.main.empleados .clases .bloqueCard.amplio .bloqueSeccion .tituloSeccion {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16.5px;
+}
+div.main.empleados .clases .bloqueCard.amplio .bloqueSeccion .tituloSeccion span {
+  background-color: rgb(253, 225, 225);
+  padding: 0.5%;
+  text-decoration: underline;
 }
 div.main.empleados .clases .bloqueCard .tituloEmpl {
   text-align: center;
@@ -1803,6 +1827,9 @@ div.main.empleados .clases .bloqueCard .grid {
        column-gap: 10px;
   row-gap: 7.5px;
   padding: 10px 0px;
+}
+div.main.empleados .clases .bloqueCard .grid.amplio {
+  grid-template-columns: 20% 1fr;
 }
 div.main.empleados .clases .bloqueCard .grid .subtitulo2 {
   grid-column: 1/span 2;
