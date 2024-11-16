@@ -79,8 +79,12 @@ $cambiarPagina = false;
                             <div><span>Ejercicios Realizados</span></div>
                             <div class="grid">
                                 <textarea rows="5" name="ejerciciosRealizados"></textarea>
-
-
+                            </div>
+                        </div>
+                        <div class="subContenido">
+                            <div><span>Observaciones (Próxima Clase)</span></div>
+                            <div class="grid">
+                                <textarea rows="5" name="observacionesCSiguiente"></textarea>
                             </div>
                         </div>
                     </div>
@@ -90,7 +94,15 @@ $cambiarPagina = false;
                             <h3>PROCESO ALUMNO</h3>
                         </div>
                         <div class="subContenido">
-                            <div><span>Contenido Explicado</span></div>
+                            <div><span>Dificultad</span></div>
+                            <div class="grid">
+                                <textarea rows="5" name="contenidoExplicado"></textarea>
+                                <input type="text" name="id" hidden value="">
+
+                            </div>
+                        </div>
+                        <div class="subContenido">
+                            <div><span>Evolución</span></div>
                             <div class="grid">
                                 <textarea rows="5" name="contenidoExplicado"></textarea>
                                 <input type="text" name="id" hidden value="">
@@ -98,18 +110,8 @@ $cambiarPagina = false;
                             </div>
                         </div>
 
-                        <div class="subContenido">
-                            <div><span>Observaciones (Clase Anterior)</span></div>
-                            <div class="grid">
-                                <textarea rows="5" name="observacionesCAnterior" disabled></textarea>
-                            </div>
-                        </div>
-                        <div class="subContenido">
-                            <div><span>Observaciones (Próxima Clase)</span></div>
-                            <div class="grid">
-                                <textarea rows="5" name="observacionesCSiguiente"></textarea>
-                            </div>
-                        </div>
+
+
                     </div>
 
                     <div class="panelInformacion">
@@ -121,8 +123,12 @@ $cambiarPagina = false;
 
 
             </div>
-            <div class="contenidoFinal">
-                <input type="submit" name="submitCrear" value="Crear Empleado">
+            <div class="contenidoFinal1">
+
+                <div class="botones">
+                    <input type="submit" name="submitCrear" value="Crear Clase">
+                    <input type="submit" name="submitCrear" value="Cancelar">
+                </div>
             </div>
     </div>
     </form>
