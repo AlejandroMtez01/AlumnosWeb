@@ -207,7 +207,7 @@
                                                                                         ?>" hidden>
                                                 </div> -->
                                                 <div class="grid-botones">
-                                                    <input type="submit" name="confirmarClase" class="boton editar" value="Finalizada" />
+                                                    <input type="submit" name="crearClase" class="boton editar" value="Finalizada" />
                                                 </div>
                                             </form>
                                         </div>
