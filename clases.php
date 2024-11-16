@@ -133,7 +133,7 @@
                             //echo "Domingo: " . $domingo->format("d/m/Y");
 
                             //Consulta para saber cuantas clases se han creado esta semana.
-                            $query = "SELECT * FROM clases WHERE fecha between '" . $lunes->format("d/m/Y") . "' and '" . $domingo->format("d/m/Y") . "'";
+                            $query = "SELECT * FROM clases WHERE fecha between '" . $lunes->format("Y-m-d") . "' and '" . $domingo->format("Y-m-d") . "' and idAlumno=".$filaAlumno["id"] ;
                             $resultadoClasesRealizadas = $conn->query($query);
 
                             //Consulta para saber el número de la última clase
@@ -308,45 +308,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="bloqueCard amplio">
-                        <form action="gestionClases.php" method="post">
-
-                            <div class="tituloEmpl"><b>(<?php echo "Clase" ?>)</b> - <?php echo $filaClasesRealizadas["nombre"] . " " . substr($filaClasesRealizadas["apellido1"], 0, 1) . "." ?></div>
-
-                            <div class="bloqueSeccion">
-                                <p class="tituloSeccion"><span>CONTENIDO VISTO</span></p>
-
-                                <div class="bloqueSubseccion">
-                                    <span class="posibleEnlace"><?php echo str_replace("\n", "<br>", $filaClasesRealizadas["contenidoExplicado"]) ?></span>
-                                </div>
-                            </div>
-
-                            <div class="bloqueSeccion">
-                                <p class="tituloSeccion"><span>EJERCICIOS REALIZADOS</span></p>
-
-                                <div class="bloqueSubseccion">
-                                    <span class="posibleEnlace"><?php echo str_replace("\n", "<br>", $filaClasesRealizadas["ejerciciosRealizados"]) ?></span>
-                                </div>
-                            </div>
-
-
-                            <!-- <div class="grid division">
-                                                    <div class="subtitulo2">
-                                                        <h3>INFORMACIÓN ADICIONAL</h3>
-                                                    </div>
-
-
-                                                    <span class="subtituloSin"></span>
-                                                    <span class="informacion"></span>
-
-
-                                                    
-                                                </div> -->
-                            <div class="grid-botones">
-                                <input type="submit" name="editarClase" class="boton editar" value="Editar">
-                            </div>
-                        </form>
-                    </div>
+                    
                 <?php } ?>
 
 
