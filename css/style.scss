@@ -18,7 +18,7 @@
 ::-webkit-scrollbar {
     //width: 5px;
     //height: 5px;
-    
+
 
 }
 
@@ -31,7 +31,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-   // background: rgb(141, 0, 0)
+    // background: rgb(141, 0, 0)
 }
 
 /*Estilos BG (Background)*/
@@ -2266,14 +2266,15 @@ div.main.empleados {
         padding: 2%;
         border-radius: 10px;
         overflow: auto;
-        &.color2{
+
+        &.color2 {
             background-color: #ffe5d8;
             border: 1px solid rgb(224, 224, 224);
             flex-wrap: wrap;
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            
+
         }
 
         .bloqueCard {
@@ -2285,7 +2286,7 @@ div.main.empleados {
             padding: 10px;
             padding-bottom: 0;
             margin-bottom: 1%;
-            
+
 
 
 
@@ -2297,7 +2298,7 @@ div.main.empleados {
                     padding-bottom: 2%;
                     border-bottom: 1px solid rgb(226, 226, 229);
 
-                    .bloqueSubseccion{
+                    .bloqueSubseccion {
                         background-color: #fdecec;
                         padding: 2%;
                         max-height: 150px;
@@ -2305,7 +2306,7 @@ div.main.empleados {
                         overflow-y: auto;
                         border-radius: 20px;
 
-                        a{
+                        a {
                             background-color: darkred;
                             color: white;
                             text-decoration: underline;
@@ -2318,14 +2319,15 @@ div.main.empleados {
                         text-transform: uppercase;
                         font-weight: 500;
                         font-size: 16.5px;
-                        span{
+
+                        span {
                             background-color: rgb(253, 225, 225);
                             padding: .5%;
                             text-decoration: underline;
                         }
                     }
-                    
-                    
+
+
 
 
                 }
@@ -2739,17 +2741,25 @@ div.main.empleados {
     }
 
     .bloqueNuevo {
-        padding: 25px;
-        background-color: white;
-        border-radius: 15px;
+        padding: 2px;
+        // border: 1px solid gray;
+        border-radius: 10px;
+        // background-color: rgb(247, 225, 225);
+        display: flex;
         align-self: center;
         align-items: center;
         align-content: center;
+        min-width: 85px;
 
         a.boton-especial {
             padding: 5px;
+            margin: auto auto;
+            min-width: 70px;
 
-            background-color: rgb(243, 208, 208);
+
+            background-color: white;
+
+            //background-color: rgb(243, 208, 208);
             border: 1px solid black;
 
             border-radius: 5px;

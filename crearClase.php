@@ -6,7 +6,9 @@ session_start();
 include($_SESSION["pagina"] . ".php");
 $cambiarPagina = false;
 
+//Variables importantes que serán utilizadas varias veces en el documetno
 
+$idInicializado = isset($_GET["id"]);
 
 
 
@@ -30,8 +32,21 @@ $cambiarPagina = false;
             <div class="contenidoGlobal">
 
                 <div class="contenidoM">
-                    <h2>Clase Nº</h2>
-                    <p>Clase número X de <b>Alejandro Martínez García</b></p>
+
+                    <?php
+                    if ($idInicializado) {
+
+                        
+                    ?>
+                        <h2>Nueva Clase</h2>
+                        <p>Clase Nº <b><?php echo obtenerNumeroClaseSiguiente($_GET["id"],$conn) ?></b> de <b><?php echo obtenerNombreyApellidosUsuario($_GET["id"],$conn)?></b></p>
+                    <?php
+                    } else { ?>
+                        <h2>Nueva Clase</h2>
+                        <p>Seleccione el <b>alumno</b></p>
+
+                    <?php } ?>
+
                     </p>
                     <div class="contenedor">
                         <div class="subtitulo">
@@ -40,96 +55,135 @@ $cambiarPagina = false;
                         <div class="subContenido">
                             <div><span>Fecha</span></div>
                             <div class="grid">
-                            <input type="date" name="fecha" value="<?php echo $_GET["fecha"] ?>"  required>
-                                <input type="text" name="id" hidden value="<?php echo $_GET["id"] ?>">
+                                <input type="date" name="fecha" value="<?php if (isset($_GET["fecha"])) echo $_GET["fecha"] ?>" required>
 
+
+                                <?php if ($idInicializado) {
+                                ?>
+                                    <input type="text" name="id" hidden value="<?php echo $_GET["id"] ?>">
                             </div>
-                        </div>
-                        <div class="grid-dual">
+                        <?php } else {
+                        ?>
                             <div class="subContenido">
-                                <div><span>Hora Inicio</span></div>
+                                <div><span>Alumno</span></div>
                                 <div class="grid">
-                                    <input type="time" name="horaInicio" value="<?php echo $_GET["horaInicio"] ?>" required>
+                                    <select name="id">
+                                        <?php
+
+                                        $query = "SELECT * FROM alumnos ORDER BY id asc";
+                                        //echo $query;
+                                        $resultado = $conn->query($query);
+                                        $idAlumnos = [''];
+                                        $nombreCompletoAlumnos = [''];
+                                        while ($filaAlumnos = $resultado->fetch_assoc()) {
+                                            array_push($idAlumnos, $filaAlumnos["id"]);
+                                            array_push($nombreCompletoAlumnos, $filaAlumnos["nombre"] . " " . $filaAlumnos["apellido1"] . " " . $filaAlumnos["apellido2"]);
+                                        }
+
+
+                                        ?>
+
+                                        <?php for ($i = 0; $i < count($idAlumnos); $i++) {
+                                        ?>
+                                            <option value="<?php echo $idAlumnos[$i] ?>"><?php echo $nombreCompletoAlumnos[$i] ?></option>
+                                        <?php
+                                        } ?>
+
+                                    </select>
+
+
+                                <?php
+                                }
+
+                                ?>
+
 
                                 </div>
-                            </div>
-                            <div class="subContenido">
-                                <div><span>Hora Final</span></div>
-                                <div class="grid">
-                                    <input type="time" name="horaFin" value="<?php echo $_GET["horaFin"] ?>"  required>
+                                <div class="grid-dual">
+                                    <div class="subContenido">
+                                        <div><span>Hora Inicio</span></div>
+                                        <div class="grid">
+                                            <input type="time" name="horaInicio" value="<?php if (isset($_GET["horaInicio"])) echo $_GET["horaInicio"] ?>" required>
 
+                                        </div>
+                                    </div>
+                                    <div class="subContenido">
+                                        <div><span>Hora Final</span></div>
+                                        <div class="grid">
+                                            <input type="time" name="horaFin" value="<?php if (isset($_GET["horaInicio"])) echo $_GET["horaFin"] ?>" required>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+
+                            <div class="contenedor">
+                                <div class="subtitulo">
+                                    <h3>CONTENIDO CLASE</h3>
+                                </div>
+                                <div class="subContenido">
+                                    <div><span>Contenido Explicado</span></div>
+                                    <div class="grid">
+                                        <textarea rows="5" name="contenidoExplicado" required></textarea>
+
+                                    </div>
+                                </div>
+                                <div class="subContenido">
+                                    <div><span>Ejercicios Realizados</span></div>
+                                    <div class="grid">
+                                        <textarea rows="5" name="ejerciciosRealizados"></textarea>
+                                    </div>
+                                </div>
+                                <div class="subContenido">
+                                    <div><span>Observaciones (Próxima Clase)</span></div>
+                                    <div class="grid">
+                                        <textarea rows="5" name="observacionesProximaClase"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contenedor">
+                                <div class="subtitulo">
+                                    <h3>PROCESO ALUMNO</h3>
+                                </div>
+                                <div class="subContenido">
+                                    <div><span>Dificultad</span></div>
+                                    <div class="grid">
+                                        <textarea rows="5" name="dificultad"></textarea>
+
+                                    </div>
+                                </div>
+                                <div class="subContenido">
+                                    <div><span>Evolución</span></div>
+                                    <div class="grid">
+                                        <textarea rows="5" name="evolucion"></textarea>
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                            <div class="panelInformacion">
+                                <span class="error"></span>
+
+
+                            </div>
                         </div>
+
+
                     </div>
+                    <div class="contenidoFinal1">
 
-                    <div class="contenedor">
-                        <div class="subtitulo">
-                            <h3>CONTENIDO CLASE</h3>
+                        <div class="botones">
+                            <input type="submit" name="crearClase" value="Crear Clase">
+                            <input type="submit" name="cancelarClase" value="Cancelar">
                         </div>
-                        <div class="subContenido">
-                            <div><span>Contenido Explicado</span></div>
-                            <div class="grid">
-                                <textarea rows="5" name="contenidoExplicado"  required></textarea>
-
-                            </div>
-                        </div>
-                        <div class="subContenido">
-                            <div><span>Ejercicios Realizados</span></div>
-                            <div class="grid">
-                                <textarea rows="5" name="ejerciciosRealizados"></textarea>
-                            </div>
-                        </div>
-                        <div class="subContenido">
-                            <div><span>Observaciones (Próxima Clase)</span></div>
-                            <div class="grid">
-                                <textarea rows="5" name="observacionesProximaClase"></textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contenedor">
-                        <div class="subtitulo">
-                            <h3>PROCESO ALUMNO</h3>
-                        </div>
-                        <div class="subContenido">
-                            <div><span>Dificultad</span></div>
-                            <div class="grid">
-                                <textarea rows="5" name="dificultad"></textarea>
-
-                            </div>
-                        </div>
-                        <div class="subContenido">
-                            <div><span>Evolución</span></div>
-                            <div class="grid">
-                                <textarea rows="5" name="evolucion"></textarea>
-
-                            </div>
-                        </div>
-
-
-
-                    </div>
-
-                    <div class="panelInformacion">
-                        <span class="error"></span>
-
-
                     </div>
                 </div>
-
-
-            </div>
-            <div class="contenidoFinal1">
-
-                <div class="botones">
-                    <input type="submit" name="crearClase" value="Crear Clase">
-                    <input type="submit" name="cancelarClase" value="Cancelar">
-                </div>
-            </div>
+        </form>
     </div>
-    </form>
-</div>
 
 </div>
 
@@ -178,11 +232,10 @@ $cambiarPagina = false;
 
 
     function confirmarSalida(pagina) {
-      const respuesta = confirm("¿Estás seguro de que desea salir?");
-      if (respuesta) {
-        window.location.href =pagina;
-      } else {
-      }
+        const respuesta = confirm("¿Estás seguro de que desea salir?");
+        if (respuesta) {
+            window.location.href = pagina;
+        } else {}
     }
 
     // When the user clicks anywhere outside of the modal, close it

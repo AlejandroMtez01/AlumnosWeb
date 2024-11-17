@@ -195,3 +195,21 @@ function crearArrayAniversario($fechaMes,$conn){
 
     return $arrayNuevo;
 }
+function obtenerNombreyApellidosUsuario($idAlumno, $conn)
+{
+    $query = 'SELECT * FROM alumnos where id = ' . $idAlumno;
+    $resultado = $conn->query($query);
+    $fila = $resultado->fetch_assoc();
+
+
+    return $fila["nombre"] . " " . $fila["apellido1"] . " " . $fila["apellido2"];
+}
+function obtenerNumeroClaseSiguiente($idAlumno, $conn)
+{
+    $query = 'SELECT * FROM clases  where idAlumno = ' . $idAlumno;
+    $resultado = $conn->query($query);
+    $numFilas = $resultado->num_rows;
+
+
+    return ++$numFilas; //Lo incremento, puesto que necesitamos el número siguiente de clase
+}

@@ -73,6 +73,7 @@
 
             <?php
             include "php/baseDeDatos.php";
+
             include "php/Nav.php"; ?>
 
 
@@ -119,6 +120,8 @@
 
                         if ($resultadoClasesHorario->num_rows > 0) { //En caso de que no tenga horario fijado, no mostrará sugerencias.
                             $hoy = new DateTime();
+                            $hoy->modify('+' . 7 . ' days'); //Prueba para, la siguiente semana.
+
 
                             $diaDeLaSemana = $hoy->format('N');
 
@@ -170,6 +173,7 @@
                                                         <input type="date" name="fecha" value="<?php
                                                                                                 //Cálculo de fecha en función del día de la semana
                                                                                                 $diaDeLaSemana = $hoy->format('N');
+
 
                                                                                                 // Calcular la fecha del lunes (inicio de la semana)
                                                                                                 $lunes = clone $hoy;
@@ -233,7 +237,7 @@
                 }
                 ?>
                 <div class="bloqueNuevo">
-                    <a class="boton-especial" href="crearAlumno.php">+ Clase</a>
+                    <a class="boton-especial" href="crearClase.php">+ Clase</a>
                 </div>
 
 

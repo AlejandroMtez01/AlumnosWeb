@@ -2124,16 +2124,19 @@ div.main.empleados .empleados .bloqueCard .informacionConsulta:empty {
   background-color: #F4F4F5;
 }
 div.main.empleados .bloqueNuevo {
-  padding: 25px;
-  background-color: white;
-  border-radius: 15px;
+  padding: 2px;
+  border-radius: 10px;
+  display: flex;
   align-self: center;
   align-items: center;
   align-content: center;
+  min-width: 85px;
 }
 div.main.empleados .bloqueNuevo a.boton-especial {
   padding: 5px;
-  background-color: rgb(243, 208, 208);
+  margin: auto auto;
+  min-width: 70px;
+  background-color: white;
   border: 1px solid black;
   border-radius: 5px;
   border-color: #CC0132;

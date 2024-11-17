@@ -1,5 +1,6 @@
 <?php
 include "php/baseDeDatos.php";
+include "php/Funciones.php";
 
 if (isset($_GET["eliminarAlumno"])) {
     $nombreYapellidos= obtenerNombreyApellidosUsuario($_GET["id"],$conn);
@@ -64,15 +65,7 @@ if (isset($_POST["submitCrear"])) {
 
 }
 
-function obtenerNombreyApellidosUsuario($id, $conn)
-{
-    $query = 'SELECT * FROM alumnos where id = ' . $id;
-    $resultado = $conn->query($query);
-    $fila = $resultado->fetch_assoc();
 
-
-    return $fila["nombre"] . " " . $fila["apellido1"] . " " . $fila["apellido2"];
-}
 if (isset($_POST["submitEditarHorarioAlumno"])) {
 
     //Comprobar cuantos valores existen en base de datos
