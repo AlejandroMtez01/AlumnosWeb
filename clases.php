@@ -120,7 +120,7 @@
 
                         if ($resultadoClasesHorario->num_rows > 0) { //En caso de que no tenga horario fijado, no mostrará sugerencias.
                             $hoy = new DateTime();
-                            $hoy->modify('+' . 7 . ' days'); //Prueba para, la siguiente semana.
+                            //$hoy->modify('+' . 7 . ' days'); //Prueba para, la siguiente semana.
 
 
                             $diaDeLaSemana = $hoy->format('N');
