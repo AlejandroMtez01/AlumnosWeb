@@ -136,7 +136,7 @@
                             //echo "Domingo: " . $domingo->format("d/m/Y");
 
                             //Consulta para saber cuantas clases se han creado esta semana.
-                            $query = "SELECT * FROM clases WHERE fecha between '" . $lunes->format("Y-m-d") . "' and '" . $domingo->format("Y-m-d") . "' and idAlumno=".$filaAlumno["id"] ;
+                            $query = "SELECT * FROM clases WHERE fecha between '" . $lunes->format("Y-m-d") . "' and '" . $domingo->format("Y-m-d") . "' and idAlumno=" . $filaAlumno["id"];
                             $resultadoClasesRealizadas = $conn->query($query);
 
                             //Consulta para saber el número de la última clase
@@ -237,7 +237,7 @@
                 }
                 ?>
                 <div class="bloqueNuevo">
-                    <a class="boton-especial" href="crearClase.php">+ Clase</a>
+                    <a class="boton-especial" href="formularioClase.php">+ Clase</a>
                 </div>
 
 
@@ -266,7 +266,7 @@
                 $domingo = clone $hoy;
                 $domingo->modify('+' . (7 - $diaDeLaSemana) . ' days');
                 //echo "Domingo: " . $domingo->format("d/m/Y");
-                $query = "SELECT * FROM clases INNER JOIN alumnos on clases.idAlumno = alumnos.id  WHERE fecha between '" . $lunes->format("Y-m-d") . "' and '" . $domingo->format("Y-m-d") . "' ORDER BY idAlumno,fecha asc";
+                $query = "SELECT clases.id, alumnos.id as idAlumno, contenidoExplicado,nombre,apellido1,apellido2,fecha,horaDesde,horaHasta,ejerciciosRealizados FROM clases INNER JOIN alumnos on clases.idAlumno = alumnos.id  WHERE fecha between '" . $lunes->format("Y-m-d") . "' and '" . $domingo->format("Y-m-d") . "' ORDER BY idAlumno,fecha asc";
                 //echo $query;
                 $resultado = $conn->query($query);
                 while ($filaClasesRealizadas = $resultado->fetch_assoc()) {
@@ -308,11 +308,19 @@
                                                     
                                                 </div> -->
                             <div class="grid-botones">
+                                <input type="text" name="id" value="<?php echo $filaClasesRealizadas["idAlumno"] ?>" hidden>
+
+                                <input type="text" name="fecha" value="<?php echo $filaClasesRealizadas["fecha"] ?>" hidden>
+                                <input type="text" name="horaInicio" value="<?php echo $filaClasesRealizadas["horaDesde"] ?>" hidden>
+                                <input type="text" name="horaFin" value="<?php echo $filaClasesRealizadas["horaHasta"] ?>" hidden>
+                                <input type="text" name="idClase" value="<?php echo $filaClasesRealizadas["id"] ?>" hidden>
                                 <input type="submit" name="editarClase" class="boton editar" value="Editar">
+                                <input type="submit" name="verClase" class="boton editar" value="Ver Completa">
+                                <input type="submit" name="enviarTG" class="boton editar" value="Enviar Telegram">
                             </div>
                         </form>
                     </div>
-                    
+
                 <?php } ?>
 
 

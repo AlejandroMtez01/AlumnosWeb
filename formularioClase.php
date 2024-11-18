@@ -11,6 +11,20 @@ $cambiarPagina = false;
 $idInicializado = isset($_GET["id"]);
 
 
+$edicion = isset($_GET["idClase"]);
+
+$bloqueado = isset($_GET["bloqueado"]);
+
+$filaClase = "";
+
+if ($edicion) {
+    $query = "SELECT * FROM clases WHERE id=" . $_GET["idClase"];
+    //echo $query;
+    $resultado = $conn->query($query);
+    $filaClase = $resultado->fetch_assoc();
+}
+
+
 
 ?>
 <script>
@@ -33,13 +47,28 @@ $idInicializado = isset($_GET["id"]);
 
                 <div class="contenidoM">
 
-                    <?php
-                    if ($idInicializado) {
 
-                        
+                    <?php
+                    //var_dump($_GET);
+
+                    //echo count($filaClase);
+
+                    if ($bloqueado) { ?>
+                        <h2>Ver Clase</h2>
+                        <p>Clase Nº <b><?php echo obtenerNumeroClase($_GET["id"], $_GET["idClase"], $conn) ?></b> de <b><?php echo obtenerNombreyApellidosUsuario($_GET["id"], $conn) ?></b></p>
+                    <?php
+                    } else if ($edicion) {
+                    ?>
+                        <h2>Editar Clase</h2>
+                        <p>Clase Nº <b><?php echo obtenerNumeroClase($_GET["id"], $_GET["idClase"], $conn) ?></b> de <b><?php echo obtenerNombreyApellidosUsuario($_GET["id"], $conn) ?></b></p>
+
+                    <?php
+                    } else if ($idInicializado) {
+
+
                     ?>
                         <h2>Nueva Clase</h2>
-                        <p>Clase Nº <b><?php echo obtenerNumeroClaseSiguiente($_GET["id"],$conn) ?></b> de <b><?php echo obtenerNombreyApellidosUsuario($_GET["id"],$conn)?></b></p>
+                        <p>Clase Nº <b><?php echo obtenerNumeroClaseSiguiente($_GET["id"], $conn) ?></b> de <b><?php echo obtenerNombreyApellidosUsuario($_GET["id"], $conn) ?></b></p>
                     <?php
                     } else { ?>
                         <h2>Nueva Clase</h2>
@@ -55,12 +84,13 @@ $idInicializado = isset($_GET["id"]);
                         <div class="subContenido">
                             <div><span>Fecha</span></div>
                             <div class="grid">
-                                <input type="date" name="fecha" value="<?php if (isset($_GET["fecha"])) echo $_GET["fecha"] ?>" required>
+                                <input type="date" name="fecha" value="<?php if (isset($_GET["fecha"])) echo $_GET["fecha"] ?>" <?php if ($bloqueado) echo "disabled" ?> required>
 
 
                                 <?php if ($idInicializado) {
                                 ?>
                                     <input type="text" name="id" hidden value="<?php echo $_GET["id"] ?>">
+                                    <input type="text" name="idClase" hidden value="<?php echo $filaClase["id"] ?>">
                             </div>
                         <?php } else {
                         ?>
@@ -103,14 +133,14 @@ $idInicializado = isset($_GET["id"]);
                                     <div class="subContenido">
                                         <div><span>Hora Inicio</span></div>
                                         <div class="grid">
-                                            <input type="time" name="horaInicio" value="<?php if (isset($_GET["horaInicio"])) echo $_GET["horaInicio"] ?>" required>
+                                            <input type="time" name="horaInicio" value="<?php if (isset($_GET["horaInicio"])) echo $_GET["horaInicio"] ?>" <?php if ($bloqueado) echo "disabled" ?> required>
 
                                         </div>
                                     </div>
                                     <div class="subContenido">
                                         <div><span>Hora Final</span></div>
                                         <div class="grid">
-                                            <input type="time" name="horaFin" value="<?php if (isset($_GET["horaInicio"])) echo $_GET["horaFin"] ?>" required>
+                                            <input type="time" name="horaFin" value="<?php if (isset($_GET["horaInicio"])) echo $_GET["horaFin"] ?>" <?php if ($bloqueado) echo "disabled" ?> required>
 
                                         </div>
                                     </div>
@@ -124,20 +154,20 @@ $idInicializado = isset($_GET["id"]);
                                 <div class="subContenido">
                                     <div><span>Contenido Explicado</span></div>
                                     <div class="grid">
-                                        <textarea rows="5" name="contenidoExplicado" required></textarea>
+                                        <textarea rows="5" name="contenidoExplicado" <?php if ($bloqueado) echo "disabled" ?>><?php if ($edicion) echo $filaClase["contenidoExplicado"]; ?></textarea>
 
                                     </div>
                                 </div>
                                 <div class="subContenido">
                                     <div><span>Ejercicios Realizados</span></div>
                                     <div class="grid">
-                                        <textarea rows="5" name="ejerciciosRealizados"></textarea>
+                                        <textarea rows="5" name="ejerciciosRealizados" <?php if ($bloqueado) echo "disabled" ?>><?php if ($edicion) echo $filaClase["ejerciciosRealizados"]; ?></textarea>
                                     </div>
                                 </div>
                                 <div class="subContenido">
                                     <div><span>Observaciones (Próxima Clase)</span></div>
                                     <div class="grid">
-                                        <textarea rows="5" name="observacionesProximaClase"></textarea>
+                                        <textarea rows="5" name="observacionesProximaClase" <?php if ($bloqueado) echo "disabled" ?>><?php if ($edicion) echo $filaClase["observacionesProximaClase"]; ?></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -149,14 +179,14 @@ $idInicializado = isset($_GET["id"]);
                                 <div class="subContenido">
                                     <div><span>Dificultad</span></div>
                                     <div class="grid">
-                                        <textarea rows="5" name="dificultad"></textarea>
+                                        <textarea rows="5" name="dificultad" <?php if ($bloqueado) echo "disabled" ?>><?php if ($edicion) echo $filaClase["dificultad"]; ?></textarea>
 
                                     </div>
                                 </div>
                                 <div class="subContenido">
                                     <div><span>Evolución</span></div>
                                     <div class="grid">
-                                        <textarea rows="5" name="evolucion"></textarea>
+                                        <textarea rows="5" name="evolucion" <?php if ($bloqueado) echo "disabled" ?>><?php if ($edicion) echo $filaClase["evolucion"]; ?></textarea>
 
                                     </div>
                                 </div>
@@ -177,8 +207,23 @@ $idInicializado = isset($_GET["id"]);
                     <div class="contenidoFinal1">
 
                         <div class="botones">
-                            <input type="submit" name="crearClase" value="Crear Clase">
-                            <input type="submit" name="cancelarClase" value="Cancelar">
+                            <?php if ($bloqueado) { ?>
+                                <input type="submit" name="cerrar" value="Cerrar">
+                            <?php
+
+                            } else if ($edicion) {
+                            ?>
+                                <input type="submit" name="editarClase" value="Editar Clase">
+                                <input type="submit" name="cancelarClase" value="Cancelar">
+
+                            <?php } else {
+                            ?>
+                                <input type="submit" name="crearClase" value="Crear Clase">
+                                <input type="submit" name="cancelarClase" value="Cancelar">
+                            <?php
+                            } ?>
+
+
                         </div>
                     </div>
                 </div>

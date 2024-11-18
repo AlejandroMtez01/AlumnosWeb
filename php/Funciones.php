@@ -213,3 +213,13 @@ function obtenerNumeroClaseSiguiente($idAlumno, $conn)
 
     return ++$numFilas; //Lo incremento, puesto que necesitamos el número siguiente de clase
 }
+function obtenerNumeroClase($idAlumno,$idClase, $conn)
+{
+    $query = 'SELECT * FROM clases  where idAlumno = ' . $idAlumno.' and id <='.$idClase;
+    $resultado = $conn->query($query);
+    //echo $query;
+    $numFilas = $resultado->num_rows;
+
+
+    return $numFilas; //Lo incremento, puesto que necesitamos el número siguiente de clase
+}
