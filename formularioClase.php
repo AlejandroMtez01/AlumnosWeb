@@ -9,6 +9,7 @@ $cambiarPagina = false;
 //Variables importantes que serán utilizadas varias veces en el documetno
 
 $idInicializado = isset($_GET["id"]);
+$idClase = isset($_GET["idClase"]);
 
 
 $edicion = isset($_GET["idClase"]);
@@ -90,7 +91,12 @@ if ($edicion) {
                                 <?php if ($idInicializado) {
                                 ?>
                                     <input type="text" name="id" hidden value="<?php echo $_GET["id"] ?>">
-                                    <input type="text" name="idClase" hidden value="<?php echo $filaClase["id"] ?>">
+                                    <?php if ($idClase) {
+                                    ?>
+                                        <input type="text" name="idClase" hidden value="<?php echo $filaClase["id"] ?>">
+
+                                    <?php
+                                    } ?>
                             </div>
                         <?php } else {
                         ?>
@@ -121,10 +127,8 @@ if ($edicion) {
 
                                     </select>
 
-
                                 <?php
                                 }
-
                                 ?>
 
 

@@ -33,6 +33,8 @@
     //if (!isset($_SESSION["id"])) {
     //    header("Location: login.php");
     //}
+    $hoy = new DateTime();
+    //$hoy->modify('-' . 7 . ' days'); //Prueba para, la siguiente semana.
 
     ?>
 
@@ -119,8 +121,8 @@
                         $numFilasClasesHorario = $resultadoClasesHorario->num_rows;
 
                         if ($resultadoClasesHorario->num_rows > 0) { //En caso de que no tenga horario fijado, no mostrará sugerencias.
-                            $hoy = new DateTime();
-                            //$hoy->modify('+' . 7 . ' days'); //Prueba para, la siguiente semana.
+                            //$hoy = new DateTime();
+                            //$hoy->modify('-' . 7 . ' days'); //Prueba para, la siguiente semana.
 
 
                             $diaDeLaSemana = $hoy->format('N');
@@ -253,7 +255,7 @@
             <div class="clases color2">
 
                 <?php
-                $hoy = new DateTime();
+                //$hoy = new DateTime();
 
                 $diaDeLaSemana = $hoy->format('N');
 
