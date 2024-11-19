@@ -183,7 +183,7 @@
                                         <h3>CLASES SEMANALES</h3>
                                     </div>
                                     <?php
-                                    $query = 'SELECT * FROM horarioAlumnos WHERE idAlumno= ' . $fila["id"]. " ORDER BY diaSem ASC";
+                                    $query = 'SELECT diaSem, TIME_FORMAT(horaInicio, "%H:%i") as horaInicio,TIME_FORMAT(horaFin, "%H:%i") as horaFin FROM horarioAlumnos WHERE idAlumno= ' . $fila["id"]. " ORDER BY diaSem ASC";
 
                                     $resultado2 = $conn->query($query);
                                     while ($fila2 = $resultado2->fetch_assoc()) {

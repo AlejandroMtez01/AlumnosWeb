@@ -39,29 +39,8 @@
     ?>
 
     <?php
-    if (isset($_POST["editarAlumno"])) {
-        header("Location: editarAlumno.php?id=" . $_POST["id"]);
-    }
 
-
-    if (isset($_GET["eliminarEmpleado"])) {
-        $query = "DELETE FROM ALUMNOS WHERE ID= " . $_POST["id"];
-        $resultado7 = $conn->query($query);
-        //$query = "DELETE FROM USUARIOS WHERE idempleado=" . $_GET["eliminarEmpleado"];
-        //$resultado8 = $conn->query($query);
-    }
-
-
-
-
-
-
-
-    //$query = "DELETE FROM USUARIOS WHERE idempleado=" . $_GET["eliminarEmpleado"];
-    //$resultado8 = $conn->query($query);
-    //}
-
-
+    $alumnoInicializado = isset($_GET["idAlumno"]);
 
     ?>
     <div class="sidebar">
@@ -99,300 +78,128 @@
 
         <div class="areaFlex">
             <div class="titulo">
-                <h3>CLASES SEMANALES (PENDIENTES)</h3>
+
+                <h3>CLASES <select name="alumno">
+                        <option value="">Todos </option>
+                        <?php
+
+                        $query = "SELECT * FROM alumnos ORDER BY id asc";
+
+                        $resultado = $conn->query($query);
+                        while ($filasAlumnos = $resultado->fetch_assoc()) {
+                            echo $query;
+                        ?>
+                            <option <?php if ($alumnoInicializado && $filasAlumnos["id"]== $_GET["idAlumno"] ) { echo "selected";}?> value="<?php echo $filasAlumnos["id"] ?>"><?php echo $filasAlumnos["nombre"] . " " . $filasAlumnos["apellido1"] . " " . $filasAlumnos["apellido2"]; ?></option>
+                        <?php
+                        }
+                        ?>
+
+                    </select> </h3>
             </div>
 
-            <div class="clases">
-                <?php
+
+            <?php
 
 
-                //Creación de algoritmo para mostrar todas las clases pendientes de la semana.
-                //Comprueba por alumno, [cuantas clases a la semana tiene] y [cuantas clases han dado]
+            if ($alumnoInicializado) {
+                $query = "SELECT * FROM alumnos WHERE id= " . $_GET["idAlumno"] . " ORDER BY id asc";
+            } else {
+                $query = "SELECT * FROM alumnos ORDER BY id asc";
+            }
+            $resultado = $conn->query($query);
+            while ($filasAlumnos = $resultado->fetch_assoc()) {
 
-                $query = 'SELECT * FROM alumnos ORDER BY id';
-                $resultado = $conn->query($query);
-                if ($resultado->num_rows > 0) {
-                    // Iterar sobre cada alumno
-                    while ($filaAlumno = $resultado->fetch_assoc()) {
-                        $query = 'SELECT * FROM horarioAlumnos WHERE idAlumno = ' . $filaAlumno["id"] . " ORDER BY diaSem ASC";
-                        $resultadoClasesHorario = $conn->query($query);
-                        //echo "Alumno: " . $filaAlumno["nombre"] . "- Número de filas " . $resultadoClasesHorario->num_rows;
+            ?>
 
-                        $numFilasClasesHorario = $resultadoClasesHorario->num_rows;
+                <div class="clasesPadre colorFondo1">
+                    <h4><span><?php echo $filasAlumnos["nombre"] . " " . $filasAlumnos["apellido1"] . " " . $filasAlumnos["apellido2"] ?></span></h4>
 
-                        if ($resultadoClasesHorario->num_rows > 0) { //En caso de que no tenga horario fijado, no mostrará sugerencias.
-                            //$hoy = new DateTime();
-                            //$hoy->modify('-' . 7 . ' days'); //Prueba para, la siguiente semana.
+                    <div class="clases wrap center">
 
-
-                            $diaDeLaSemana = $hoy->format('N');
-
-                            // Calcular la fecha del lunes (inicio de la semana)
-                            $lunes = clone $hoy;
-                            $lunes->modify('-' . ($diaDeLaSemana - 1) . ' days');
-                            //echo "Lunes: " . $lunes->format("d/m/Y");
-
-                            // Calcular la fecha del domingo (último día de la semana)
-                            $domingo = clone $hoy;
-                            $domingo->modify('+' . (7 - $diaDeLaSemana) . ' days');
-                            //echo "Domingo: " . $domingo->format("d/m/Y");
-
-                            //Consulta para saber cuantas clases se han creado esta semana.
-                            $query = "SELECT * FROM clases WHERE fecha between '" . $lunes->format("Y-m-d") . "' and '" . $domingo->format("Y-m-d") . "' and idAlumno=" . $filaAlumno["id"];
-                            $resultadoClasesRealizadas = $conn->query($query);
-
-                            //Consulta para saber el número de la última clase
-                            $query = "SELECT * FROM clases WHERE idAlumno = '" . $filaAlumno["id"] . "'";
-                            $resultadoNumeroClasesRealizadas = $conn->query($query);
-                            $numeroClasesRealizadas = $resultadoNumeroClasesRealizadas->num_rows;
-
-
-
-                            //echo $query;
-                            $numFilasClasesRealizadas = $resultadoClasesRealizadas->num_rows;
-
-                            //Cálculo de clases pendientes (Clases Horario - Clases Realizadas)
-                            if ($numFilasClasesHorario > $numFilasClasesRealizadas) {
-                                //Añadir filas de [filasClasesHorarios], descontando el número de filas que se han dado, por orden de fecha.
-
-                                $contadorFilasPendientes = 0;
-                                while ($filaClasesPendientes = $resultadoClasesHorario->fetch_assoc()) { //Filas de clases de horario pendiente por usuario.
-
-                                    $contadorFilasPendientes++; //Se incrementa  contadorFilasPendientes
-                                    if ($contadorFilasPendientes > $numFilasClasesRealizadas) { //Se muestran las clases pendiente, donde el contador de filas es mayor que el numero de filas totales de clases realizadas, no me interesa la información si es igual o menor, puesto que eso no lo tiene que mostrar.
-                ?>
-                                        <div class="bloqueCard">
-                                            <form action="gestionClases.php" method="post">
-
-                                                <div class="tituloEmpl"><?php echo "<b>(" . ++$numeroClasesRealizadas . ")</b> - " .
-                                                                            $filaAlumno["nombre"] . " " . substr($filaAlumno["apellido1"], 0, 1) . "." //. substr($filaAlumno["apellido2"],0,1)."." 
-                                                                        ?></div>
-                                                <div class="grid">
-                                                    <input type="text" name="id" value="<?php echo $filaAlumno["id"];
-                                                                                        ?>" hidden>
-                                                    <span class="subtitulo">Fecha</span>
-                                                    <span class="informacion">
-                                                        <input type="date" name="fecha" value="<?php
-                                                                                                //Cálculo de fecha en función del día de la semana
-                                                                                                $diaDeLaSemana = $hoy->format('N');
-
-
-                                                                                                // Calcular la fecha del lunes (inicio de la semana)
-                                                                                                $lunes = clone $hoy;
-
-                                                                                                $diaConvertido = clone $hoy;
-                                                                                                $diaConvertido->modify('-' . ($diaDeLaSemana - $filaClasesPendientes["diaSem"]) . ' days');
-                                                                                                echo $diaConvertido->format("Y-m-d");
-                                                                                                ?>"></span>
-                                                </div>
-                                                <div class="grid">
-                                                    <span class="subtitulo">Horario</span>
-                                                    <span class="informacion">
-                                                        <div class="grid-3">
-                                                            <div class="div_centrado"><input type="time" name="horaInicio" value="<?php echo $filaClasesPendientes["horaInicio"] ?>"></div>
-                                                            <div class="div_centrado">-</div>
-                                                            <div class="div_centrado"><input type="time" name="horaFin" value="<?php echo $filaClasesPendientes["horaFin"] ?>"> </div>
-
-                                                        </div>
-                                                    </span>
-                                                </div>
-
-
-
-                                                <!-- <div class="grid division">
-                                                    <div class="subtitulo2">
-                                                        <h3>INFORMACIÓN ADICIONAL</h3>
-                                                    </div>
-
-
-                                                    <span class="subtituloSin"><?php //echo $diasSemana[$fila2["diaSem"] - 1] 
-                                                                                ?></span>
-                                                    <span class="informacion"><?php //echo $fila2["horaInicio"] . " - " . $fila2["horaFin"]; 
-                                                                                ?></span>
-
-
-                                                    
-                                                </div> -->
-                                                <div class="grid-botones">
-                                                    <input type="submit" name="crearClase" class="boton editar" value="Finalizada" />
-                                                </div>
-                                            </form>
-                                        </div>
                         <?php
-                                    }
-                                }
-                            }
-                        }
 
-
-
-
-
+                        $query = 'SELECT clases.id as idClase, idAlumno, observacionesProximaClase,contenidoExplicado,ejerciciosRealizados,fecha,horaDesde,horaHasta,dificultad,evolucion,nombre,apellido1,apellido2 FROM clases INNER JOIN alumnos on clases.idAlumno=alumnos.id WHERE idAlumno = ' . $filasAlumnos["id"] . ' ORDER BY clases.id  ';
+                        $resultado1 = $conn->query($query);
+                        $contadorClasePorAlumno = 0;
+                        while ($filaClasesRealizadas = $resultado1->fetch_assoc()) {
 
                         ?>
 
 
+                            <div class="bloqueCard-Completo color1">
+                                <form action="gestionClases.php" method="post">
 
 
-                <?php
-                    }
-                }
-                ?>
-                <div class="bloqueNuevo">
-                    <a class="boton-especial" href="formularioClase.php">+ Clase</a>
-                </div>
 
+                                    <div class="tituloEmpl"><b>(<?php echo "Clase" ?> <?php echo ++$contadorClasePorAlumno; ?>)</b></div>
+                                    <div class="grid-2">
 
-            </div>
+                                        <div class="bloqueSeccion">
+                                            <p class="tituloSeccion"><span>CONTENIDO VISTO</span></p>
 
-        </div>
-        <br>
-        <br>
-        <div class="titulo">
-            <h3>CLASES FINALIZADAS</h3>
-        </div>
-        <div class="areaFlex">
-            <div class="clases color2">
+                                            <div class="bloqueSubseccion">
+                                                <span class="posibleEnlace"><?php echo str_replace("\n", "<br>", $filaClasesRealizadas["contenidoExplicado"]) ?></span>
+                                            </div>
+                                        </div>
 
-                <?php
-                //$hoy = new DateTime();
+                                        <div class="bloqueSeccion">
+                                            <p class="tituloSeccion"><span>EJERCICIOS REALIZADOS</span></p>
 
-                $diaDeLaSemana = $hoy->format('N');
+                                            <div class="bloqueSubseccion">
+                                                <span class="posibleEnlace"><?php echo str_replace("\n", "<br>", $filaClasesRealizadas["ejerciciosRealizados"]) ?></span>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                // Calcular la fecha del lunes (inicio de la semana)
-                $lunes = clone $hoy;
-                $lunes->modify('-' . ($diaDeLaSemana - 1) . ' days');
-                //echo "Lunes: " . $lunes->format("d/m/Y");
+                                    <div class="grid-2">
 
-                // Calcular la fecha del domingo (último día de la semana)
-                $domingo = clone $hoy;
-                $domingo->modify('+' . (7 - $diaDeLaSemana) . ' days');
-                //echo "Domingo: " . $domingo->format("d/m/Y");
-                $query = "SELECT clases.id, alumnos.id as idAlumno, contenidoExplicado,nombre,apellido1,apellido2,fecha,horaDesde,horaHasta,ejerciciosRealizados FROM clases INNER JOIN alumnos on clases.idAlumno = alumnos.id  WHERE fecha between '" . $lunes->format("Y-m-d") . "' and '" . $domingo->format("Y-m-d") . "' ORDER BY idAlumno,fecha asc";
-                //echo $query;
-                $resultado = $conn->query($query);
-                while ($filaClasesRealizadas = $resultado->fetch_assoc()) {
-                ?>
+                                        <div class="bloqueSeccion">
+                                            <p class="tituloSeccion"><span>EVOLUCIÓN</span></p>
 
+                                            <div class="bloqueSubseccion">
+                                                <span class="posibleEnlace"><?php echo str_replace("\n", "<br>", $filaClasesRealizadas["evolucion"]) ?></span>
+                                            </div>
+                                        </div>
+                                        <div class="bloqueSeccion">
+                                            <p class="tituloSeccion"><span>DIFICULTAD</span></p>
 
-                    <div class="bloqueCard amplio">
-                        <form action="gestionClases.php" method="post">
+                                            <div class="bloqueSubseccion">
+                                                <span class="posibleEnlace"><?php echo str_replace("\n", "<br>", $filaClasesRealizadas["dificultad"]) ?></span>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                            <div class="tituloEmpl"><b>(<?php echo "Clase" ?>)</b> - <?php echo $filaClasesRealizadas["nombre"] . " " . substr($filaClasesRealizadas["apellido1"], 0, 1) . "." ?></div>
+                                    <div class="grid-botones">
+                                        <input type="text" name="id" value="<?php echo $filaClasesRealizadas["idAlumno"] ?>" hidden>
 
-                            <div class="bloqueSeccion">
-                                <p class="tituloSeccion"><span>CONTENIDO VISTO</span></p>
-
-                                <div class="bloqueSubseccion">
-                                    <span class="posibleEnlace"><?php echo str_replace("\n", "<br>", $filaClasesRealizadas["contenidoExplicado"]) ?></span>
-                                </div>
+                                        <input type="text"  name="fecha" value="<?php echo $filaClasesRealizadas["fecha"] ?>" hidden>
+                                        <input type="text" name="horaInicio" value="<?php echo $filaClasesRealizadas["horaDesde"] ?>" hidden>
+                                        <input type="text" name="horaFin" value="<?php echo $filaClasesRealizadas["horaHasta"] ?>" hidden>
+                                        <input type="text" name="idClase" value="<?php echo $filaClasesRealizadas["idClase"] ?>" hidden>
+                                        <input type="submit" name="editarClase" class="boton azulClaro" value="Editar">
+                                        <input type="submit" name="verClase" class="boton azulClaro" value="Ver Completa">
+                                        <input type="submit" name="enviarTG" class="boton azulClaro" value="Enviar Telegram">
+                                    </div>
+                                </form>
                             </div>
 
-                            <div class="bloqueSeccion">
-                                <p class="tituloSeccion"><span>EJERCICIOS REALIZADOS</span></p>
-
-                                <div class="bloqueSubseccion">
-                                    <span class="posibleEnlace"><?php echo str_replace("\n", "<br>", $filaClasesRealizadas["ejerciciosRealizados"]) ?></span>
-                                </div>
-                            </div>
-
-
-                            <!-- <div class="grid division">
-                                                    <div class="subtitulo2">
-                                                        <h3>INFORMACIÓN ADICIONAL</h3>
-                                                    </div>
-
-
-                                                    <span class="subtituloSin"></span>
-                                                    <span class="informacion"></span>
-
-
-                                                    
-                                                </div> -->
-                            <div class="grid-botones">
-                                <input type="text" name="id" value="<?php echo $filaClasesRealizadas["idAlumno"] ?>" hidden>
-
-                                <input type="text" name="fecha" value="<?php echo $filaClasesRealizadas["fecha"] ?>" hidden>
-                                <input type="text" name="horaInicio" value="<?php echo $filaClasesRealizadas["horaDesde"] ?>" hidden>
-                                <input type="text" name="horaFin" value="<?php echo $filaClasesRealizadas["horaHasta"] ?>" hidden>
-                                <input type="text" name="idClase" value="<?php echo $filaClasesRealizadas["id"] ?>" hidden>
-                                <input type="submit" name="editarClase" class="boton editar" value="Editar">
-                                <input type="submit" name="verClase" class="boton editar" value="Ver Completa">
-                                <input type="submit" name="enviarTG" class="boton editar" value="Enviar Telegram">
-                            </div>
-                        </form>
-                    </div>
-
-                <?php } ?>
-
-
-
-                </form>
-            </div>
-
-
-
-
-            <script>
-                cargarEventos();
-
-                var elementos = document.querySelectorAll(".posibleEnlace");
-                elementos.forEach(e => {
-
-                    //Declaración de array
-                    var palabras = e.innerHTML.split(" ");
-
-
-                    //console.log("Cantidad de palabras: "+e.innerHTML.split(" ").length);
-                    //Construccción innherHTML
-                    finalTexto = "";
-                    for (var i = 0; i < palabras.length; i++) {
-
-                        if (palabras[i].startsWith("https://") || palabras[i].startsWith("http://") || palabras[i].startsWith("www://")) {
-
-                            //Dividir enlace en parte del enlace (y siguiente) (Si está  junto un intro)
-                            palabra0 = "";
-                            palabra1 = "";
-                            const cortar = palabras[i].indexOf('<'); //Inicio de br
-                            if (cortar != -1) {
-                                palabra0 = palabras[i].substring(0, cortar);
-                                palabra1 = palabras[i].substring(cortar, palabras[i].length);
-                                console.log("Palabra0: " + palabra0);
-                                console.log("Palabra1: " + palabra1);
-
-                            }
-
-                            if (palabra0 != "") {
-                                finalTexto += "<a href='" +
-                                    palabra0 +
-                                    "'>" + "(Enlace)" + "</a>" + palabra1;
-                            } else {
-                                console.log("enlace");
-                                finalTexto += "<a href='" +
-                                    palabras[i] +
-                                    "'>" + "enlace" + "</a>";
-                            }
-
-                        } else {
-
-                            if (i == palabras.length - 1) {
-                                finalTexto += palabras[i];
-                            } else {
-
-                                finalTexto += (palabras[i] + " ");
-                            }
-
+                        <?php
                         }
-                        e.innerHTML = finalTexto;
+                        ?>
+                    </div>
+                </div>
+                <br>
+            <?php
+            } ?>
 
 
-                    }
 
-                    console.log("funciona");
-                });
-            </script>
+
+
         </div>
+
     </div>
+
     </div>
 
 </body>

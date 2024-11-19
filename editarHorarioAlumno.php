@@ -37,7 +37,7 @@ $cambiarPagina = false;
 
 
                     <?php
-                    $query = 'SELECT * FROM horarioAlumnos WHERE idAlumno= ' . $_GET["id"];
+                    $query = 'SELECT id,diaSem, TIME_FORMAT(horaInicio, "%H:%i") as horaInicio,TIME_FORMAT(horaFin, "%H:%i") as horaFin FROM horarioAlumnos WHERE idAlumno= ' . $_GET["id"];
 
                     $resultado = $conn->query($query);
                     $contador = 0;
@@ -144,7 +144,8 @@ $cambiarPagina = false;
     contenidoHorario.forEach((e) => {
         e.style = "padding: 1% 2%;" +
             "margin: 1% 0%;" + "border: 2px solid transparent;" +
-            "border-radius: 10px;";
+            "border-radius: 10px;"+
+            "border: 2px solid white;";
 
 
         e.addEventListener("mouseenter", () => {
@@ -156,11 +157,12 @@ $cambiarPagina = false;
                 "margin: 1% 0%;";
         });
         e.addEventListener("mouseleave", () => {
-            e.style += //"background: darkred;"+
-                "border: 2px solid transparent;" +
+            e.style = //"background: darkred;"+
+                "border: 2px solid white;" +
                 "border-radius: 10px;" +
                 "padding: 1% 2%;" +
                 "margin: 1% 0%;";
+                console.log("salgo")
         });
 
 

@@ -114,3 +114,4 @@ if (isset($_POST["cerrar"])) {
 if (isset($_POST["cancelarClase"])) {
     header("Location: clases.php?exito=Acción cancelada");
 }
+

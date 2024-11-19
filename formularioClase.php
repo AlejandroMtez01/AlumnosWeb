@@ -155,6 +155,25 @@ if ($edicion) {
                                 <div class="subtitulo">
                                     <h3>CONTENIDO CLASE</h3>
                                 </div>
+                                <?php
+                                if (!$idClase) { //Si la clase aún no esta creada...
+
+                                    $query = "SELECT * FROM clases WHERE idAlumno = " . $_GET["id"] . " ORDER BY id desc LIMIT 1";
+                                    //echo $query;
+                                    $resultado = $conn->query($query);
+                                    $filaClaseAnterior = $resultado->fetch_assoc();
+                                ?>
+                                <div class="subContenido">
+                                    <div><span>Clase Anterior (Pendiente)</span></div>
+                                    <div class="grid">
+                                        <textarea rows="5" disabled><?php echo $filaClaseAnterior["observacionesProximaClase"]; ?></textarea>
+
+                                    </div>
+                                </div>
+                                <?php
+
+                                }
+                                ?>
                                 <div class="subContenido">
                                     <div><span>Contenido Explicado</span></div>
                                     <div class="grid">

@@ -336,9 +336,17 @@ function crearNav(nombreUsuario, estilo, admin) {
     }*/
 
 
-
+    crearTitulo("GESTIÓN ALUMNOS");
     crearMenus("alumnos", "Alumnos", "resources/icons/home.svg", false);
-    crearMenus("clases", "Clases Semanales", "resources/icons/mentor.png", false);
+    crearMenus("clasesSemanales", "Clases Semanales", "resources/icons/mentor.png", false);
+    crearMenus("clases", "Clases", "resources/icons/mentor.png", false);
+
+    crearTitulo("RECURSOS");
+    crearMenus("alumnos", "Alumnos", "resources/icons/home.svg", false);
+
+
+
+
     //crearMenus("notificaciones", "Bandeja de entrada", "resources/icons/email.svg", true);
 
 
@@ -359,14 +367,14 @@ function crearNav(nombreUsuario, estilo, admin) {
     //crearMenus("ausencias", "Ausencias", "resources/icons/ausencia.svg", false);
 
 
-    crearTitulo("DISPONIBILIDAD");
+    //crearTitulo("DISPONIBILIDAD");
     /*crearMenus("empleados", "Empleados", "resources/icons/equipo.svg", true);
 
     var palabra = "empleados";
     var subElementos = ["Empleados", "Equipos"];
     crearSubMenus(palabra, subElementos);*/
 
-    crearMenus("Calendario", "Calendario", "resources/icons/calendario.svg", true);
+    /*crearMenus("Calendario", "Calendario", "resources/icons/calendario.svg", true);
 
     var palabra = "Calendario";
     var subElementos = ["Calendario", "Vista del Equipo"];
@@ -387,4 +395,5 @@ function crearNav(nombreUsuario, estilo, admin) {
     for (var i = 0; i < botones.length; i++) {
         botones[i].addEventListener('click', mostar_nomostrar_subMenu);
     }
+        */
 }

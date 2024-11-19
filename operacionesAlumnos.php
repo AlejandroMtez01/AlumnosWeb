@@ -100,6 +100,8 @@ if (isset($_POST["submitEditarHorarioAlumno"])) {
             $resultado6 = $conn->query($query);
             $valoresParaMostrar = $valoresBBDD;
         }
+        header("Location: alumnos.php?exito=El horario de ".obtenerNombreyApellidosUsuario($_POST["idAlumno"],$conn). " ha sido actualizado correctamente.");
+
     } else 
     if ($valoresBBDD > $valoresPOST) { //Se han eliminado valores
         $valoresParaMostrar = $valoresPOST;
