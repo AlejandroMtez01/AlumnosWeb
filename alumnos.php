@@ -121,14 +121,14 @@
                 if ($resultado->num_rows > 0) {
                     // Iterar sobre cada alumno
                     while ($fila = $resultado->fetch_assoc()) {
-                        
 
 
 
 
 
 
-              
+
+
 
                 ?>
                         <div class="bloqueCard">
@@ -173,7 +173,7 @@
                                     $resultado2 = $conn->query($query);
                                     $fila2 = $resultado2->fetch_assoc();
 
-                                    
+
                                     ?>
                                     <span class="informacion" data-tooltip="<?php echo $fila2["nombreCurso"] ?>"><?php echo $fila2["abrevCurso"] . " (" . $fila2["año"] . ")"; ?> </span>
                                 </div>
@@ -183,7 +183,7 @@
                                         <h3>CLASES SEMANALES</h3>
                                     </div>
                                     <?php
-                                    $query = 'SELECT diaSem, TIME_FORMAT(horaInicio, "%H:%i") as horaInicio,TIME_FORMAT(horaFin, "%H:%i") as horaFin FROM horarioAlumnos WHERE idAlumno= ' . $fila["id"]. " ORDER BY diaSem ASC";
+                                    $query = 'SELECT diaSem, TIME_FORMAT(horaInicio, "%H:%i") as horaInicio,TIME_FORMAT(horaFin, "%H:%i") as horaFin FROM horarioAlumnos WHERE idAlumno= ' . $fila["id"] . " ORDER BY diaSem ASC";
 
                                     $resultado2 = $conn->query($query);
                                     while ($fila2 = $resultado2->fetch_assoc()) {
@@ -218,9 +218,10 @@
                                     <input type="text" name="id" value="<?php echo $fila["id"]; ?>" hidden>
                                 </div>
                                 <div class="grid-botones">
-                                    <input type="submit" name="editarAlumno" class="boton editar" value="Editar Alumno" />
+                                    <input type="submit" name="editarAlumno" id="editar" class="boton editar" value="Editar Alumno" />
                                     <!-- <input type="submit" name="editarEmpleado" class="boton editar" value="Editar Empleado" href="<?php echo "editarAlumno.php?id=" . $fila["id"]; ?>" /> -->
-                                    <input type="submit" name="eliminarAlumno" class="boton eliminar" value="Eliminar Alumno" href="<?php echo "operacionesAlumnos.php?id=" . $fila["id"]; ?>" />
+                                    <input type="submit" name="eliminarAlumno" id="eliminar" class="boton eliminar" value="Eliminar Alumno" />
+                                    <!-- href="<?php echo "operacionesAlumnos.php?id=" . $fila["id"]; ?>" -->
                                     <!-- <input type="submit" name="darAlta" class="boton alta" value="Dar Alta" href="<?php echo "dar_alta.php?id=" . $fila["id"]; ?>" <?php
                                                                                                                                                                         //  $query = 'SELECT * FROM empleados_departamento WHERE idEmpleado= ' . $fila["id"] . " and fechaBaja is null";
                                                                                                                                                                         //  $resultado3 = $conn->query($query);
@@ -284,10 +285,25 @@
 
 
     </div>
-   
-        
+
+
     <script>
         cargarEventos();
+
+        var elemento = document.querySelectorAll("#eliminar");
+        elemento.forEach(element => {
+            console.log("Añadido");
+            element.onclick = function(event) {
+                        const confirmacion = confirm("¿Estás seguro de que deseas eliminar el ALUMNO?");
+                        if (!confirmacion) {
+                            // Prevenir el envío del formulario si el usuario cancela
+                            event.preventDefault();
+                        }
+                    };
+                    });
+                
+
+                
     </script>
 
 </body>

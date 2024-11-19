@@ -227,6 +227,29 @@ a{
 
 
 body {
+    /*Contenido informativo. */
+    div.error{
+        padding: 1%;
+        border: 3px solid darkred;
+        border-radius: 5px;
+        background-color: #e4e4e4;
+
+        span{
+            color: darkred;
+            font-weight: 700;
+        }
+    }
+    div.exito{
+        padding: 1%;
+        border: 3px solid rgb(0, 139, 19);
+        border-radius: 5px;
+        background-color: #e9f8e9;
+
+        span{
+            color: rgb(0, 139, 19);
+            font-weight: 700;
+        }
+    }
     font-family: $fuente;
     background-color: $colorFondo;
 
@@ -689,6 +712,8 @@ div.main.empleados {
                         min-height: 150px;
                         overflow-y: auto;
                         border-radius: 20px;
+                        font-size: 15px;
+
 
                         a {
                             background-color: darkred;
@@ -791,11 +816,6 @@ div.main.empleados {
                     border-radius: 7.5px;
                     padding: 0 5px;
                     font-family: $fuente;
-
-
-
-
-
                 }
 
                 .informacion {
@@ -836,7 +856,6 @@ div.main.empleados {
                 }
 
             }
-
             .grid-botones {
                 padding: 20px 0;
                 border-top: 1px solid rgb(226, 226, 229);
@@ -926,8 +945,7 @@ div.main.empleados {
             }
         }
     }
-
-    
+   
     .bloqueCard-Completo { //CSS Para tarjetas de Clases (Todos los campos)
         background-color: #ffdbc9e0;
         border-radius: 7.5px;
@@ -952,6 +970,7 @@ div.main.empleados {
                 max-height: 270px;
                 overflow-y: auto;
                 font-size: 15px;
+                width: 100%;
 
                 
                 .bloqueSubseccion {
@@ -963,11 +982,39 @@ div.main.empleados {
                     border-radius: 5px;
                     min-height: 200px;
                     max-height: 200px;
+                    position: relative;
+
+                    
+                    .botonCopiar {
+                        
+                        position: absolute;
+                        bottom: 10px;
+                        right: 10px;
+                        padding: 5px 10px;
+                        font-size: 14px;
+                        border: none;
+                        border-radius: 4px;
+                        background-color: #007bff;
+                        color: white;
+                        cursor: pointer;
+                        opacity: 0;
+                        z-index: 1;
+                        transition: opacity 0.5s ease;
+                      }
+                      
 
                     &:hover{
                         background-color: #fffafd;
 
-                        
+                        .botonCopiar{
+                            bottom: 10px;
+                            right: 10px;
+                            position: absolute;
+                            background-color: #0056b3;
+                            opacity: 1;
+                            bottom: 10px;
+                            right: 10px;
+                        }
                     }
 
                     a {
@@ -983,12 +1030,6 @@ div.main.empleados {
                 }
 
         }
-
-
-
-
-    
-
                 .tituloSeccion {
                     text-align: center;
                     text-transform: uppercase;
@@ -1005,13 +1046,8 @@ div.main.empleados {
 
                     }
                 }
-
-
-
-
             }
         }
-
         .tituloEmpl {
             text-align: center;
             letter-spacing: 1px;
@@ -1220,6 +1256,7 @@ div.main.empleados {
     display: flex;
     gap: 50px;
     flex-wrap: wrap;
+
 
 
 

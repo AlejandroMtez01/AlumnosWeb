@@ -3,9 +3,9 @@ function cargarEventos() {
 
     var elemento = document.querySelectorAll("*[data-tooltip]");
     elemento.forEach(element => {
-        console.log("Mostrando data-tooltip");
-        console.log(element);
-        console.log("ee");
+        //console.log("Mostrando data-tooltip");
+        //console.log(element);
+
         element.addEventListener("mouseover", mostrarTooltip);
         element.addEventListener("mouseout", desmostrarTooltip);
     });
@@ -48,4 +48,16 @@ function desmostrarTooltip(event) {
         tooltipElement.remove();
         tooltipElement = null;
     }
+}
+function confirmarSalida(pagina) {
+    const respuesta = confirm("¿Estás seguro de que desea salir?");
+    if (respuesta) {
+        window.location.href = pagina;
+    } else {}
+}
+function confirmarBorradoAlumno(pagina) {
+    const respuesta = confirm("¿Estás seguro de que deseas eliminar el ALUMNO?");
+    if (respuesta) {
+        window.location.href = pagina;
+    } else {}
 }

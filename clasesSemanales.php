@@ -40,12 +40,13 @@
     //echo $query;
     $resultado = $conn->query($query);
     while ($filaHorario = $resultado->fetch_assoc()) {
-        $query = "SELECT * FROM HORARIOALUMNOS where diaSem='".$filaHorario["diaSem"]. "' and horaInicio>='".$filaHorario["horaInicio"]."' and horaFin<='".$filaHorario["horaFin"]."'";
-        //echo $query;
-       
+        $query = "SELECT * FROM HORARIOALUMNOS where diaSem='" . $filaHorario["diaSem"] . "' and (horaInicio>='" . $filaHorario["horaInicio"] . "' and horaFin<='" . $filaHorario["horaFin"] . "')";
+        //$_GET["exito"] = $query;
+
         $resultado2 = $conn->query($query);
         if ($resultado2->num_rows > 1) {
             $_GET["error"] = "El horario realizado no se ha desarrollado correctamente. (Existen duplicidades en días y fechas concretas)";
+            //$_GET["exito"] = $query;
         }
     }
     ?>
@@ -79,13 +80,13 @@
     </script>
 
     <div class="main empleados">
-        <div class="exito"><?php if (isset($_GET["exito"])) {
-                                echo $_GET["exito"];
-                            } ?></div>
+        <?php if (isset($_GET["exito"])) { ?>
+            <div class="exito"><?php echo $_GET["exito"]; ?></div><?php
+                                                                } ?>
 
-        <div class="error"><?php if (isset($_GET["error"])) {
-                                echo $_GET["error"];
-                            } ?></div>
+<?php if (isset($_GET["error"])) { ?>
+            <div class="error"><?php echo "<span>Error! </span>". $_GET["error"]. ". (Cod. L1)"; ?></div><?php
+                                                                } ?>
 
 
         <div class="areaFlex">
@@ -263,7 +264,7 @@
                 //echo "Domingo: " . $domingo->format("d/m/Y");
                 $query = "SELECT clases.id, alumnos.id as idAlumno, contenidoExplicado,nombre,apellido1,apellido2,fecha,horaDesde,horaHasta,ejerciciosRealizados FROM clases INNER JOIN alumnos on clases.idAlumno = alumnos.id  WHERE fecha between '" . $lunes->format("Y-m-d") . "' and '" . $domingo->format("Y-m-d") . "' ORDER BY idAlumno,fecha asc";
                 //$query = "SELECT clases.id, alumnos.id as idAlumno, contenidoExplicado,nombre,apellido1,apellido2,fecha,DATE_FORMAT(horaDesde,'%H:%i') as horaDesde,horaHasta,ejerciciosRealizados FROM clases INNER JOIN alumnos on clases.idAlumno = alumnos.id  WHERE fecha between '" . $lunes->format("Y-m-d") . "' and '" . $domingo->format("Y-m-d") . "' ORDER BY idAlumno,fecha asc";
-               
+
                 //echo $query;
                 $resultado = $conn->query($query);
                 while ($filaClasesRealizadas = $resultado->fetch_assoc()) {

@@ -139,6 +139,8 @@
 
                                             <div class="bloqueSubseccion">
                                                 <span class="posibleEnlace"><?php echo str_replace("\n", "<br>", $filaClasesRealizadas["contenidoExplicado"]) ?></span>
+                                                <button id="copiar" class="botonCopiar" title="Copiar">Copiar</button>
+
                                             </div>
                                         </div>
 
@@ -147,6 +149,7 @@
 
                                             <div class="bloqueSubseccion">
                                                 <span class="posibleEnlace"><?php echo str_replace("\n", "<br>", $filaClasesRealizadas["ejerciciosRealizados"]) ?></span>
+                                                <button id="copiar" class="botonCopiar" title="Copiar">Copiar</button>
                                             </div>
                                         </div>
                                     </div>
@@ -158,6 +161,7 @@
 
                                             <div class="bloqueSubseccion">
                                                 <span class="posibleEnlace"><?php echo str_replace("\n", "<br>", $filaClasesRealizadas["evolucion"]) ?></span>
+                                                <button id="copiar" class="botonCopiar" title="Copiar">Copiar</button>
                                             </div>
                                         </div>
                                         <div class="bloqueSeccion">
@@ -165,6 +169,7 @@
 
                                             <div class="bloqueSubseccion">
                                                 <span class="posibleEnlace"><?php echo str_replace("\n", "<br>", $filaClasesRealizadas["dificultad"]) ?></span>
+                                                <button id="copiar" class="botonCopiar" title="Copiar">Copiar</button>
                                             </div>
                                         </div>
                                     </div>
