@@ -233,13 +233,6 @@ body div.sidebar {
   - contenedorSubB (Permite añadir margen y padding de izquierda a derecha), si añadimos hacia arriba o hacia abajo se tiene en cuenta en la linea de 'subBotonesNav.active'
   */
 }
-body div.sidebar div.logo img {
-  width: 120px;
-  display: block;
-  height: 40px;
-  margin: auto auto;
-  padding-bottom: 62px;
-}
 body div.sidebar div.botonesNav {
   padding: 6px;
   border-radius: 8px;
@@ -971,6 +964,74 @@ div.main.empleados .empleados .bloqueCard .tituloEmpl {
 }
 div.main.empleados .empleados .bloqueCard .tituloEmpl span {
   font-weight: 700;
+}
+div.main.empleados .empleados .bloqueCard .grid-3 {
+  display: grid;
+  grid-template-columns: 30% 25% 20%;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  row-gap: 7.5px;
+  padding: 10px 0px;
+}
+div.main.empleados .empleados .bloqueCard .grid-3 .subtitulo2 {
+  grid-column: 1/span 3;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+}
+div.main.empleados .empleados .bloqueCard .grid-3.division {
+  border-top: 1px solid rgb(226, 226, 229);
+  min-height: 120px;
+}
+div.main.empleados .empleados .bloqueCard .grid-3 span {
+  display: block;
+}
+div.main.empleados .empleados .bloqueCard .grid-3 textarea {
+  resize: none;
+}
+div.main.empleados .empleados .bloqueCard .grid-3 .subtitulo {
+  text-align: right;
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 1px;
+}
+div.main.empleados .empleados .bloqueCard .grid-3 .subtitulo.sinNada::after {
+  content: "";
+}
+div.main.empleados .empleados .bloqueCard .grid-3 .subtitulo::after {
+  content: ":";
+}
+div.main.empleados .empleados .bloqueCard .grid-3 .subtitulo.extraInformacion {
+  height: 100%;
+  margin: auto 0px;
+}
+div.main.empleados .empleados .bloqueCard .grid-3 input,
+div.main.empleados .empleados .bloqueCard .grid-3 textarea {
+  background-color: rgb(243, 243, 243);
+  border-radius: 7.5px;
+  padding: 0 5px;
+  font-family: "Inter";
+}
+div.main.empleados .empleados .bloqueCard .grid-3 .informacion {
+  text-align: left;
+  font-size: 15px;
+  border: 0px;
+  padding: 1px;
+}
+div.main.empleados .empleados .bloqueCard .grid-3 .informacion.extraInformacion {
+  height: 50px;
+}
+div.main.empleados .empleados .bloqueCard .grid-3 .informacion.separador-::before {
+  content: "-> ";
+}
+div.main.empleados .empleados .bloqueCard .grid-3 .informacion.separador- {
+  background-color: rgb(233, 233, 233);
+  border-radius: 5px;
+  padding: 1px;
+}
+div.main.empleados .empleados .bloqueCard .grid-3 .informacion.separador-:hover {
+  background-color: #dfeeff;
 }
 div.main.empleados .empleados .bloqueCard .grid {
   display: grid;

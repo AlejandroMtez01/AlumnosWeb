@@ -126,43 +126,47 @@ if ($edicion) {
                                         } ?>
 
                                     </select>
-
-                                <?php
-                                }
-                                ?>
-
-
-                                </div>
-                                <div class="grid-dual">
-                                    <div class="subContenido">
-                                        <div><span>Hora Inicio</span></div>
-                                        <div class="grid">
-                                            <input type="time" name="horaInicio" value="<?php if (isset($_GET["horaInicio"])) echo $_GET["horaInicio"] ?>" <?php if ($bloqueado) echo "disabled" ?> required>
-
-                                        </div>
-                                    </div>
-                                    <div class="subContenido">
-                                        <div><span>Hora Final</span></div>
-                                        <div class="grid">
-                                            <input type="time" name="horaFin" value="<?php if (isset($_GET["horaInicio"])) echo $_GET["horaFin"] ?>" <?php if ($bloqueado) echo "disabled" ?> required>
-
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
 
-                            <div class="contenedor">
-                                <div class="subtitulo">
-                                    <h3>CONTENIDO CLASE</h3>
-                                </div>
-                                <?php
-                                if (!$idClase) { //Si la clase aún no esta creada...
 
-                                    $query = "SELECT * FROM clases WHERE idAlumno = " . $_GET["id"] . " ORDER BY id desc LIMIT 1";
-                                    //echo $query;
-                                    $resultado = $conn->query($query);
-                                    $filaClaseAnterior = $resultado->fetch_assoc();
-                                ?>
+                        <?php
+                                }
+                        ?>
+
+
+                        </div>
+                        <div class="grid-dual">
+                            <div class="subContenido">
+                                <div><span>Hora Inicio</span></div>
+                                <div class="grid">
+                                    <input type="time" name="horaInicio" value="<?php if (isset($_GET["horaInicio"])) echo $_GET["horaInicio"] ?>" <?php if ($bloqueado) echo "disabled" ?> required>
+
+                                </div>
+                            </div>
+                            <div class="subContenido">
+                                <div><span>Hora Final</span></div>
+                                <div class="grid">
+                                    <input type="time" name="horaFin" value="<?php if (isset($_GET["horaInicio"])) echo $_GET["horaFin"] ?>" <?php if ($bloqueado) echo "disabled" ?> required>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedor">
+                        <div class="subtitulo">
+                            <h3>CONTENIDO CLASE</h3>
+                        </div>
+                        <?php
+                        if (!$idClase) { //Si la clase aún no esta creada...
+
+                            if ($idInicializado) {
+                                $query = "SELECT * FROM clases WHERE idAlumno = " . $_GET["id"] . " ORDER BY id desc LIMIT 1";
+                                //echo $query;
+                                $resultado = $conn->query($query);
+                                $filaClaseAnterior = $resultado->fetch_assoc();
+                        ?>
                                 <div class="subContenido">
                                     <div><span>Clase Anterior (Pendiente)</span></div>
                                     <div class="grid">
@@ -170,88 +174,106 @@ if ($edicion) {
 
                                     </div>
                                 </div>
-                                <?php
 
-                                }
-                                ?>
-                                <div class="subContenido">
-                                    <div><span>Contenido Explicado</span></div>
-                                    <div class="grid">
-                                        <textarea rows="5" name="contenidoExplicado" <?php if ($bloqueado) echo "disabled" ?>><?php if ($edicion) echo $filaClase["contenidoExplicado"]; ?></textarea>
+                            <?php
+                            } else { //Si es [+ Clase] y no tiene alumno, no mostrará clase anterior.
+                                // $query = "SELECT * FROM clases WHERE idAlumno = " . $idAlumno . " ORDER BY id desc LIMIT 1";
+                                //echo $query;
+                                //$resultado = $conn->query($query);
+                                //$filaClaseAnterior = $resultado->fetch_assoc();
+                            ?>
+                                <!-- <div class="subContenido">
+                                            <div><span>Clase Anterior (Pendiente)</span></div>
+                                            <div class="grid">
+                                                <textarea rows="5" disabled>Solo se muestran la información de clases anteriores si se</textarea>
 
-                                    </div>
-                                </div>
-                                <div class="subContenido">
-                                    <div><span>Ejercicios Realizados</span></div>
-                                    <div class="grid">
-                                        <textarea rows="5" name="ejerciciosRealizados" <?php if ($bloqueado) echo "disabled" ?>><?php if ($edicion) echo $filaClase["ejerciciosRealizados"]; ?></textarea>
-                                    </div>
-                                </div>
-                                <div class="subContenido">
-                                    <div><span>Observaciones (Próxima Clase)</span></div>
-                                    <div class="grid">
-                                        <textarea rows="5" name="observacionesProximaClase" <?php if ($bloqueado) echo "disabled" ?>><?php if ($edicion) echo $filaClase["observacionesProximaClase"]; ?></textarea>
-                                    </div>
-                                </div>
-                            </div>
+                                            </div>
+                                        </div> -->
 
-                            <div class="contenedor">
-                                <div class="subtitulo">
-                                    <h3>PROCESO ALUMNO</h3>
-                                </div>
-                                <div class="subContenido">
-                                    <div><span>Dificultad</span></div>
-                                    <div class="grid">
-                                        <textarea rows="5" name="dificultad" <?php if ($bloqueado) echo "disabled" ?>><?php if ($edicion) echo $filaClase["dificultad"]; ?></textarea>
+                        <?php
 
-                                    </div>
-                                </div>
-                                <div class="subContenido">
-                                    <div><span>Evolución</span></div>
-                                    <div class="grid">
-                                        <textarea rows="5" name="evolucion" <?php if ($bloqueado) echo "disabled" ?>><?php if ($edicion) echo $filaClase["evolucion"]; ?></textarea>
+                            }
+                        }
+                        ?>
 
-                                    </div>
-                                </div>
-
-
-
-                            </div>
-
-                            <div class="panelInformacion">
-                                <span class="error"></span>
-
+                        <div class="subContenido">
+                            <div><span>Contenido Explicado</span></div>
+                            <div class="grid">
+                                <textarea rows="5" name="contenidoExplicado" <?php if ($bloqueado) echo "disabled" ?>><?php if ($edicion) echo $filaClase["contenidoExplicado"]; ?></textarea>
 
                             </div>
                         </div>
+                        <div class="subContenido">
+                            <div><span>Ejercicios Realizados</span></div>
+                            <div class="grid">
+                                <textarea rows="5" name="ejerciciosRealizados" <?php if ($bloqueado) echo "disabled" ?>><?php if ($edicion) echo $filaClase["ejerciciosRealizados"]; ?></textarea>
+                            </div>
+                        </div>
+                        <div class="subContenido">
+                            <div><span>Observaciones (Próxima Clase)</span></div>
+                            <div class="grid">
+                                <textarea rows="5" name="observacionesProximaClase" <?php if ($bloqueado) echo "disabled" ?>><?php if ($edicion) echo $filaClase["observacionesProximaClase"]; ?></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedor">
+                        <div class="subtitulo">
+                            <h3>PROCESO ALUMNO</h3>
+                        </div>
+                        <div class="subContenido">
+                            <div><span>Dificultad</span></div>
+                            <div class="grid">
+                                <textarea rows="5" name="dificultad" <?php if ($bloqueado) echo "disabled" ?>><?php if ($edicion) echo $filaClase["dificultad"]; ?></textarea>
+
+                            </div>
+                        </div>
+                        <div class="subContenido">
+                            <div><span>Evolución</span></div>
+                            <div class="grid">
+                                <textarea rows="5" name="evolucion" <?php if ($bloqueado) echo "disabled" ?>><?php if ($edicion) echo $filaClase["evolucion"]; ?></textarea>
+
+                            </div>
+                        </div>
+
 
 
                     </div>
-                    <div class="contenidoFinal1">
 
-                        <div class="botones">
-                            <?php if ($bloqueado) { ?>
-                                <input type="submit" name="cerrar" value="Cerrar">
-                            <?php
-
-                            } else if ($edicion) {
-                            ?>
-                                <input type="submit" name="editarClase" value="Editar Clase">
-                                <input type="submit" name="cancelarClase" value="Cancelar">
-
-                            <?php } else {
-                            ?>
-                                <input type="submit" name="crearClase" value="Crear Clase">
-                                <input type="submit" name="cancelarClase" value="Cancelar">
-                            <?php
-                            } ?>
+                    <div class="panelInformacion">
+                        <span class="error"></span>
 
 
-                        </div>
                     </div>
                 </div>
-        </form>
+
+
+            </div>
+            <div class="contenidoFinal1">
+
+                <div class="botones">
+                    <?php if ($bloqueado) { ?>
+                        <input type="submit" name="cerrar" value="Cerrar">
+                    <?php
+
+                    } else if ($edicion) {
+                    ?>
+                        <input type="submit" name="editarClase" value="Editar Clase">
+                        <input type="submit" name="cancelarClase" value="Cancelar">
+
+                    <?php } else {
+                    ?>
+                        <input type="submit" name="crearClase" value="Crear Clase">
+                        <input type="submit" name="cancelarClase" value="Cancelar">
+                    <?php
+                    } ?>
+
+
+                </div>
+            </div>
     </div>
+    </form>
+</div>
 
 </div>
 
@@ -306,13 +328,19 @@ if ($edicion) {
         } else {}
     }
 
+
+
+
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         if (event.target == modal) {
-            //window.location.href = "<?php echo $_SESSION["pagina"] . ".php" ?>";
-            confirmarSalida("<?php echo $_SESSION["pagina"] . ".php" ?>");
+            window.location.href = "<?php echo $_SESSION["pagina"] . ".php" ?>";
+            //confirmarSalida("<?php //echo $_SESSION["pagina"] . ".php" 
+                                ?>");
         }
     }
+
+    confirmarDesecharCambiosFormularios(document.querySelectorAll("form"));
 </script>
 <?php
 // if ($cambiarPagina) {

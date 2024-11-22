@@ -88,6 +88,7 @@ if (isset($_POST["submitEditarHorarioAlumno"])) {
             $valoresPOST++;
         }
     }
+    
 
 
     echo "Los valores de BBDD son: $valoresBBDD 
@@ -104,19 +105,23 @@ if (isset($_POST["submitEditarHorarioAlumno"])) {
 
     } else 
     if ($valoresBBDD > $valoresPOST) { //Se han eliminado valores
-        $valoresParaMostrar = $valoresPOST;
-        $variableIn = "[";
-        for ($i=1; $i <= $valoresPOST ; $i++) { 
+        $valoresParaMostrar = $valoresBBDD;
+        $variableIn = "(";
+        for ($i=1; $i <= $valoresParaMostrar ; $i++) { 
+            
             if (isset($_POST["id$i"])){
                 $variableIn= $variableIn.$_POST["id$i"].",";
+                //echo $_POST["id$i"];
             }
         }
-        $variableIn = substr($variableIn,0,-1);
-        $variableIn = $variableIn ."]";
+        $variableIn = substr($variableIn,0,strlen($variableIn)-1);
+        $variableIn = $variableIn .")";
 
         $query = 'DELETE FROM horarioalumnos where idAlumno = ' . $_POST["idAlumno"] . " and id not in ".$variableIn. ";";
         echo $query;
         $resultado = $conn->query($query);
+        
+
         $filasEliminadas = $conn->affected_rows;;
         header("Location: alumnos.php?exito=El horario de ".obtenerNombreyApellidosUsuario($_POST["idAlumno"],$conn). " ha sido eliminado correctamente. ($filasEliminadas registros)");
 

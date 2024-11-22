@@ -178,7 +178,7 @@
                                     <span class="informacion" data-tooltip="<?php echo $fila2["nombreCurso"] ?>"><?php echo $fila2["abrevCurso"] . " (" . $fila2["año"] . ")"; ?> </span>
                                 </div>
 
-                                <div class="grid division">
+                                <div class="grid-3 division">
                                     <div class="subtitulo2">
                                         <h3>CLASES SEMANALES</h3>
                                     </div>
@@ -195,6 +195,18 @@
 
                                         <span class="subtitulo"><?php echo $diasSemana[$fila2["diaSem"] - 1] ?></span>
                                         <span class="informacion"><?php echo $fila2["horaInicio"] . " - " . $fila2["horaFin"]; ?></span>
+                                        <?php
+                                        $inicio = new DateTime($fila2["horaInicio"]);
+                                        $fin = new DateTime($fila2["horaFin"]);
+                                        $diferencia = $inicio->diff($fin);
+                                        $diferenciaHoras = $diferencia->h;
+                                        $diferenciaMinutos = $diferencia->i;
+
+                                        if (strlen($diferenciaMinutos) == 1) {
+                                            $diferenciaMinutos = $diferenciaMinutos . "0";
+                                        }
+                                        ?>
+                                        <span class="informacion separador-"><?php echo $diferenciaHoras . ":" . $diferenciaMinutos . " <b>H</b>" ?></span>
                                     <?php }
 
                                     if ($resultado2->num_rows == 0) {
@@ -209,8 +221,10 @@
                                     <?php } else if ($resultado2->num_rows == 1) {
 
                                     ?>
-                                        <!-- <span class="subtitulo">No día</span>
-                                                                               <span class="informacion">00:00 - 00:00</span> -->
+                                        <span class="subtitulo sinNada">&nbsp;</span>
+                                        <span class="informacion">&nbsp;</span>
+                                        <span class="informacion-">&nbsp;</span>
+
 
                                     <?php }  ?>
 
@@ -294,16 +308,16 @@
         elemento.forEach(element => {
             console.log("Añadido");
             element.onclick = function(event) {
-                        const confirmacion = confirm("¿Estás seguro de que deseas eliminar el ALUMNO?");
-                        if (!confirmacion) {
-                            // Prevenir el envío del formulario si el usuario cancela
-                            event.preventDefault();
-                        }
-                    };
-                    });
-                
+                const confirmacion = confirm("¿Estás seguro de que deseas eliminar el ALUMNO?");
+                if (!confirmacion) {
+                    // Prevenir el envío del formulario si el usuario cancela
+                    event.preventDefault();
+                }
+            };
+        });
 
-                
+        confirmarDesecharCambiosFormularios(document.querySelectorAll("form"));
+
     </script>
 
 </body>

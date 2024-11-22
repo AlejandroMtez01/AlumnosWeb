@@ -1,2 +1,0 @@
-Boton 'Establecer Horario' -> Cambiar cuando haya datos en SQL, y sea Editar y se puede editar.
-

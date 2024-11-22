@@ -288,7 +288,7 @@ body {
 
         div.logo {
             img {
-                @include logoEmpresa();
+              //  @include logoEmpresa();
             }
         }
 
@@ -1283,7 +1283,97 @@ div.main.empleados {
 
 
 
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 30% 25% 20%;
+            column-gap: 10px;
+            row-gap: 7.5px;
+            padding: 10px 0px;
 
+            .subtitulo2 {
+                grid-column: 1 / span 3;
+                text-align: center;
+                font-size: 14px;
+                letter-spacing: 1.5px;
+
+            }
+
+            &.division {
+                border-top: 1px solid rgb(226, 226, 229);
+                min-height: 120px;
+            }
+
+            span {
+                display: block;
+            }
+
+            textarea {
+                resize: none;
+            }
+
+
+
+            .subtitulo {
+                text-align: right;
+                width: 100%;
+                font-weight: 500;
+                font-size: 16px;
+                padding: 1px;
+                &.sinNada{
+                    &::after{
+                    content: "";
+
+                    }
+                }
+
+
+                &::after {
+                    content: ":";
+                }
+
+                &.extraInformacion {
+                    height: 100%;
+                    margin: auto 0px;
+                }
+            }
+
+            input,
+            textarea {
+                background-color: rgb(243, 243, 243);
+                border-radius: 7.5px;
+                padding: 0 5px;
+                font-family: $fuente;
+
+
+
+
+
+            }
+
+            .informacion {
+                text-align: left;
+                font-size: 15px;
+                border: 0px;
+                padding: 1px;
+
+                &.extraInformacion {
+                    height: 50px;
+
+                }
+                &.separador-::before{
+                    content: '-> ';
+                }
+                &.separador-{
+                    background-color: rgb(233, 233, 233);
+                    border-radius: 5px;
+                    padding: 1px;
+                    &:hover{
+                        background-color: #dfeeff;
+                    }
+                }
+            }
+
+        }
 
         .grid {
             display: grid;

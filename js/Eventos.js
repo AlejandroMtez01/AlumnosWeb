@@ -11,6 +11,22 @@ function cargarEventos() {
     });
 }
 
+function confirmarDesecharCambiosFormularios(formulario){
+    
+    formulario.forEach(e => {
+        e.addEventListener('input', () => {
+            tieneCambios = true
+        });
+        console.log(e);
+    });
+    window.addEventListener('beforeunload', (event) => {
+        if (tieneCambios) {
+            event.preventDefault();
+            event.returnValue = ''; // Necesario para que algunos navegadores muestren el cuadro de diálogo
+        }
+    });
+}
+
 
 var tooltipElement;
 

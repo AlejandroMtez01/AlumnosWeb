@@ -19,6 +19,8 @@ if (isset($_GET["id"])) {
 
 
 ?>
+    <script src="js/Eventos.js"></script>
+
     <script>
 
 
@@ -123,15 +125,15 @@ if (isset($_GET["id"])) {
                                     <select name="idCurso" id="curso" required>
                                         <option value=""></option>
                                         <option value="1" <?php if ($fila1["nombreCurso"] == "Desarrollo de Aplicaciones Multiplataforma") {
-                                                                        echo "selected";
-                                                                    } ?>>DAM (Desarrollo de Aplicaciones Multiplataforma)</option>
+                                                                echo "selected";
+                                                            } ?>>DAM (Desarrollo de Aplicaciones Multiplataforma)</option>
                                         <option value="2" <?php if ($fila1["nombreCurso"] == "Desarrollo de Aplicaciones Web") {
                                                                 echo "selected";
                                                             } ?>>DAW (Desarrollo de Aplicaciones Web)</option>
                                         <option value="3" <?php if ($fila1["nombreCurso"] == "Ingeniería Informática") {
-                                                                    echo "selected";
-                                                                } ?>>Ingeniería Informática</option>
-                                        
+                                                                echo "selected";
+                                                            } ?>>Ingeniería Informática</option>
+
                                     </select>
 
                                 </div>
@@ -143,17 +145,17 @@ if (isset($_GET["id"])) {
                                         <select name="yearCurso" id="curso" required>
                                             <option value=""></option>
                                             <option value="1" <?php if ($fila1["año"] == "1") {
-                                                                        echo "selected";
-                                                                    } ?>>1</option>
+                                                                    echo "selected";
+                                                                } ?>>1</option>
                                             <option value="2" <?php if ($fila1["año"] == "2") {
-                                                                        echo "selected";
-                                                                    } ?>>2</option>
+                                                                    echo "selected";
+                                                                } ?>>2</option>
                                             <option value="3" <?php if ($fila1["año"] == "3") {
-                                                                        echo "selected";
-                                                                    } ?>>3</option>
+                                                                    echo "selected";
+                                                                } ?>>3</option>
                                             <option value="4" <?php if ($fila1["año"] == "4") {
-                                                                        echo "selected";
-                                                                    } ?>>4</option>
+                                                                    echo "selected";
+                                                                } ?>>4</option>
                                         </select>
 
                                     </div>
@@ -165,8 +167,8 @@ if (isset($_GET["id"])) {
 
                                             <option value=""></option>
                                             <option value="2024/2025" <?php if ($fila1["promocion"] == "2024/2025") {
-                                                                        echo "selected";
-                                                                    } ?>>2024/2025</option>
+                                                                            echo "selected";
+                                                                        } ?>>2024/2025</option>
                                         </select>
                                     </div>
                                 </div>
@@ -245,6 +247,7 @@ if (isset($_GET["id"])) {
             window.location.href = "<?php echo $_SESSION["pagina"] . ".php" ?>";
         }
     }
+    confirmarDesecharCambiosFormularios(document.querySelectorAll("form"));
 </script>
 <?php
 if ($cambiarPagina) {
