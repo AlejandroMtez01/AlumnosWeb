@@ -89,9 +89,13 @@
     </script>
 
     <div class="main empleados">
-        <div class="exito"><?php if (isset($_GET["exito"])) {
-                                echo $_GET["exito"];
-                            } ?></div>
+    <?php if (isset($_GET["exito"])) { ?>
+            <div class="exito"><?php echo $_GET["exito"]; ?></div><?php
+                                                                } ?>
+
+<?php if (isset($_GET["error"])) { ?>
+            <div class="error"><?php echo "<span>Error! </span>". $_GET["error"]. ". (Cod. L1)"; ?></div><?php
+                                                                } ?>
         <div class="titulo">
             <h2>ALUMNOS</h2>
         </div>
