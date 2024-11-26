@@ -89,7 +89,9 @@
                         while ($filasAlumnos = $resultado->fetch_assoc()) {
                             echo $query;
                         ?>
-                            <option <?php if ($alumnoInicializado && $filasAlumnos["id"]== $_GET["idAlumno"] ) { echo "selected";}?> value="<?php echo $filasAlumnos["id"] ?>"><?php echo $filasAlumnos["nombre"] . " " . $filasAlumnos["apellido1"] . " " . $filasAlumnos["apellido2"]; ?></option>
+                            <option <?php if ($alumnoInicializado && $filasAlumnos["id"] == $_GET["idAlumno"]) {
+                                        echo "selected";
+                                    } ?> value="<?php echo $filasAlumnos["id"] ?>"><?php echo $filasAlumnos["nombre"] . " " . $filasAlumnos["apellido1"] . " " . $filasAlumnos["apellido2"]; ?></option>
                         <?php
                         }
                         ?>
@@ -139,7 +141,6 @@
 
                                             <div class="bloqueSubseccion">
                                                 <span class="posibleEnlace"><?php echo str_replace("\n", "<br>", $filaClasesRealizadas["contenidoExplicado"]) ?></span>
-                                                <button id="copiar" class="botonCopiar" title="Copiar">Copiar</button>
 
                                             </div>
                                         </div>
@@ -149,7 +150,6 @@
 
                                             <div class="bloqueSubseccion">
                                                 <span class="posibleEnlace"><?php echo str_replace("\n", "<br>", $filaClasesRealizadas["ejerciciosRealizados"]) ?></span>
-                                                <button id="copiar" class="botonCopiar" title="Copiar">Copiar</button>
                                             </div>
                                         </div>
                                     </div>
@@ -161,7 +161,6 @@
 
                                             <div class="bloqueSubseccion">
                                                 <span class="posibleEnlace"><?php echo str_replace("\n", "<br>", $filaClasesRealizadas["evolucion"]) ?></span>
-                                                <button id="copiar" class="botonCopiar" title="Copiar">Copiar</button>
                                             </div>
                                         </div>
                                         <div class="bloqueSeccion">
@@ -169,7 +168,6 @@
 
                                             <div class="bloqueSubseccion">
                                                 <span class="posibleEnlace"><?php echo str_replace("\n", "<br>", $filaClasesRealizadas["dificultad"]) ?></span>
-                                                <button id="copiar" class="botonCopiar" title="Copiar">Copiar</button>
                                             </div>
                                         </div>
                                     </div>
@@ -177,7 +175,7 @@
                                     <div class="grid-botones">
                                         <input type="text" name="id" value="<?php echo $filaClasesRealizadas["idAlumno"] ?>" hidden>
 
-                                        <input type="text"  name="fecha" value="<?php echo $filaClasesRealizadas["fecha"] ?>" hidden>
+                                        <input type="text" name="fecha" value="<?php echo $filaClasesRealizadas["fecha"] ?>" hidden>
                                         <input type="text" name="horaInicio" value="<?php echo $filaClasesRealizadas["horaDesde"] ?>" hidden>
                                         <input type="text" name="horaFin" value="<?php echo $filaClasesRealizadas["horaHasta"] ?>" hidden>
                                         <input type="text" name="idClase" value="<?php echo $filaClasesRealizadas["idClase"] ?>" hidden>
@@ -206,7 +204,22 @@
     </div>
 
     </div>
+    <script>
+        //Obtenemos el SELECT.
+        select = document.querySelectorAll("select[name='alumno']")[0];
 
+        select.addEventListener('change', function () {
+        const valorSeleccionado = this.value; // Obtiene el valor del select
+        const url = new URL(window.location.href); // Obtiene la URL actual
+        if (valorSeleccionado) {
+            url.searchParams.set('idAlumno', valorSeleccionado); // Agrega/modifica el parámetro "alumno"
+        } else {
+            url.searchParams.delete('idAlumno'); // Elimina el parámetro si se selecciona "Todos"
+        }
+        window.location.href = url.toString(); // Recarga la página con la nueva URL
+    });
+
+    </script>
 </body>
 
 </html>

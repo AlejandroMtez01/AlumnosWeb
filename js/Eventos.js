@@ -25,7 +25,13 @@ function confirmarDesecharCambiosFormularios(formulario){
             event.returnValue = ''; // Necesario para que algunos navegadores muestren el cuadro de diálogo
         }
     });
+    formulario.forEach(e => {
+        e.addEventListener('submit', (event) => {
+            tieneCambios = false; // Reseteamos la bandera al enviar
+        });
+    });
 }
+
 
 
 var tooltipElement;

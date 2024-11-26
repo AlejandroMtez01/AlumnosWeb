@@ -54,21 +54,7 @@ if (isset($_POST["darBaja"])) {
     header("Location: dar_baja.php?id=" . $_POST["id"]);
 }
 
-//Confirmación de datos
-//$query = "SELECT * FROM alumnos WHERE id= " . $_POST["id"];
-//$resultado2 = $conn->query($query);
-//$fila2 = $resultado2->fetch_assoc();
+if (isset($_POST["clases"])){
+    header("Location: clases.php?idAlumno=". $_POST["id"]);
 
-if (isset($_POST["submitDarAlta"])) {
-    //header("Location: empleados.php?informacionFinal=" . $_POST["departamento"] . "-" . $_POST["fechaAlta"] . "-" . $_POST["observaciones"] . "-" . $_POST["id"] . "-");
-    $query = "INSERT INTO empleados_departamento (idEmpleado,idDepartamento,idEmpresa,observaciones,fechaAlta,fechaBaja) VALUES (" . $_POST["id"] . "," . $_POST["departamento"] . "," . $_SESSION["idEmpresa"] . ",'" . $_POST["observaciones"] . "','" . $_POST["fechaAlta"] . "',null)";
-    $resultado = $conn->query($query);
-    header("Location: empleados.php?informacionFinal=" . "<b>Éxito</b> Empleado <span>" . $fila2["nombre"] . " " . $fila2["apellido1"] . " " . $fila2["apellido2"] .  "</span> ha sido dado de alta.");
-}
-if (isset($_POST["submitDarBaja"])) {
-    //header("Location: empleados.php?informacionFinal=" . $_POST["departamento"] . "-" . $_POST["fechaAlta"] . "-" . $_POST["observaciones"] . "-" . $_POST["id"] . "-");
-    $query = "UPDATE empleados_departamento SET fechaBaja='" . $_POST["fechaBaja"] . "' WHERE id=" . $_POST["idAlta"];
-    $resultado = $conn->query($query);
-    header("Location: empleados.php?informacionFinal=" . "<b>Éxito</b> Empleado <span>" . $fila2["nombre"] . " " . $fila2["apellido1"] . " " . $fila2["apellido2"] .  "</span> ha sido dado de baja.");
-    //header("Location: empleados.php?informacionFinal=" . $query);
 }

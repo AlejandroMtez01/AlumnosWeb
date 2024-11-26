@@ -269,7 +269,7 @@
 
 
                                     <?php } ?>
-                                    <input type="submit" name="clases y progreso" class="boton baja" value="Clases y Progeso" />
+                                    <input type="submit" name="clases" class="boton baja" value="Clases y Progeso" />
 
                                 </div>
                             </form>

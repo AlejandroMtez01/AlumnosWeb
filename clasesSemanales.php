@@ -49,6 +49,7 @@
             //$_GET["exito"] = $query;
         }
     }
+    $diaSem = ["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"];
     ?>
 
 
@@ -175,7 +176,7 @@
                                                                                                 $diaConvertido = clone $hoy;
                                                                                                 $diaConvertido->modify('-' . ($diaDeLaSemana - $filaClasesPendientes["diaSem"]) . ' days');
                                                                                                 echo $diaConvertido->format("Y-m-d");
-                                                                                                ?>"></span>
+                                                                                                ?>"> (<?php echo $diaSem[$filaClasesPendientes["diaSem"]-1];?>)</span>
                                                 </div>
                                                 <div class="grid">
                                                     <span class="subtitulo">Horario</span>
@@ -386,7 +387,9 @@
 
                     console.log("funciona");
                 });
-            </script>
+                
+
+           </script>
         </div>
     </div>
     </div>

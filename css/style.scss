@@ -587,6 +587,8 @@ body {
 
 
 div.main.empleados {
+
+
     margin: 10px 25px;
     padding: 10px 25px;
 
@@ -594,6 +596,11 @@ div.main.empleados {
         text-align: center;
         letter-spacing: 2px;
         font-size: large;
+        select{
+            border: 1px solid gray;
+            border-radius: 7.5px;
+            padding: .25%;
+        }
     }
 
     .bloqueInformacionFinal {
@@ -984,37 +991,12 @@ div.main.empleados {
                     max-height: 200px;
                     position: relative;
 
-                    
-                    .botonCopiar {
-                        
-                        position: absolute;
-                        bottom: 10px;
-                        right: 10px;
-                        padding: 5px 10px;
-                        font-size: 14px;
-                        border: none;
-                        border-radius: 4px;
-                        background-color: #007bff;
-                        color: white;
-                        cursor: pointer;
-                        opacity: 0;
-                        z-index: 1;
-                        transition: opacity 0.5s ease;
-                      }
-                      
+                                    
 
                     &:hover{
                         background-color: #fffafd;
 
-                        .botonCopiar{
-                            bottom: 10px;
-                            right: 10px;
-                            position: absolute;
-                            background-color: #0056b3;
-                            opacity: 1;
-                            bottom: 10px;
-                            right: 10px;
-                        }
+                       
                     }
 
                     a {
@@ -1285,7 +1267,7 @@ div.main.empleados {
 
         .grid-3 {
             display: grid;
-            grid-template-columns: 30% 25% 20%;
+            grid-template-columns: 35% 30% 20%;
             column-gap: 10px;
             row-gap: 7.5px;
             padding: 10px 0px;
@@ -1367,6 +1349,7 @@ div.main.empleados {
                     background-color: rgb(233, 233, 233);
                     border-radius: 5px;
                     padding: 1px;
+                    text-align: center;
                     &:hover{
                         background-color: #dfeeff;
                     }
