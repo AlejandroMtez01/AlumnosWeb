@@ -179,7 +179,7 @@
   height: 100%;
 }
 .contenidoModal .contenidoFinal {
-  background-color: #F4F4F5;
+  background-color: rgb(255, 243, 227);
   border-top: 1px solid gray;
   padding: 20px;
   display: flex;
@@ -210,7 +210,7 @@
   background-color: rgba(199, 0, 0, 0.753);
 }
 .contenidoModal .contenidoFinal1 {
-  background-color: #F4F4F5;
+  background-color: rgb(255, 243, 227);
   border-top: 1px solid gray;
   padding: 20px;
   margin-bottom: 70px;

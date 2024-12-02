@@ -176,7 +176,7 @@ a {
 body {
   /*Contenido informativo. */
   font-family: "Inter";
-  background-color: #F4F4F5;
+  background-color: rgb(255, 243, 227);
   display: grid;
 }
 body div.error {
@@ -216,7 +216,7 @@ body .tooltip {
   background: #fff;
 }
 body div.sidebar {
-  background-color: #F4F4F5;
+  background-color: rgb(255, 243, 227);
   padding-top: 12px;
   padding-bottom: 12px;
   display: block;
