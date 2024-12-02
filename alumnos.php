@@ -173,7 +173,7 @@
                                     </span> -->
                                     <span class="subtitulo">Curso Actual</span>
                                     <?php
-                                    $query = 'SELECT * FROM CURSOSALUMNOS INNER JOIN alumnos on cursosalumnos.idAlumno = alumnos.id INNER JOIN cursos ON cursos.id = cursosalumnos.idCurso WHERE idAlumno=' . $fila["id"] . ';';
+                                    $query = 'SELECT * FROM cursosalumnos INNER JOIN alumnos on cursosalumnos.idAlumno = alumnos.id INNER JOIN cursos ON cursos.id = cursosalumnos.idCurso WHERE idAlumno=' . $fila["id"] . ';';
                                     $resultado2 = $conn->query($query);
                                     $fila2 = $resultado2->fetch_assoc();
 
@@ -187,7 +187,7 @@
                                         <h3>CLASES SEMANALES</h3>
                                     </div>
                                     <?php
-                                    $query = 'SELECT diaSem, TIME_FORMAT(horaInicio, "%H:%i") as horaInicio,TIME_FORMAT(horaFin, "%H:%i") as horaFin FROM horarioAlumnos WHERE idAlumno= ' . $fila["id"] . " ORDER BY diaSem ASC";
+                                    $query = 'SELECT diaSem, TIME_FORMAT(horaInicio, "%H:%i") as horaInicio,TIME_FORMAT(horaFin, "%H:%i") as horaFin FROM horarioalumnos WHERE idAlumno= ' . $fila["id"] . " ORDER BY diaSem ASC";
 
                                     $resultado2 = $conn->query($query);
                                     while ($fila2 = $resultado2->fetch_assoc()) {
