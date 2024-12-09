@@ -37,7 +37,7 @@ $cambiarPagina = false;
 
 
                     <?php
-                    $query = 'SELECT id,diaSem, TIME_FORMAT(horaInicio, "%H:%i") as horaInicio,TIME_FORMAT(horaFin, "%H:%i") as horaFin FROM horarioAlumnos WHERE idAlumno= ' . $_GET["id"];
+                    $query = 'SELECT id,diaSem, TIME_FORMAT(horaInicio, "%H:%i") as horaInicio,TIME_FORMAT(horaFin, "%H:%i") as horaFin FROM horarioalumnos WHERE idAlumno= ' . $_GET["id"];
 
                     $resultado = $conn->query($query);
                     $contador = 0;
